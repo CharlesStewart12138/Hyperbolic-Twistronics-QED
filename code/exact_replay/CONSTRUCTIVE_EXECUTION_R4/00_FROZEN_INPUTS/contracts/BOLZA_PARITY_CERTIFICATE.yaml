@@ -1,0 +1,25 @@
+schema_version: "1.0"
+registry_id: "PF-GRP-001-PARITY"
+homomorphism:
+  domain: "Gamma_B=<a1,b1,a2,b2 | [a1,b1][a2,b2]=1>"
+  codomain: "Z/2Z"
+  generator_images: {a1: 1, b1: 1, a2: 1, b2: 1}
+  signed_inverse_images: {a1_inv: 1, b1_inv: 1, a2_inv: 1, b2_inv: 1}
+  executable_rule: "pi(word)=word_length mod 2"
+certificates:
+  surface_relator_value: 0
+  surface_relator_in_kernel: true
+  surjective: true
+  homomorphism: true
+  kernel_normal: true
+  phi8_preserves_parity: true
+  phi8_preserves_kernel: true
+proof_dependencies:
+  - "surface relator has even parity"
+  - "kernel of a group homomorphism is normal"
+  - "phi8 gives odd-parity images for all four primitive generators"
+separation_of_contracts:
+  graph_bipartiteness: "not inferred until a quotient Cayley graph exists"
+  finite_quotient_factorization: "not inferred until a candidate kernel is contained in ker(pi)"
+  manuscript_main_tex_modified: false
+

@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "parameter_id": "PF-ROB-002",
+  "immutable_record": true,
+  "authority": "2026-09-04 highest-priority theory-production directive",
+  "classification": "THEORY_PRODUCTION",
+  "disposition": "FREEZE",
+  "status": "Fixed",
+  "exact_source": "pp.15-16",
+  "exact_dependency": "Before Monte Carlo",
+  "rationale": "Freeze truncated-normal (sigma_t,sigma_perp)={(0.005,0.005),(0.01,0.01),(0.02,0.02)}.",
+  "frozen_value": {
+    "law": "independent standard normal truncated at |Z|<=5",
+    "sigma_t": {
+      "mild": 0.005,
+      "medium": 0.01,
+      "stress": 0.02
+    },
+    "sigma_perp": {
+      "mild": 0.005,
+      "medium": 0.01,
+      "stress": 0.02
+    },
+    "prng": "PCG64-DXSM",
+    "base_seed": 170217
+  },
+  "partial_directive_values": null,
+  "production_scope": "dimensionless theory production",
+  "validation": "PASSED"
+}

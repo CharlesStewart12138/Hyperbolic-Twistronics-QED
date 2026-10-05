@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "parameter_id": "PF-FLT-005",
+  "immutable_record": true,
+  "authority": "2026-09-04 highest-priority theory-production directive",
+  "classification": "THEORY_PRODUCTION",
+  "disposition": "FREEZE",
+  "status": "Fixed",
+  "exact_source": "p.60; pp.228-232",
+  "exact_dependency": "Before flatness run",
+  "rationale": "Freeze basic Ekin*rho_coh_max>=5 and strong >=10 at a common preregistered broadening.",
+  "frozen_value": {
+    "metric": "Ekin*rho_coh_max",
+    "basic_min": 5,
+    "strong_min": 10,
+    "broadening": "common preregistered production eta required"
+  },
+  "partial_directive_values": null,
+  "production_scope": "dimensionless theory production",
+  "validation": "PASSED"
+}

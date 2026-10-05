@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "parameter_id": "PF-HOD-003",
+  "immutable_record": true,
+  "authority": "2026-09-04 highest-priority theory-production directive",
+  "classification": "THEORY_PRODUCTION",
+  "disposition": "FREEZE",
+  "status": "Fixed",
+  "exact_source": "pp.66-69",
+  "exact_dependency": "Before Hodge root run",
+  "rationale": "Freeze the independent Hodge search interval I_H=[0,pi/8], with brackets refined without reading Chain A.",
+  "frozen_value": {
+    "I_H": [
+      "0",
+      "pi/8"
+    ],
+    "independent_chain": "HODGE",
+    "forbidden_input": "physical optimizer output",
+    "bracketing": "adaptive within I_H"
+  },
+  "partial_directive_values": null,
+  "production_scope": "dimensionless theory production",
+  "validation": "PASSED"
+}

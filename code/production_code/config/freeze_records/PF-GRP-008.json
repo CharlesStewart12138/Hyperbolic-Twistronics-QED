@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "parameter_id": "PF-GRP-008",
+  "immutable_record": true,
+  "authority": "2026-09-04 highest-priority theory-production directive",
+  "classification": "THEORY_PRODUCTION",
+  "disposition": "BLOCKED",
+  "status": "Blocked",
+  "exact_source": "p.250 Eq. (4182)",
+  "exact_dependency": "Before bulk runs",
+  "rationale": "The asymptotic conditions are known, but no unique mesoscopic shell schedule is specified and no tower radii exist yet.",
+  "frozen_value": null,
+  "partial_directive_values": null,
+  "production_scope": "blocked dependent theory branch",
+  "validation": "PASSED"
+}

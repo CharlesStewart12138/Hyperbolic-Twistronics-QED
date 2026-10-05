@@ -1,0 +1,47 @@
+\section{Final theorem stack}
+\label{sec:r7-final-stack}
+
+\begin{theorem}[Intrinsic operational non-Bloch magic]
+\label{thm:r7-principal}
+For the frozen scalar hyperbolic twisted-bilayer family there is a nonempty
+open parameter region $\mathcal U_{\rm magic}$ with the following properties.
+\begin{enumerate}
+\item The exact infinite Hamiltonian is bounded and self-adjoint.
+\item At every declared finite observation radius, finite energy resolution,
+and finite time horizon, the local spectral concentration, propagation
+suppression, return enhancement, interlayer coherence, and broadened LDOS
+satisfy the preregistered strict inequalities of
+\eqref{eq:r7-strict-magic} on a nonzero twist interval.
+\item Inside that interval the exact-common-cover twists form the dense null
+set $\Theta_C$.  Its complement is conull and dense.
+\item At every twist in the complement no exact finite common periodic cover
+and no exact finite Bloch representation exists, while the five magic
+inequalities hold for the same infinite operator.
+\item For observation scale $\ell$ the certified angular half-width has the
+explicit lower bound \eqref{eq:r7-exponential-window}, hence is positive for
+every finite $\ell$ and decays as $e^{-\ell/R}$ at fixed proof budget.
+\end{enumerate}
+Thus the operational magic and the obstruction to finite periodicity occur at
+the same conull dense set of parameter points.  They are not two statements
+about different models or different angles.
+\end{theorem}
+
+\begin{proof}
+Combine Theorems~\ref{thm:r7-wellposed}, \ref{thm:r7-anchor}, and
+\ref{thm:r7-inheritance}, Corollary~\ref{cor:r7-any-scale}, and the frozen R5
+normalizer and commensurator theorems.  The finite-resolution observables are
+intrinsic by Theorems~\ref{thm:r7-ct}, \ref{thm:r7-dyn}, and
+\ref{thm:r7-fixed-generic}.  R5 supplies the exact large-supercell exclusion.
+\end{proof}
+
+\begin{corollary}[Licensed paper-level claim]
+\label{cor:r7-paper-claim}
+Negative curvature places a rigorously certified magic mechanism in a generic
+non-Bloch setting and preserves its finite-resolution local spectral and
+dynamical signatures.
+\end{corollary}
+
+The stronger phrase ``intrinsically non-Bloch quantum dynamics'' without a
+finite-time qualifier is not licensed, because $T\to\infty$ has not been
+proved.  This is why the closure status is \texttt{CLOSED\_OPERATIONAL}, not
+\texttt{CLOSED\_STRONG}.

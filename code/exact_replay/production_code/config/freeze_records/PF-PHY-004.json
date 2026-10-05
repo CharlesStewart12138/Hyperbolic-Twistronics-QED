@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "parameter_id": "PF-PHY-004",
+  "immutable_record": true,
+  "authority": "2026-09-04 highest-priority theory-production directive",
+  "classification": "THEORY_PRODUCTION",
+  "disposition": "FREEZE",
+  "status": "Fixed",
+  "exact_source": "pp.10-17; Eq. (101)",
+  "exact_dependency": "Before production spectrum",
+  "rationale": "Theory freezes w/t through omega_ref=140.36861265335298 and omega/omega_ref=[0,0.25,0.5,0.75,0.9,0.97,1,1.03,1.1,1.25,1.5,2]; one boundary-triggered expansion to [0.125,4] is allowed. Dimensional w remains device-only.",
+  "frozen_value": {
+    "energy_unit": "t",
+    "omega_ref_w_over_t": 140.36861265335298,
+    "omega_over_omega_ref": [
+      0,
+      0.25,
+      0.5,
+      0.75,
+      0.9,
+      0.97,
+      1,
+      1.03,
+      1.1,
+      1.25,
+      1.5,
+      2
+    ],
+    "boundary_expansion": {
+      "maximum_uses": 1,
+      "range": [
+        0.125,
+        4
+      ],
+      "trigger": "candidate_reaches_initial_coupling_boundary"
+    },
+    "dimensional_w": "Deferred — physical device calibration not required for theory production"
+  },
+  "partial_directive_values": null,
+  "production_scope": "dimensionless theory production",
+  "validation": "PASSED"
+}

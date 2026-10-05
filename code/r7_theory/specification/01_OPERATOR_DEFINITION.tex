@@ -1,0 +1,45 @@
+\section{The infinite twisted-bilayer operator}
+\label{sec:r7-operator}
+
+Let $\mathbb H_R^2$ have curvature $-R^{-2}$ and let
+$\Lambda=\Gamma_Bo$ be the uniformly discrete Bolza orbit, with separation
+$a_0>0$.  Put $x_\gamma=\gamma o$.  The production Hilbert space is
+\begin{equation}
+ \mathscr H=\ell^2(\Gamma_B)\otimes\mathbb C^2_{\rm layer}.
+\end{equation}
+The index set is fixed as the twist varies; only the physical position of the
+upper-layer site changes from $x_\delta$ to $r_\theta x_\delta$.  Thus no
+nearest-image convention or periodicization enters the definition.
+
+Let $S$ be the eight-element nearest-neighbour shell and
+\begin{equation}
+ (H_0u)(\gamma)=-t\sum_{s\in S}u(\gamma s).
+\end{equation}
+For $\mu=\lambda_\perp^{-1}$ define
+\begin{align}
+ d_\theta(\gamma,\delta)&=d_{\mathbb H_R^2}
+       (x_\gamma,r_\theta x_\delta),\\
+ D_\theta(\gamma,\delta)&=
+       \sqrt{h^2+d_\theta(\gamma,\delta)^2},\\
+ T_\theta(\gamma,\delta)&=
+ w\exp\{-\mu[D_\theta(\gamma,\delta)-h]\}.
+\end{align}
+The exact infinite Hamiltonian is
+\begin{equation}
+ H(\theta)=
+ \begin{pmatrix}H_0&T_\theta\\T_\theta^*&H_0\end{pmatrix}.
+ \label{eq:r7-Htheta}
+\end{equation}
+At $\theta=0$ this is the convolution operator used by the frozen
+surface-group anchor.  At a generic angle it is not a finite Bloch matrix.
+
+For a finite orbital fibre $\mathbb C^m$, the same definition is made with
+$H_0(\gamma,\delta),T_\theta(\gamma,\delta)\in M_m(\mathbb C)$ and
+$H_0(\gamma,\delta)=H_0(\delta,\gamma)^*$,
+$T_\theta^*$ the Hilbert-space adjoint.  The scalar operator above, not an
+unfrozen Slater--Koster model, is the production instance.
+
+We use two distinct cutoffs.  The hopping cutoff $T_\theta^{[L]}$ retains
+matrix elements with $d_\theta\le L$.  The observation projector $P_L$
+retains both layer copies of indices satisfying $d(o,x_\gamma)\le L$.
+Neither cutoff is an exact finite periodic cover.

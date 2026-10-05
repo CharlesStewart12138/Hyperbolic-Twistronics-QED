@@ -1,0 +1,13 @@
+Read("CONSTRUCTIVE_EXECUTION_R4/17_FINAL_FREEZE/artifacts/CAND-R4-0005_factor_regular_generators.g");;
+Qreg := DirectProduct(Areg, Breg);;
+Print("CoreFreeSubgroups=", IsBound(CoreFreeSubgroups), "\n");
+Print("CoreFreeSubgroup=", IsBound(CoreFreeSubgroup), "\n");
+Print("MinimalFaithfulPermutationRepresentation=", IsBound(MinimalFaithfulPermutationRepresentation), "\n");
+Print("MinimalFaithfulPermutationDegree=", IsBound(MinimalFaithfulPermutationDegree), "\n");
+Print("LowIndexSubgroups=", IsBound(LowIndexSubgroups), "\n");
+Print("LowIndexSubgroupsFpGroup=", IsBound(LowIndexSubgroupsFpGroup), "\n");
+Print("ConjugacyClassesSubgroups=", IsBound(ConjugacyClassesSubgroups), "\n");
+Print("MaximalSubgroupClassReps=", IsBound(MaximalSubgroupClassReps), "\n");
+Print("IntermediateSubgroups=", IsBound(IntermediateSubgroups), "\n");
+Print("A_PC=", IsPcGroup(Areg), " B_PC=", IsPcGroup(Breg), " Q_PC=", IsPcGroup(Qreg), "\n");
+QUIT_GAP(0);

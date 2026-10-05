@@ -1,0 +1,30 @@
+schema_version: 1
+freeze_status: partial
+surface_group:
+  generator_order: [a1, a1_inv, b1, b1_inv, a2, a2_inv, b2, b2_inv]
+  inverse_map:
+    a1: a1_inv
+    a1_inv: a1
+    b1: b1_inv
+    b1_inv: b1
+    a2: a2_inv
+    a2_inv: a2
+    b2: b2_inv
+    b2_inv: b2
+  presentation:
+    group_name: Gamma_B
+    genus: 2
+    identity: e
+    positive_generators: [a1, b1, a2, b2]
+    commutator_convention: x_y_xinv_yinv
+    relation_display: "[a1,b1][a2,b2]=e"
+    relator_tokens: [a1, b1, a1_inv, b1_inv, a2, b2, a2_inv, b2_inv]
+    parser_policy: exact_named_tokens_no_aliases
+bolza:
+  kappa_B:
+    exact_expression: "2*acosh(1+sqrt(2))"
+    value: 3.057141838961996
+    units: dimensionless
+    tunable: false
+    source: "main.tex Eq. (50); Table II"
+

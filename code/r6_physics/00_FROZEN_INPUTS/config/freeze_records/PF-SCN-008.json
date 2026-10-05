@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "parameter_id": "PF-SCN-008",
+  "immutable_record": true,
+  "authority": "2026-09-04 highest-priority theory-production directive",
+  "classification": "THEORY_PRODUCTION",
+  "disposition": "FREEZE",
+  "status": "Fixed",
+  "exact_source": "pp.55-56",
+  "exact_dependency": "Before twist scan",
+  "rationale": "Freeze 91 endpoint-inclusive initial points, zeta_track=0.20, mandatory refinement triggers, and delta_theta<=1e-4 rad plus decisive local error closure.",
+  "frozen_value": {
+    "initial_uniform_points": 91,
+    "include_endpoints": true,
+    "theta_interval": [
+      "0",
+      "pi/8"
+    ],
+    "zeta_track": 0.2,
+    "minimum_delta_theta_rad": 0.0001,
+    "mandatory_triggers": [
+      "small_gap",
+      "rapid_projector_rotation",
+      "physical_score_extremum",
+      "hodge_root_bracket",
+      "representation_label_change",
+      "avoided_crossing"
+    ],
+    "stop_rule": "delta_theta<=1e-4 rad AND local tracking/gap/score error intervals are decisively converged"
+  },
+  "partial_directive_values": null,
+  "production_scope": "dimensionless theory production",
+  "validation": "PASSED"
+}

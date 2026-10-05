@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "parameter_id": "PF-QUB-002",
+  "immutable_record": true,
+  "authority": "2026-09-04 highest-priority theory-production directive",
+  "classification": "DEVICE_ONLY",
+  "disposition": "DEFER",
+  "status": "Deferred",
+  "exact_source": "pp.181-201",
+  "exact_dependency": "Before qubit run",
+  "rationale": "Transmon frequencies require device calibration and do not enter the photonic theory benchmark.",
+  "frozen_value": null,
+  "partial_directive_values": null,
+  "production_scope": "device-only downstream",
+  "validation": "PASSED"
+}

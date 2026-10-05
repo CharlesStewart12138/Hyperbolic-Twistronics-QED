@@ -1,0 +1,41 @@
+# Exact wrapper for sealed degree-24 seed workload shard318.
+OUT:="/mnt/d/work/revise/production_code/escalations/GAP_TRANSITIVE_DEGREE24_C8_SEED_SHARD318_SEGMENT001_UNIT1_1220_POSTVERIFY_V7_GPT56SOL.txt";
+STOP_AFTER_UNIT:=fail;
+INTERNAL_GUARD_MS:=1320000; START_UNIT:=1;
+INITIAL_COUNTERS:=[0,0,0,0,0,0,0,0,0,0,0,0];
+PREVIOUS_CHECKPOINT_SHA256:="NONE_FRESH_START";
+PREVIOUS_OUTPUT_FILE:="NONE_FRESH_START"; PREVIOUS_OUTPUT_PREFIX_BYTES:=0;
+PREVIOUS_OUTPUT_PREFIX_SHA256:="NONE_FRESH_START";
+CHECKPOINT_FILE:="/mnt/d/work/revise/production_code/escalations/GAP_TRANSITIVE_DEGREE24_C8_SEED_SHARD318_CHECKPOINT_GPT56SOL.txt";
+CHECKPOINT_TMP:="/mnt/d/work/revise/production_code/escalations/GAP_TRANSITIVE_DEGREE24_C8_SEED_SHARD318_CHECKPOINT_TMP_GPT56SOL.txt";
+EXPECTED_PROFILE_SHA256:="1D1A363463C8A0EFACD59EB5220555E7ADD2BD6AD4F686CC1CED9653706A70D2";
+EXPECTED_PLAN_SHA256:="0CBD0E7205976B7634A09FFA567A515259C1F2A087004680D32B9ADAB87B67C2";
+PROFILE_FILE:="/mnt/d/work/revise/production_code/escalations/GAP_TRANSITIVE_DEGREE24_AUT_PROFILE_FULL_MERGED_GPT56SOL.txt";
+PLAN_FILE:="/mnt/d/work/revise/production_code/escalations/GAP_TRANSITIVE_DEGREE24_C8_SEED_WORKLOAD_PLAN_GPT56SOL.tsv";
+ENGINE_FILE:="/mnt/d/work/revise/production_code/escalations/gap_transitive_degree24_c8_seed_plan_alpha_checkpoint_shard318_v7_gpt56sol.g";
+EXPECTED_ENGINE_SHA256:="59070D39FA546715B9C1BB88A1C84068C459D230D216CEEF6216EDAEEB3488C7";
+S318_RECORDS:=[
+rec(k:=14359,first:=12,last:=74,unitFirst:=1,unitLast:=63,order:=36864,autOrder:=294912,parity:=3,classes:=74,raw:=2727936,method:="pc",representation:="pc_transport",pcOrder:=36864,profileMs:=968),
+rec(k:=14360,first:=1,last:=74,unitFirst:=64,unitLast:=137,order:=36864,autOrder:=294912,parity:=7,classes:=74,raw:=2727936,method:="pc",representation:="pc_transport",pcOrder:=36864,profileMs:=989),
+rec(k:=14361,first:=1,last:=100,unitFirst:=138,unitLast:=237,order:=36864,autOrder:=294912,parity:=3,classes:=100,raw:=3686400,method:="pc",representation:="pc_transport",pcOrder:=36864,profileMs:=854),
+rec(k:=14362,first:=1,last:=14,unitFirst:=238,unitLast:=251,order:=36864,autOrder:=294912,parity:=3,classes:=14,raw:=516096,method:="pc",representation:="pc_transport",pcOrder:=36864,profileMs:=947),
+rec(k:=14363,first:=1,last:=14,unitFirst:=252,unitLast:=265,order:=36864,autOrder:=294912,parity:=3,classes:=14,raw:=516096,method:="pc",representation:="pc_transport",pcOrder:=36864,profileMs:=963),
+rec(k:=14364,first:=1,last:=14,unitFirst:=266,unitLast:=279,order:=36864,autOrder:=294912,parity:=3,classes:=14,raw:=516096,method:="pc",representation:="pc_transport",pcOrder:=36864,profileMs:=1003),
+rec(k:=14365,first:=1,last:=12,unitFirst:=280,unitLast:=291,order:=36864,autOrder:=2654208,parity:=7,classes:=12,raw:=442368,method:="pc",representation:="pc_transport",pcOrder:=36864,profileMs:=1385),
+rec(k:=14366,first:=1,last:=80,unitFirst:=292,unitLast:=371,order:=36864,autOrder:=147456,parity:=3,classes:=80,raw:=2949120,method:="pc",representation:="pc_transport",pcOrder:=36864,profileMs:=624),
+rec(k:=14367,first:=1,last:=80,unitFirst:=372,unitLast:=451,order:=36864,autOrder:=147456,parity:=3,classes:=80,raw:=2949120,method:="pc",representation:="pc_transport",pcOrder:=36864,profileMs:=557),
+rec(k:=14368,first:=1,last:=16,unitFirst:=452,unitLast:=467,order:=36864,autOrder:=147456,parity:=3,classes:=16,raw:=589824,method:="pc",representation:="pc_transport",pcOrder:=36864,profileMs:=716),
+rec(k:=14369,first:=1,last:=16,unitFirst:=468,unitLast:=483,order:=36864,autOrder:=147456,parity:=3,classes:=16,raw:=589824,method:="pc",representation:="pc_transport",pcOrder:=36864,profileMs:=1212),
+rec(k:=14370,first:=1,last:=80,unitFirst:=484,unitLast:=563,order:=36864,autOrder:=147456,parity:=7,classes:=80,raw:=2949120,method:="pc",representation:="pc_transport",pcOrder:=36864,profileMs:=643),
+rec(k:=14371,first:=1,last:=80,unitFirst:=564,unitLast:=643,order:=36864,autOrder:=147456,parity:=3,classes:=80,raw:=2949120,method:="pc",representation:="pc_transport",pcOrder:=36864,profileMs:=578),
+rec(k:=14372,first:=1,last:=80,unitFirst:=644,unitLast:=723,order:=36864,autOrder:=147456,parity:=3,classes:=80,raw:=2949120,method:="pc",representation:="pc_transport",pcOrder:=36864,profileMs:=628),
+rec(k:=14373,first:=1,last:=80,unitFirst:=724,unitLast:=803,order:=36864,autOrder:=147456,parity:=3,classes:=80,raw:=2949120,method:="pc",representation:="pc_transport",pcOrder:=36864,profileMs:=514),
+rec(k:=14374,first:=1,last:=12,unitFirst:=804,unitLast:=815,order:=36864,autOrder:=442368,parity:=3,classes:=12,raw:=442368,method:="pc",representation:="pc_transport",pcOrder:=36864,profileMs:=757),
+rec(k:=14375,first:=1,last:=12,unitFirst:=816,unitLast:=827,order:=36864,autOrder:=442368,parity:=3,classes:=12,raw:=442368,method:="pc",representation:="pc_transport",pcOrder:=36864,profileMs:=803),
+rec(k:=14376,first:=1,last:=80,unitFirst:=828,unitLast:=907,order:=36864,autOrder:=147456,parity:=7,classes:=80,raw:=2949120,method:="pc",representation:="pc_transport",pcOrder:=36864,profileMs:=504),
+rec(k:=14377,first:=1,last:=80,unitFirst:=908,unitLast:=987,order:=36864,autOrder:=147456,parity:=3,classes:=80,raw:=2949120,method:="pc",representation:="pc_transport",pcOrder:=36864,profileMs:=886),
+rec(k:=14378,first:=1,last:=80,unitFirst:=988,unitLast:=1067,order:=36864,autOrder:=147456,parity:=3,classes:=80,raw:=2949120,method:="pc",representation:="pc_transport",pcOrder:=36864,profileMs:=557),
+rec(k:=14379,first:=1,last:=80,unitFirst:=1068,unitLast:=1147,order:=36864,autOrder:=147456,parity:=3,classes:=80,raw:=2949120,method:="pc",representation:="pc_transport",pcOrder:=36864,profileMs:=530),
+rec(k:=14380,first:=1,last:=73,unitFirst:=1148,unitLast:=1220,order:=36864,autOrder:=147456,parity:=7,classes:=80,raw:=2949120,method:="pc",representation:="pc_transport",pcOrder:=36864,profileMs:=555)
+];
+Read("/mnt/d/work/revise/production_code/escalations/gap_transitive_degree24_c8_seed_plan_alpha_checkpoint_shard318_v7_gpt56sol.g");

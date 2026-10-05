@@ -1,0 +1,72 @@
+schema_version: "1.0"
+registry_id: "PF-HOD-002-LOCAL"
+status: "exact-canonical-local-Hodge-metric-frozen"
+scope: "LOCAL_SCALAR_CHARACTER"
+basis:
+  registry: "production_code/hodge/BOLZA_HARMONIC_TANGENT_BASIS.yaml"
+  order: [eta_a1, eta_b1, eta_a2, eta_b2]
+riemann_data:
+  a_normalized_tau:
+    - ["-2/3 + (2*sqrt(2)/3)i", "1/3 - (sqrt(2)/3)i"]
+    - ["1/3 - (sqrt(2)/3)i", "-2/3 + (2*sqrt(2)/3)i"]
+  Im_tau:
+    - ["2*sqrt(2)/3", "-sqrt(2)/3"]
+    - ["-sqrt(2)/3", "2*sqrt(2)/3"]
+  Im_tau_eigenvalues: ["sqrt(2)/3", "sqrt(2)"]
+  symmetric: true
+  Im_tau_positive_definite: true
+period_stack_contract:
+  block_cycle_order: [a1, a2, b1, b2]
+  Omega: "vertical_stack(I_2, tau^dagger)"
+  C: "Omega*(Im tau)^(-1)*Omega^dagger"
+  C_hermitian: true
+  Re_C_role: "determinant-one Jacobian metric on homology cycles"
+cycle_metric_standard_interleaved:
+  order: [a1, b1, a2, b2]
+  matrix:
+    - ["sqrt(2)", "-sqrt(2)/2", "sqrt(2)/2", "0"]
+    - ["-sqrt(2)/2", "sqrt(2)", "0", "-sqrt(2)/2"]
+    - ["sqrt(2)/2", "0", "sqrt(2)", "-sqrt(2)/2"]
+    - ["0", "-sqrt(2)/2", "-sqrt(2)/2", "sqrt(2)"]
+  determinant: 1
+hodge_metric_on_cohomology:
+  definition: "G=(Re C_interleaved)^(-1)"
+  order: [eta_a1, eta_b1, eta_a2, eta_b2]
+  matrix:
+    - ["sqrt(2)", "sqrt(2)/2", "-sqrt(2)/2", "0"]
+    - ["sqrt(2)/2", "sqrt(2)", "0", "sqrt(2)/2"]
+    - ["-sqrt(2)/2", "0", "sqrt(2)", "sqrt(2)/2"]
+    - ["0", "sqrt(2)/2", "sqrt(2)/2", "sqrt(2)"]
+  determinant: 1
+  leading_principal_minors: ["sqrt(2)", "3/2", "sqrt(2)", "1"]
+  eigenvalues_with_multiplicity:
+    "sqrt(2)-1": 2
+    "sqrt(2)+1": 2
+  positive_definite: true
+  equals_identity: false
+  condition_number: "3+2*sqrt(2)"
+inverse_square_root:
+  S: "G-sqrt(2)I_4"
+  involution_identity: "S^2=I_4"
+  formula: "G^(-1/2)=0.5[(sqrt(sqrt(2)-1)+sqrt(sqrt(2)+1))I_4+(sqrt(sqrt(2)-1)-sqrt(sqrt(2)+1))S]"
+  exact_check: "G^(-1/2) G G^(-1/2)=I_4"
+normalized_hessian:
+  required_formula: "K_hat=G^(-1/2) K G^(-1/2)"
+  identity_metric_shortcut_forbidden: true
+  all_four_principal_directions_retained: true
+uncertainty:
+  registry: "production_code/hodge/PF_HOD_002_DETERMINISTIC_UNCERTAINTY.json"
+acceptance:
+  period_stack_formula_exact: true
+  independent_period_Gram_check: true
+  Sylvester_positive: true
+  inverse_square_root_exact: true
+  coordinate_invariant_generalized_spectrum: true
+  passed: true
+claim_boundary:
+  finite_quotient_required: false
+  general_nonabelian_Ad_rho_metric: false
+  Hodge_root_claim: false
+  physical_magic_angle_claim: false
+  main_tex_modified: false
+

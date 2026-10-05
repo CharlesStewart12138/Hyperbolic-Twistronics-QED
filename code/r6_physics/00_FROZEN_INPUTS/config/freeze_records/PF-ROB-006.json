@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "parameter_id": "PF-ROB-006",
+  "immutable_record": true,
+  "authority": "2026-09-04 highest-priority theory-production directive",
+  "classification": "DEVICE_ONLY",
+  "disposition": "DEFER",
+  "status": "Deferred",
+  "exact_source": "pp.164-165",
+  "exact_dependency": "Before multimode claim",
+  "rationale": "The parasitic-mode registry is needed only for device-specific multimode certification.",
+  "frozen_value": null,
+  "partial_directive_values": null,
+  "production_scope": "device-only downstream",
+  "validation": "PASSED"
+}

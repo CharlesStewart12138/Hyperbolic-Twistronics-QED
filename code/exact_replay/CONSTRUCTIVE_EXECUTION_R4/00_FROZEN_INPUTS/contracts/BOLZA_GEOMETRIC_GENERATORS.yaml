@@ -1,0 +1,62 @@
+schema_version: "1.0"
+registry_id: "PF-GRP-001-GEO"
+status: "exact-geometric-interface-certified"
+coordinate_model: "Poincare unit disk"
+action_convention: "M.z = (M00*z + M01)/(M10*z + M11)"
+composition_convention: "(M*N).z = M.(N.z)"
+constants:
+  sqrt2: "sqrt(2)"
+  rho: "2^(-1/4)"
+  zeta8: "(1+i)/sqrt(2) = exp(i*pi/4)"
+  zeta16: "exp(i*pi/8)"
+  q_side: "sqrt(sqrt(2)-1)"
+  eta: "sqrt(2*(sqrt(2)-1))"
+  alpha: "1+sqrt(2)"
+  beta: "sqrt(2+2*sqrt(2))"
+octagon:
+  vertices: "v_j = rho*zeta16^(2*j+1), j=0,...,7"
+  vertex_modulus_squared: "rho^2 = 1/sqrt(2)"
+  central_increment: "v_(j+1) = zeta8*v_j"
+generator_formula:
+  id_pattern: "g_nu, nu=0,...,7"
+  matrix: "[[alpha, beta*zeta8^nu], [beta*zeta8^(-nu), alpha]]"
+  determinant_identity: "alpha^2-beta^2=1"
+  inverse_identity: "g_(nu+4)=g_nu^(-1), nu=0,...,3"
+generators:
+  - {id: "g0", nu: 0, phase: "1"}
+  - {id: "g1", nu: 1, phase: "zeta8"}
+  - {id: "g2", nu: 2, phase: "i"}
+  - {id: "g3", nu: 3, phase: "zeta8^3"}
+  - {id: "g4", nu: 4, phase: "-1", inverse_of: "g0"}
+  - {id: "g5", nu: 5, phase: "-zeta8", inverse_of: "g1"}
+  - {id: "g6", nu: 6, phase: "-i", inverse_of: "g2"}
+  - {id: "g7", nu: 7, phase: "zeta8^(-1)", inverse_of: "g3"}
+ordered_side_pairing:
+  endpoint_rule_1: "g_nu(v_(nu+3)) = v_nu"
+  endpoint_rule_2: "g_nu(v_(nu+4)) = v_(nu-1)"
+  midpoint_rule: "g_nu(-q_side*zeta8^nu) = q_side*zeta8^nu"
+  index_convention: "all vertex and generator indices are modulo 8"
+oriented_polygon_basis:
+  h0: "g0"
+  h1: "g1^(-1)"
+  h2: "g2"
+  h3: "g3^(-1)"
+  boundary_word: "h0*h1*h2*h3*h0^(-1)*h1^(-1)*h2^(-1)*h3^(-1)"
+  exact_value: "identity_matrix"
+certificates:
+  algebraic_field_degree: 16
+  exact_octagon_geometry: true
+  exact_su11: true
+  exact_inverse_pairing: true
+  exact_endpoint_pairing: true
+  exact_midpoint_pairing: true
+  exact_oriented_polygon_relation: true
+  independent_numeric_backend: "mpmath; constants reconstructed independently"
+  independent_numeric_decimal_digits: 140
+  independent_numeric_max_entrywise_residual: "1.749490129232441947651680857259e-139"
+  acceptance_threshold: "1e-120"
+scope_boundary:
+  standard_commutator_basis: "not asserted here; requires PF-GRP-001-NIELSEN"
+  c8_automorphism_in_standard_basis: "not asserted here; requires PF-GRP-001-PHI8"
+  manuscript_main_tex_modified: false
+

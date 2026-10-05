@@ -1,0 +1,15 @@
+SetInfoLevel(InfoWarning,0);SetInfoLevel(InfoQuotientSystem,0);LoadPackage("nq");
+Iter:=function(h,x,n)local j,y;y:=x;for j in [1..n]do y:=Image(h,y);od;return y;end;
+VM:=function(v,m)local j,i,o;o:=[];for j in [1..Length(v)]do Add(o,Sum([1..Length(v)],i->v[i]*m[i][j]) mod 2);od;return o;end;
+F:=FreeGroup("a1","b1","a2","b2");r:=F.1*F.2*F.1^-1*F.2^-1*F.3*F.4*F.3^-1*F.4^-1;SG:=F/[r];s:=GeneratorsOfGroup(SG);
+w:=[s[2]^-1,s[3]^-1*s[2]*s[1],s[3]^-1*s[2]*s[1]*s[2]^-1*s[1]^-1*s[2]^-1*s[4]^-1,s[1]*s[2]*s[1]^-1*s[2]^-1*s[3]];
+q:=PQuotient(SG,2,3,256,"combinatorial":noninteractive:=true);e:=EpimorphismQuotientSystem(q);u:=Image(e);g:=List(s,x->Image(e,x));a:=GroupHomomorphismByImages(u,u,g,List(w,x->Image(e,x)));pc:=Pcgs(u);b:=pc{[14..38]};
+rows:=List(b,x->ExponentsOfPcElement(pc,Image(a,x)){[14..38]});m:=Matrix(GF(2),rows);
+all8:=true;allsteps:=true;
+for i in [1..25]do v:=List([1..25],j->0);v[i]:=1;unit:=ShallowCopy(v);
+ for k in [1..8]do v:=VM(v,rows);actual:=ExponentsOfPcElement(pc,Iter(a,b[i],k)){[14..38]};if v<>actual then allsteps:=false;fi;od;
+ if v<>unit then all8:=false;fi;
+od;
+Print("allsteps=",allsteps," custom8=",all8," matrixIsOne8=",IsOne(m^8)," rank=",RankMat(m),"\n");
+Print("entryType=",m[1][1]," IsFFE=",IsFFE(m[1][1])," IsInt=",IsInt(m[1][1]),"\n");
+QUIT;

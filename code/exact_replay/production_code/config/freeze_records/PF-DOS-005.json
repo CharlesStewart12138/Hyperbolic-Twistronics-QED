@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "parameter_id": "PF-DOS-005",
+  "immutable_record": true,
+  "authority": "2026-09-04 highest-priority theory-production directive",
+  "classification": "THEORY_PRODUCTION",
+  "disposition": "FREEZE",
+  "status": "Fixed",
+  "exact_source": "p.229",
+  "exact_dependency": "Before production DOS",
+  "rationale": "Freeze independent SLQ probes=64 with a disjoint RNG namespace.",
+  "frozen_value": {
+    "primary_probes": 64,
+    "rng_namespace": "slq.production.random_vectors",
+    "independent_from": "kpm.production.random_vectors"
+  },
+  "partial_directive_values": null,
+  "production_scope": "dimensionless theory production",
+  "validation": "PASSED"
+}

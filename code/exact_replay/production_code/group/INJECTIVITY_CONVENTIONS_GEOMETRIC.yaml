@@ -1,0 +1,28 @@
+schema_version: "1.0"
+contract_id: "PF-GRP-001-INJECTIVITY-CONVENTIONS"
+status: "frozen"
+conventions:
+  standard_presentation_word:
+    definition: "one half the shortest nontrivial kernel length in S8_PRESENTATION"
+    units: "presentation-generator steps"
+    physical_acceptance: false
+  physical_geometric_word:
+    definition: "one half the shortest nontrivial kernel length in S8_GEOMETRIC"
+    units: "side-sharing generator steps"
+    physical_acceptance: "only via the separate Option-B cutoff theorem"
+  hyperbolic_geometric:
+    based_definition: "one half min_{gamma in K nontrivial} d_H(0,gamma*0)"
+    global_definition: "one half min_{gamma in K nontrivial} translation_length(gamma)"
+    units: "a_B"
+    production_condition: "r_inj_global_geo/a_B > 3"
+noninterchangeability:
+  word_metrics_equal: false
+  word_radius_promoted_to_hyperbolic_radius: false
+  witness_role: "a kernel witness yields hyperbolic upper bounds only"
+  graph_diameter_is_radius: false
+  group_order_is_radius: false
+option_B:
+  based_acceptance_requires_no_geometric_kernel_word_through: 127
+  global_acceptance_requires_no_geometric_kernel_word_through: 156
+scope_boundary:
+  main_tex_modified: false

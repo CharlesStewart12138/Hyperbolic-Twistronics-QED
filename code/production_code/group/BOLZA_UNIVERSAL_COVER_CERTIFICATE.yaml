@@ -1,0 +1,40 @@
+schema_version: "1.0"
+registry_id: "PF-GRP-001-UC"
+scope: "universal-cover reference; not a finite quotient"
+generating_set:
+  name: "geometric_first_shell"
+  elements: ["g0", "g1", "g2", "g3", "g4", "g5", "g6", "g7"]
+  inverse_rule: "g_(j+4)=g_j^(-1)"
+  degree: 8
+radius_data:
+  maximum_radius: 6
+  shell_counts: [1, 8, 56, 392, 2736, 19096, 133288]
+  ball_counts: [1, 9, 65, 457, 3193, 22289, 155577]
+  nonidentity_inverse_pair_counts: [0, 4, 32, 228, 1596, 11144, 77788]
+identity_hierarchy:
+  - "free inverse cancellation"
+  - "exact normalized algebraic SU(1,1) matrix equality"
+  - "high-precision/decimal coordinates are reporting-only"
+exact_field:
+  basis: ["1", "sqrt(2)", "beta", "sqrt(2)*beta", "i", "i*sqrt(2)", "i*beta", "i*sqrt(2)*beta"]
+  beta: "sqrt(2+2*sqrt(2))"
+  coefficient_encoding: "[denominator_power_of_two,n0,...,n7]"
+geometry:
+  exact_orbit_coordinate: "z=b/conjugate(a), stored as exact homogeneous pair (b,conjugate(a))"
+  exact_distance_invariant: "cosh(d_H(0,M.0)/R)=2*|a|^2-1"
+  decimal_distance_fields: ["distance_over_R", "distance_over_a_B"]
+relations:
+  shortest_discovered_nontrivial_length: 8
+  number_of_shortest_cyclic_or_inverse_representatives: 16
+  oriented_polygon_relator: ["g0", "g5", "g2", "g7", "g4", "g1", "g6", "g3"]
+acceptance:
+  UC-01_shell_one_eight_directions: true
+  UC-02_inverse_consistency: true
+  UC-03_word_matrix_identity_consistency: true
+  UC-04_ball_counts_deterministic: true
+separation_of_contracts:
+  standard_s8_is_geometric_first_shell: false
+  finite_quotient: false
+  word_injectivity_is_geometric_injectivity: false
+  manuscript_main_tex_modified: false
+

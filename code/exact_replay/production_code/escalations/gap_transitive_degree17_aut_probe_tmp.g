@@ -1,0 +1,2 @@
+SetInfoLevel(InfoWarning,0);
+for k in [6..8] do G:=TransitiveGroup(17,k); n:=Size(G); maps:=GQuotients(G,CyclicGroup(2)); if Length(maps)>0 then t:=Runtime(); A:=AutomorphismGroup(G); if IsSolvableGroup(A) then iso:=IsomorphismPcGroup(A); P:=Image(iso); cc:=ConjugacyClasses(P); else cc:=ConjugacyClasses(A); fi; c8:=Filtered(cc,c->Order(Representative(c))=8); Print("17T",k," n ",n," Aut ",Size(A)," c8 ",Length(c8)," pairs ",n*Length(c8)," ms ",Runtime()-t,"\n"); fi; od; QUIT;

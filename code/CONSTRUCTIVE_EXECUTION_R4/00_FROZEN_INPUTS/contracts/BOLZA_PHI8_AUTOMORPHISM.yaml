@@ -1,0 +1,61 @@
+schema_version: "1.0"
+registry_id: "PF-GRP-001-PHI8"
+status: "exact-order-eight-automorphism-certified-with-P8-05-source-inconsistency"
+geometric_rotation:
+  disk_action: "c8(z)=exp(i*pi/4)*z"
+  su11_matrix: "diag(exp(i*pi/8), exp(-i*pi/8))"
+  side_pairing_action: "c8*g_j*c8^(-1)=g_(j+1 mod 8)"
+oriented_polygon_action:
+  h0: ["h1_inv"]
+  h1: ["h2_inv"]
+  h2: ["h3_inv"]
+  h3: ["h0"]
+phi8_standard_basis:
+  a1: ["b1_inv"]
+  b1: ["a2_inv", "b1", "a1"]
+  a2: ["a2_inv", "b1", "a1", "b1_inv", "a1_inv", "b1_inv", "b2_inv"]
+  b2: ["a1", "b1", "a1_inv", "b1_inv", "a2"]
+phi8_inverse_standard_basis:
+  a1: ["b2", "b1", "a1"]
+  b1: ["a1_inv"]
+  a2: ["a1_inv", "b2", "b1", "a1", "b1_inv"]
+  b2: ["a2_inv", "b2_inv", "a1"]
+declared_standard_s8_audit:
+  set: ["a1", "a1_inv", "b1", "b1_inv", "a2", "a2_inv", "b2", "b2_inv"]
+  exact_identifications:
+    a1: "b1_inv"
+    a1_inv: "b1"
+    b1: null
+    b1_inv: null
+    a2: null
+    a2_inv: null
+    b2: null
+    b2_inv: null
+  invariant: false
+  classification: "internal-manuscript-inconsistency-not-code-failure"
+  corrective_rule: "retain exact phi8; distinguish geometric first shell {g0,...,g7} from standard S8"
+parity_audit:
+  definition: "pi(a1)=pi(b1)=pi(a2)=pi(b2)=1 in Z2"
+  image_parities:
+    a1: 1
+    b1: 1
+    a2: 1
+    b2: 1
+  invariant: true
+acceptance:
+  P8-01_relator_maps_to_identity: true
+  P8-02_invertible: true
+  P8-03_eighth_power_identity: true
+  P8-04_no_smaller_positive_power_identity: true
+  P8-05_declared_standard_s8_invariant: false
+  P8-06_exact_geometric_conjugation: true
+  P8-07_parity_invariant: true
+numeric_certificate:
+  backend: "mpmath; C8 and all g_j reconstructed independently"
+  decimal_digits: 140
+  maximum_entrywise_conjugation_residual: "1.3606090546531007745859607767166e-140"
+  acceptance_threshold: "1e-120"
+scope_boundary:
+  finite_quotient_descent: "not established by the universal-group automorphism alone"
+  manuscript_main_tex_modified: false
+

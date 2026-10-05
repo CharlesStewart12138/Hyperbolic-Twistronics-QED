@@ -1,0 +1,1 @@
+e:=0;p:=0;for k in [1..NrTransitiveGroups(18)]do G:=TransitiveGroup(18,k);n:=Size(G);if n>=2338 and n<=50000 then e:=e+1;if Length(GQuotients(G,CyclicGroup(2)))>0 then p:=p+1;fi;fi;od;Print("DATABASE ",NrTransitiveGroups(18)," ORDER_WINDOW ",e," PARITY ",p,"\n");QUIT;

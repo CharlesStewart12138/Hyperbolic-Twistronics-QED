@@ -1,0 +1,68 @@
+\documentclass[tikz,border=3mm]{standalone}
+\input{r7_figure_style}
+\begin{document}
+\begin{tikzpicture}[font=\sffamily]
+  \node[anchor=west,font=\bfseries\Large,text=R7Navy] at (0,7.7)
+    {Finite-resolution physics is exponentially local};
+  \node[anchor=west,font=\small,text=R7Muted] at (0,7.25)
+    {Dimensionless theorem slices; curves are analytic envelopes, not fits to R6 data};
+
+  \begin{axis}[
+    r7axis,
+    at={(0,0)},
+    anchor=south west,
+    width=8.25cm,
+    height=6.3cm,
+    ymode=log,
+    xmin=0,xmax=12,
+    ymin=2e-5,ymax=2.5,
+    xlabel={buffer $b/R$},
+    ylabel={normalized resolvent error bound},
+    title={(a) Combes--Thomas truncation},
+    legend pos=south west
+  ]
+    \addplot[domain=0:12,samples=180,line width=1.8pt,R7Coral]
+      {exp(-0.6*x)/(1.5*(1.5-1))};
+    \addlegendentry{$\eta/\Phi=1.5$}
+    \addplot[domain=0:12,samples=180,line width=1.8pt,R7Gold]
+      {exp(-0.6*x)/(2*(2-1))};
+    \addlegendentry{$\eta/\Phi=2$}
+    \addplot[domain=0:12,samples=180,line width=1.8pt,R7Teal]
+      {exp(-0.6*x)/(4*(4-1))};
+    \addlegendentry{$\eta/\Phi=4$}
+  \end{axis}
+
+  \begin{axis}[
+    r7axis,
+    at={(9.25cm,0)},
+    anchor=south west,
+    width=8.25cm,
+    height=6.3cm,
+    ymode=log,
+    xmin=0,xmax=12,
+    ymin=2e-5,ymax=3,
+    xlabel={buffer $b/R$},
+    ylabel={normalized dynamical error bound},
+    title={(b) Finite-time Duhamel truncation},
+    legend pos=south west
+  ]
+    \addplot[domain=0:12,samples=180,line width=1.8pt,R7Sky]
+      {exp(-0.6*x)*(exp(0.25)-1)};
+    \addlegendentry{$T\Phi=0.25$}
+    \addplot[domain=0:12,samples=180,line width=1.8pt,R7Violet]
+      {exp(-0.6*x)*(exp(0.5)-1)};
+    \addlegendentry{$T\Phi=0.5$}
+    \addplot[domain=0:12,samples=180,line width=1.8pt,R7Navy]
+      {exp(-0.6*x)*(exp(1)-1)};
+    \addlegendentry{$T\Phi=1$}
+  \end{axis}
+
+  \node[rounded corners=1.5mm,draw=R7Teal!50,fill=R7Pale,
+    text width=16.6cm,align=center,inner sep=2.1mm,font=\small,text=R7Ink]
+    at (8.75,-1.72) {
+      Admissible weight:
+      $0<q<\mu-R^{-1}$,\quad $\Phi(q)<\eta$.
+      \quad Both errors carry the same geometric factor $e^{-qb}$.
+    };
+\end{tikzpicture}
+\end{document}

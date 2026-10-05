@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "parameter_id": "PF-HOD-002",
+  "release_id": "PF-HOD-002-LOCAL-2026-09-05",
+  "immutable_record": true,
+  "supersedes_disposition_for_scope": "production_code/config/freeze_records/PF-HOD-002.json",
+  "authority": "2026-09-05 geometric physical-shell contract repair directive, Section 16",
+  "classification": "THEORY_PRODUCTION_LOCAL",
+  "status": "Fixed",
+  "scope": "LOCAL_SCALAR_CHARACTER",
+  "basis_order": ["eta_a1", "eta_b1", "eta_a2", "eta_b2"],
+  "frozen_value": {
+    "G_exact": [["sqrt(2)", "sqrt(2)/2", "-sqrt(2)/2", "0"], ["sqrt(2)/2", "sqrt(2)", "0", "sqrt(2)/2"], ["-sqrt(2)/2", "0", "sqrt(2)", "sqrt(2)/2"], ["0", "sqrt(2)/2", "sqrt(2)/2", "sqrt(2)"]],
+    "determinant": 1,
+    "eigenvalues": {"sqrt(2)-1": 2, "sqrt(2)+1": 2},
+    "positive_definite": true,
+    "identity_metric": false,
+    "normalized_hessian": "G^(-1/2) K G^(-1/2)"
+  },
+  "acceptance": "PASSED",
+  "scope_boundary": {
+    "general_nonabelian_Ad_rho": "not asserted",
+    "PF_HOD_004_root_and_tail": "not asserted",
+    "finite_quotient": "not required",
+    "physical_magic_angle": "not claimed",
+    "main_tex_modified": false
+  }
+}
+

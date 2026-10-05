@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "parameter_id": "PF-FLT-004",
+  "immutable_record": true,
+  "authority": "2026-09-04 highest-priority theory-production directive",
+  "classification": "THEORY_PRODUCTION",
+  "disposition": "FREEZE",
+  "status": "Fixed",
+  "exact_source": "p.60 Eq. (1011)",
+  "exact_dependency": "Before flatness run",
+  "rationale": "Freeze basic E_second_order/Delta<=0.10 and strong <=0.05 using all principal curvatures.",
+  "frozen_value": {
+    "metric": "E_second_order_upper/Delta_lower",
+    "basic_max": 0.1,
+    "strong_max": 0.05,
+    "principal_values": "all"
+  },
+  "partial_directive_values": null,
+  "production_scope": "dimensionless theory production",
+  "validation": "PASSED"
+}

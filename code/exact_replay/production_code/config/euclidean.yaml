@@ -1,0 +1,20 @@
+schema_version: 1
+freeze_status: partial
+production_supercells:
+  selection: all_nontrivial_crystallographically_inequivalent_Nsc_below_100
+  table_order: increasing_reduced_angle
+  cells:
+    - {Sigma: 41, Nsc: 82, m: 9, n: 1, d: 2, cos_num: 40, sin_num: 9, denominator: 41, theta_deg: 12.680383492}
+    - {Sigma: 25, Nsc: 50, m: 7, n: 1, d: 2, cos_num: 24, sin_num: 7, denominator: 25, theta_deg: 16.260204708}
+    - {Sigma: 37, Nsc: 74, m: 6, n: 1, d: 1, cos_num: 35, sin_num: 12, denominator: 37, theta_deg: 18.924644416}
+    - {Sigma: 13, Nsc: 26, m: 5, n: 1, d: 2, cos_num: 12, sin_num: 5, denominator: 13, theta_deg: 22.619864948}
+    - {Sigma: 17, Nsc: 34, m: 4, n: 1, d: 1, cos_num: 15, sin_num: 8, denominator: 17, theta_deg: 28.072486936}
+    - {Sigma: 5, Nsc: 10, m: 3, n: 1, d: 2, cos_num: 4, sin_num: 3, denominator: 5, theta_deg: 36.869897646}
+    - {Sigma: 29, Nsc: 58, m: 5, n: 2, d: 1, cos_num: 21, sin_num: 20, denominator: 29, theta_deg: 43.602818973}
+  forty_five_degree:
+    role: beat_only_negative_control
+    finite_square_CSL: false
+interlayer_kernel: null
+k_mesh: null
+diffraction_window: null
+

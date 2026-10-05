@@ -1,0 +1,94 @@
+{
+  "checks": {
+    "dimension_formula": true,
+    "index_equals_q_plus_one": true,
+    "kernel_words_trivial_in_frozen_Q": true,
+    "number_field_norm_identity": true,
+    "operator_metadata_dimension": true,
+    "projective_line_complete": true
+  },
+  "construction": {
+    "base_field": "Q(sqrt(2))",
+    "centered_angle": "theta_c=2*atan(1/(4+sqrt(2)))",
+    "classification": "commensurator-but-not-normalizer",
+    "field_norm_of_reduced_norm": 233,
+    "prime_ideal_norm": 233,
+    "projective_quaternion_element": "z=(4+sqrt(2))+I",
+    "quadratic_element": "I^2=-1",
+    "reduced_norm": "nrd(z)=19+8*sqrt(2)",
+    "theta_c_in_reduced_interval": true,
+    "theta_c_radians": 0.3652814832319478
+  },
+  "frozen_k_kernel": {
+    "base_word_orders_in_Q": [
+      8,
+      10
+    ],
+    "base_words": [
+      [
+        1,
+        3,
+        1,
+        0,
+        6,
+        4,
+        2,
+        7,
+        2,
+        0,
+        0,
+        1,
+        2,
+        3
+      ],
+      [
+        0,
+        7,
+        7,
+        2,
+        7,
+        1,
+        6,
+        4
+      ]
+    ],
+    "full_local_action": true,
+    "kernel_word_lengths": [
+      112,
+      80
+    ],
+    "kernel_word_sha256": [
+      "9f46fec0ef75a42688fc71bee6e0239945e46f3ab545ae235016771d06d2e4bf",
+      "43ebc38bf51e4e610368abc58a0bbac48fd85bdad5072c05075685a0c9a43ff3"
+    ],
+    "projective_orbit_size": 234,
+    "source_table": "D:\\work\\revise\\CONSTRUCTIVE_EXECUTION_R4\\17_FINAL_FREEZE\\artifacts\\CAND-R4-0005.right_generators_u32le.bin",
+    "source_table_sha256": "700b36077ca3c10b1effc88930e59ab2931047513bf520c3d3561eef4bda692e"
+  },
+  "local_place": {
+    "beta_square_mod_233": 172,
+    "hecke_tree_valency": 234,
+    "rational_prime": 233,
+    "residue_field": "F_233",
+    "sqrt2_mod_233": 85
+  },
+  "r5_comm_run": {
+    "algorithm": "R5-COMM local correspondence branch enumeration",
+    "branch_count": 234,
+    "branch_registry": "D:\\work\\revise\\OPERATOR_CLOSURE_R5_REVIEWER_SUPPLEMENT\\05_CONSTRUCTIVE_COMMENSURATOR\\R5_COMM_BRANCH_REGISTRY.tsv",
+    "branch_registry_sha256": "3ec00402d1b0a34cab661cb9bc7f6c77a3d188016c23d79e0869e1dd7ee3e516",
+    "common_cover_index": 234,
+    "frozen_operator_metadata": {
+      "bilayer_dimension": 21565440,
+      "hermitian_completion": "offdiagonal block plus exact adjoint",
+      "interlayer_nnz_one_direction": 0,
+      "same_q": false,
+      "status": "COMMON_COVER_ONLY"
+    },
+    "hilbert_dimension": 21565440,
+    "physical_coefficient_matrix_materialized": false,
+    "reason": "The exact arithmetic correspondence and operator metadata are run; the 21,565,440-dimensional coefficient matrix is intentionally not materialized because no new numerical calculation was requested."
+  },
+  "schema": "r5-commensurator-example-certificate-v1",
+  "status": "PASS"
+}

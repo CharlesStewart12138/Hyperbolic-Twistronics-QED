@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "parameter_id": "PF-ROB-001",
+  "immutable_record": true,
+  "authority": "2026-09-04 highest-priority theory-production directive",
+  "classification": "THEORY_PRODUCTION",
+  "disposition": "FREEZE",
+  "status": "Fixed",
+  "exact_source": "pp.15-16; robustness",
+  "exact_dependency": "Before Monte Carlo",
+  "rationale": "Freeze truncated-normal onsite disorder sigma_omega/t={0.02,0.05,0.10} for mild, medium, stress.",
+  "frozen_value": {
+    "law": "independent standard normal truncated at |Z|<=5",
+    "sigma_omega_over_t": {
+      "mild": 0.02,
+      "medium": 0.05,
+      "stress": 0.1
+    },
+    "prng": "PCG64-DXSM",
+    "base_seed": 170217
+  },
+  "partial_directive_values": null,
+  "production_scope": "dimensionless theory production",
+  "validation": "PASSED"
+}

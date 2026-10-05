@@ -1,0 +1,42 @@
+# Exact wrapper for sealed degree-24 seed workload shard317.
+OUT:="/mnt/d/work/revise/production_code/escalations/GAP_TRANSITIVE_DEGREE24_C8_SEED_SHARD317_SEGMENT001_UNIT1_1220_POSTVERIFY_V7_GPT56SOL.txt";
+STOP_AFTER_UNIT:=fail;
+INTERNAL_GUARD_MS:=1320000; START_UNIT:=1;
+INITIAL_COUNTERS:=[0,0,0,0,0,0,0,0,0,0,0,0];
+PREVIOUS_CHECKPOINT_SHA256:="NONE_FRESH_START";
+PREVIOUS_OUTPUT_FILE:="NONE_FRESH_START"; PREVIOUS_OUTPUT_PREFIX_BYTES:=0;
+PREVIOUS_OUTPUT_PREFIX_SHA256:="NONE_FRESH_START";
+CHECKPOINT_FILE:="/mnt/d/work/revise/production_code/escalations/GAP_TRANSITIVE_DEGREE24_C8_SEED_SHARD317_CHECKPOINT_GPT56SOL.txt";
+CHECKPOINT_TMP:="/mnt/d/work/revise/production_code/escalations/GAP_TRANSITIVE_DEGREE24_C8_SEED_SHARD317_CHECKPOINT_TMP_GPT56SOL.txt";
+EXPECTED_PROFILE_SHA256:="1D1A363463C8A0EFACD59EB5220555E7ADD2BD6AD4F686CC1CED9653706A70D2";
+EXPECTED_PLAN_SHA256:="0CBD0E7205976B7634A09FFA567A515259C1F2A087004680D32B9ADAB87B67C2";
+PROFILE_FILE:="/mnt/d/work/revise/production_code/escalations/GAP_TRANSITIVE_DEGREE24_AUT_PROFILE_FULL_MERGED_GPT56SOL.txt";
+PLAN_FILE:="/mnt/d/work/revise/production_code/escalations/GAP_TRANSITIVE_DEGREE24_C8_SEED_WORKLOAD_PLAN_GPT56SOL.tsv";
+ENGINE_FILE:="/mnt/d/work/revise/production_code/escalations/gap_transitive_degree24_c8_seed_plan_alpha_checkpoint_shard317_v7_gpt56sol.g";
+EXPECTED_ENGINE_SHA256:="9577C62C6365A84F7E1ACEF4D99773875F7C62DA0791E3A536F5594E60AFD5A5";
+S317_RECORDS:=[
+rec(k:=14337,first:=78,last:=160,unitFirst:=1,unitLast:=83,order:=36864,autOrder:=294912,parity:=3,classes:=160,raw:=5898240,method:="pc",representation:="pc_transport",pcOrder:=36864,profileMs:=661),
+rec(k:=14338,first:=1,last:=20,unitFirst:=84,unitLast:=103,order:=36864,autOrder:=294912,parity:=3,classes:=20,raw:=737280,method:="pc",representation:="pc_transport",pcOrder:=36864,profileMs:=794),
+rec(k:=14339,first:=1,last:=20,unitFirst:=104,unitLast:=123,order:=36864,autOrder:=294912,parity:=3,classes:=20,raw:=737280,method:="pc",representation:="pc_transport",pcOrder:=36864,profileMs:=1053),
+rec(k:=14340,first:=1,last:=40,unitFirst:=124,unitLast:=163,order:=36864,autOrder:=294912,parity:=7,classes:=40,raw:=1474560,method:="pc",representation:="pc_transport",pcOrder:=36864,profileMs:=1312),
+rec(k:=14341,first:=1,last:=40,unitFirst:=164,unitLast:=203,order:=36864,autOrder:=294912,parity:=3,classes:=40,raw:=1474560,method:="pc",representation:="pc_transport",pcOrder:=36864,profileMs:=1360),
+rec(k:=14342,first:=1,last:=12,unitFirst:=204,unitLast:=215,order:=36864,autOrder:=1769472,parity:=3,classes:=12,raw:=442368,method:="pc",representation:="pc_transport",pcOrder:=36864,profileMs:=777),
+rec(k:=14343,first:=1,last:=112,unitFirst:=216,unitLast:=327,order:=36864,autOrder:=294912,parity:=3,classes:=112,raw:=4128768,method:="pc",representation:="pc_transport",pcOrder:=36864,profileMs:=670),
+rec(k:=14344,first:=1,last:=112,unitFirst:=328,unitLast:=439,order:=36864,autOrder:=294912,parity:=3,classes:=112,raw:=4128768,method:="pc",representation:="pc_transport",pcOrder:=36864,profileMs:=609),
+rec(k:=14345,first:=1,last:=12,unitFirst:=440,unitLast:=451,order:=36864,autOrder:=294912,parity:=3,classes:=12,raw:=442368,method:="pc",representation:="pc_transport",pcOrder:=36864,profileMs:=615),
+rec(k:=14346,first:=1,last:=12,unitFirst:=452,unitLast:=463,order:=36864,autOrder:=294912,parity:=3,classes:=12,raw:=442368,method:="pc",representation:="pc_transport",pcOrder:=36864,profileMs:=742),
+rec(k:=14347,first:=1,last:=42,unitFirst:=464,unitLast:=505,order:=36864,autOrder:=589824,parity:=7,classes:=42,raw:=1548288,method:="pc",representation:="pc_transport",pcOrder:=36864,profileMs:=724),
+rec(k:=14348,first:=1,last:=42,unitFirst:=506,unitLast:=547,order:=36864,autOrder:=589824,parity:=3,classes:=42,raw:=1548288,method:="pc",representation:="pc_transport",pcOrder:=36864,profileMs:=742),
+rec(k:=14349,first:=1,last:=100,unitFirst:=548,unitLast:=647,order:=36864,autOrder:=294912,parity:=3,classes:=100,raw:=3686400,method:="pc",representation:="pc_transport",pcOrder:=36864,profileMs:=1442),
+rec(k:=14350,first:=1,last:=100,unitFirst:=648,unitLast:=747,order:=36864,autOrder:=294912,parity:=3,classes:=100,raw:=3686400,method:="pc",representation:="pc_transport",pcOrder:=36864,profileMs:=1554),
+rec(k:=14351,first:=1,last:=14,unitFirst:=748,unitLast:=761,order:=36864,autOrder:=294912,parity:=3,classes:=14,raw:=516096,method:="pc",representation:="pc_transport",pcOrder:=36864,profileMs:=1319),
+rec(k:=14352,first:=1,last:=14,unitFirst:=762,unitLast:=775,order:=36864,autOrder:=294912,parity:=3,classes:=14,raw:=516096,method:="pc",representation:="pc_transport",pcOrder:=36864,profileMs:=978),
+rec(k:=14353,first:=1,last:=74,unitFirst:=776,unitLast:=849,order:=36864,autOrder:=294912,parity:=3,classes:=74,raw:=2727936,method:="pc",representation:="pc_transport",pcOrder:=36864,profileMs:=1235),
+rec(k:=14354,first:=1,last:=74,unitFirst:=850,unitLast:=923,order:=36864,autOrder:=294912,parity:=7,classes:=74,raw:=2727936,method:="pc",representation:="pc_transport",pcOrder:=36864,profileMs:=1311),
+rec(k:=14355,first:=1,last:=12,unitFirst:=924,unitLast:=935,order:=36864,autOrder:=2654208,parity:=7,classes:=12,raw:=442368,method:="pc",representation:="pc_transport",pcOrder:=36864,profileMs:=1051),
+rec(k:=14356,first:=1,last:=100,unitFirst:=936,unitLast:=1035,order:=36864,autOrder:=294912,parity:=3,classes:=100,raw:=3686400,method:="pc",representation:="pc_transport",pcOrder:=36864,profileMs:=981),
+rec(k:=14357,first:=1,last:=74,unitFirst:=1036,unitLast:=1109,order:=36864,autOrder:=294912,parity:=7,classes:=74,raw:=2727936,method:="pc",representation:="pc_transport",pcOrder:=36864,profileMs:=999),
+rec(k:=14358,first:=1,last:=100,unitFirst:=1110,unitLast:=1209,order:=36864,autOrder:=294912,parity:=3,classes:=100,raw:=3686400,method:="pc",representation:="pc_transport",pcOrder:=36864,profileMs:=1565),
+rec(k:=14359,first:=1,last:=11,unitFirst:=1210,unitLast:=1220,order:=36864,autOrder:=294912,parity:=3,classes:=74,raw:=2727936,method:="pc",representation:="pc_transport",pcOrder:=36864,profileMs:=968)
+];
+Read("/mnt/d/work/revise/production_code/escalations/gap_transitive_degree24_c8_seed_plan_alpha_checkpoint_shard317_v7_gpt56sol.g");

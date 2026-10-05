@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "parameter_id": "PF-DOS-004",
+  "immutable_record": true,
+  "authority": "2026-09-04 highest-priority theory-production directive",
+  "classification": "THEORY_PRODUCTION",
+  "disposition": "FREEZE",
+  "status": "Fixed",
+  "exact_source": "p.229",
+  "exact_dependency": "Before production DOS",
+  "rationale": "Freeze SLQ depth=256 with full reorthogonalization.",
+  "frozen_value": {
+    "primary_lanczos_steps": 256,
+    "reorthogonalization": "full"
+  },
+  "partial_directive_values": null,
+  "production_scope": "dimensionless theory production",
+  "validation": "PASSED"
+}

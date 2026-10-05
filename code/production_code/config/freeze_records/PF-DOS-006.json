@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "parameter_id": "PF-DOS-006",
+  "immutable_record": true,
+  "authority": "2026-09-04 highest-priority theory-production directive",
+  "classification": "THEORY_PRODUCTION",
+  "disposition": "BLOCKED",
+  "status": "Blocked",
+  "exact_source": "pp.229-232",
+  "exact_dependency": "Before production DOS",
+  "rationale": "No production Lorentzian broadening schedule or p-mass thresholds are supplied.",
+  "frozen_value": null,
+  "partial_directive_values": null,
+  "production_scope": "blocked dependent theory branch",
+  "validation": "PASSED"
+}

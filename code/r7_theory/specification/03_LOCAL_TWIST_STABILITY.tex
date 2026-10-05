@@ -1,0 +1,62 @@
+\section{Local stability under a centred twist}
+\label{sec:r7-twist}
+
+\begin{theorem}[Hyperbolically amplified twist Lipschitz bound]
+\label{thm:r7-twist}
+For the observation projector $P_L$ and all $\theta,\theta'$ in the reduced
+angle interval,
+\begin{equation}
+ \|P_L[H(\theta)-H(\theta')]P_L\|
+ \le C_L|\theta-\theta'|,
+ \qquad
+ C_L=\mu R\sinh(L/R)C_{\rm Schur}.
+ \label{eq:r7-local-lip}
+\end{equation}
+In particular
+\begin{equation}
+ C_L\le \frac{\mu R C_{\rm Schur}}2e^{L/R},\qquad
+ |\theta-\theta'|\le
+ \frac{2\varepsilon}{\mu R C_{\rm Schur}}e^{-L/R}
+ \Longrightarrow
+ \|P_L(H_\theta-H_{\theta'})P_L\|\le\varepsilon.
+ \label{eq:r7-angle-scale}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The angular orbit of a point $y$ at radius $\rho$ has speed
+\begin{equation*}
+ R\sinh(\rho/R).
+\end{equation*}
+Distance is one-Lipschitz in either
+endpoint, and $d\mapsto\sqrt{h^2+d^2}$ has derivative at most one.  Hence,
+for $x,y\in P_L$ and every intermediate angle,
+\begin{equation}
+ |\partial_\theta T_\theta(x,y)|
+ \le\mu R\sinh(L/R)|T_\theta(x,y)|.
+\end{equation}
+The mean-value theorem followed by the uniform Schur estimate proves
+\eqref{eq:r7-local-lip}.  The second statement uses
+$\sinh u\le e^u/2$.
+\end{proof}
+
+Thus the relation $|\delta\theta|e^{L/R}\ll1$ is a consequence of the
+microscopic kernel, not a phenomenological moir\'e prescription.
+
+For a finite parameter chart $p$ let
+\begin{equation}
+ C_p=8|\partial_p t|+
+ \sup_\theta\sup_x\sum_y|\partial_pT_\theta(x,y)|.
+ \label{eq:r7-Cp}
+\end{equation}
+Whenever the displayed derivatives exist and obey the same exponential
+majorant, $C_p<\infty$ and
+$\|P_L[H(\theta,p)-H(\theta,p')]P_L\|
+\le C_p\|p-p'\|$.  For example,
+$C_w=e^{\mu h}S(\mu)$ and $C_h\le\mu C_{\rm Schur}$; a decay-rate derivative
+is bounded by the differentiated geometric series
+\begin{equation}
+ C_\mu\le |w|e^{\mu h}A_\Gamma a_0
+ \frac{e^{-\gamma a_0}}{(1-e^{-\gamma a_0})^2}
+ +hC_{\rm Schur}.
+\end{equation}

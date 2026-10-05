@@ -1,0 +1,1269 @@
+schema_version: 1
+run_type: production
+freeze_status: incomplete
+ready_for_production: false
+authority: Hyperbolic_Bilayer_Parameter_Freeze_and_Exact_Code_Plan.xlsx
+config_files:
+  - model.yaml
+  - geometry.yaml
+  - quotient.yaml
+  - kernel.yaml
+  - scan.yaml
+  - target.yaml
+  - representation.yaml
+  - flatness.yaml
+  - hodge.yaml
+  - dos.yaml
+  - robustness.yaml
+  - spectroscopy.yaml
+  - qubit.yaml
+  - numerics.yaml
+  - euclidean.yaml
+required_freeze_ids:
+  - PF-GOV-001
+  - PF-GOV-002
+  - PF-GOV-003
+  - PF-ARC-001
+  - PF-ARC-002
+  - PF-ARC-003
+  - PF-ARC-004
+  - PF-ARC-005
+  - PF-ARC-006
+  - PF-PHY-001
+  - PF-PHY-002
+  - PF-PHY-003
+  - PF-PHY-004
+  - PF-PHY-005
+  - PF-PHY-006
+  - PF-PHY-007
+  - PF-PHY-008
+  - PF-PHY-009
+  - PF-SCN-001
+  - PF-SCN-002
+  - PF-SCN-003
+  - PF-SCN-004
+  - PF-SCN-005
+  - PF-SCN-006
+  - PF-SCN-007
+  - PF-SCN-008
+  - PF-SCN-009
+  - PF-GRP-001
+  - PF-GRP-002
+  - PF-GRP-003
+  - PF-GRP-004
+  - PF-GRP-005
+  - PF-GRP-006
+  - PF-GRP-007
+  - PF-GRP-008
+  - PF-KER-001
+  - PF-KER-002
+  - PF-KER-003
+  - PF-KER-004
+  - PF-KER-005
+  - PF-EUC-001
+  - PF-EUC-002
+  - PF-EUC-003
+  - PF-EUC-004
+  - PF-TGT-001
+  - PF-TGT-002
+  - PF-TGT-003
+  - PF-TGT-004
+  - PF-TGT-005
+  - PF-FLT-001
+  - PF-FLT-002
+  - PF-FLT-003
+  - PF-FLT-004
+  - PF-FLT-005
+  - PF-FLT-006
+  - PF-FLT-007
+  - PF-REP-001
+  - PF-REP-002
+  - PF-REP-003
+  - PF-REP-004
+  - PF-REP-005
+  - PF-HOD-001
+  - PF-HOD-002
+  - PF-HOD-003
+  - PF-HOD-004
+  - PF-DOS-001
+  - PF-DOS-002
+  - PF-DOS-003
+  - PF-DOS-004
+  - PF-DOS-005
+  - PF-DOS-006
+  - PF-DOS-007
+  - PF-FLD-001
+  - PF-FLD-002
+  - PF-FLD-003
+  - PF-FLD-004
+  - PF-ROB-001
+  - PF-ROB-002
+  - PF-ROB-003
+  - PF-ROB-004
+  - PF-ROB-005
+  - PF-ROB-006
+  - PF-SPC-001
+  - PF-SPC-002
+  - PF-SPC-003
+  - PF-QUB-001
+  - PF-QUB-002
+  - PF-QUB-003
+  - PF-QUB-004
+parameter_freeze:
+  PF-GOV-001:
+    freeze_id: PF-GOV-001
+    status: "Fixed"
+    domain: "Governance"
+    parameter: "Production manuscript version"
+    key: "source_version"
+    value_ref: "config/model.yaml#/source_version"
+    units: "defined_at_value_ref"
+    allowed_region: "One immutable manuscript/model version per production release."
+    rationale: "Current production contract is the 256-page PDF dated 2026-09-03."
+    source: "p.1; Methods pp.203-256"
+    owner: "PI"
+    downstream_gate: "Before any production code run"
+  PF-GOV-002:
+    freeze_id: PF-GOV-002
+    status: "Fixed"
+    domain: "Governance"
+    parameter: "Model class"
+    key: "model_class"
+    value_ref: "config/model.yaml#/model_class"
+    units: "defined_at_value_ref"
+    allowed_region: "No substitute continuum, first-shell-only, five-state-only, or w=0 production model."
+    rationale: "Two-layer, one-orbital/site, degree-eight hyperbolic resonator bilayer; exact square supercell for Euclidean controls."
+    source: "pp.4-17; Eq. (137); pp.29-45"
+    owner: "PI"
+    downstream_gate: "Before coding"
+  PF-GOV-003:
+    freeze_id: PF-GOV-003
+    status: "Fixed"
+    domain: "Governance"
+    parameter: "Unit convention"
+    key: "units"
+    value_ref: "config/model.yaml#/units"
+    units: "defined_at_value_ref"
+    allowed_region: "[H]=[t]=[w]=rad/s; use GHz/MHz only with /2π explicitly."
+    rationale: "One-particle matrices use angular-frequency units; second-quantized energy is ħ times the matrix."
+    source: "pp.3-4, Eqs. (5)-(8)"
+    owner: "PI"
+    downstream_gate: "Before coding"
+  PF-ARC-001:
+    freeze_id: PF-ARC-001
+    status: "Fixed"
+    domain: "Architecture"
+    parameter: "Layer count"
+    key: "nlay"
+    value_ref: "config/model.yaml#/model_class/production_hyperbolic/layers"
+    units: "defined_at_value_ref"
+    allowed_region: "Exactly 2"
+    rationale: "Fixed in manuscript."
+    source: "p.15 Table II"
+    owner: "PI"
+    downstream_gate: "Before coding"
+  PF-ARC-002:
+    freeze_id: PF-ARC-002
+    status: "Fixed"
+    domain: "Architecture"
+    parameter: "Orbitals per site"
+    key: "norb"
+    value_ref: "config/model.yaml#/model_class/production_hyperbolic/orbitals_per_site"
+    units: "defined_at_value_ref"
+    allowed_region: "Exactly 1"
+    rationale: "Fixed in manuscript."
+    source: "p.15 Table II"
+    owner: "PI"
+    downstream_gate: "Before coding"
+  PF-ARC-003:
+    freeze_id: PF-ARC-003
+    status: "Fixed"
+    domain: "Architecture"
+    parameter: "Intralayer degree"
+    key: "z"
+    value_ref: "config/model.yaml#/model_class/production_hyperbolic/intralayer_degree"
+    units: "defined_at_value_ref"
+    allowed_region: "Exactly 8 for declared S8 model"
+    rationale: "Fixed Bolza orbit lattice degree."
+    source: "pp.7-8; Eq. (63)"
+    owner: "PI"
+    downstream_gate: "Before coding"
+  PF-ARC-004:
+    freeze_id: PF-ARC-004
+    status: "Fixed"
+    domain: "Architecture"
+    parameter: "Generator set"
+    key: "S8"
+    value_ref: "config/geometry.yaml#/surface_group/generator_order"
+    units: "defined_at_value_ref"
+    allowed_region: "Closed under inversion; ordering frozen."
+    rationale: "Declared symmetric first-neighbor set."
+    source: "p.8 Eq. (58)"
+    owner: "PI"
+    downstream_gate: "Before group code"
+  PF-ARC-005:
+    freeze_id: PF-ARC-005
+    status: "Fixed"
+    domain: "Architecture"
+    parameter: "Surface group presentation"
+    key: "Gamma_B"
+    value_ref: "config/geometry.yaml#/surface_group/presentation"
+    units: "defined_at_value_ref"
+    allowed_region: "No alternative presentation without archived isomorphism."
+    rationale: "Genus-two group [a1,b1][a2,b2]=e."
+    source: "p.8 Eq. (57)"
+    owner: "PI"
+    downstream_gate: "Before group code"
+  PF-ARC-006:
+    freeze_id: PF-ARC-006
+    status: "Fixed"
+    domain: "Architecture"
+    parameter: "Bolza dimensionless curvature"
+    key: "kappa_B"
+    value_ref: "config/geometry.yaml#/bolza/kappa_B"
+    units: "defined_at_value_ref"
+    allowed_region: "Exactly 2 arcosh(1+sqrt(2))"
+    rationale: "Analytically fixed."
+    source: "p.7 Eq. (50); p.15 Table II"
+    owner: "PI"
+    downstream_gate: "Before geometry code"
+  PF-PHY-001:
+    freeze_id: PF-PHY-001
+    status: "Decision Required"
+    domain: "Physical scales"
+    parameter: "Resonator spacing"
+    key: "a"
+    value_ref: null
+    units: null
+    allowed_region: "a>0; consistent with chosen R through a/R."
+    rationale: "Unregistered in hardware table."
+    source: "p.15 Table II"
+    owner: "PI/Device"
+    downstream_gate: "Before production device"
+  PF-PHY-002:
+    freeze_id: PF-PHY-002
+    status: "Decision Required"
+    domain: "Physical scales"
+    parameter: "Loaded resonator frequency"
+    key: "omega0"
+    value_ref: null
+    units: null
+    allowed_region: "Must satisfy RWA and multimode inequalities."
+    rationale: "Unregistered."
+    source: "p.15 Table II; Eqs. (38),(192)"
+    owner: "PI/Device"
+    downstream_gate: "Before device/spectroscopy"
+  PF-PHY-003:
+    freeze_id: PF-PHY-003
+    status: "Decision Required"
+    domain: "Physical scales"
+    parameter: "Intralayer hopping"
+    key: "t"
+    value_ref: null
+    units: null
+    allowed_region: "t>0; satisfy RWA/multimode margins."
+    rationale: "Unregistered."
+    source: "p.15 Table II; Eq. (192)"
+    owner: "PI/Device"
+    downstream_gate: "Before production spectrum"
+  PF-PHY-004:
+    freeze_id: PF-PHY-004
+    status: "Decision Required"
+    domain: "Physical scales"
+    parameter: "Interlayer vertical hopping"
+    key: "w"
+    value_ref: null
+    units: null
+    allowed_region: "w>0; hardware-feasible scan."
+    rationale: "Unregistered."
+    source: "pp.10-17; Eq. (101)"
+    owner: "PI/Device"
+    downstream_gate: "Before production spectrum"
+  PF-PHY-005:
+    freeze_id: PF-PHY-005
+    status: "Decision Required"
+    domain: "Physical scales"
+    parameter: "Synthetic layer separation"
+    key: "h/a"
+    value_ref: null
+    units: null
+    allowed_region: "h>0; frozen before coupled spectrum."
+    rationale: "Validation fixture uses 0.5; production unregistered."
+    source: "pp.9-10; p.13 validation label"
+    owner: "PI"
+    downstream_gate: "Before production spectrum"
+  PF-PHY-006:
+    freeze_id: PF-PHY-006
+    status: "Decision Required"
+    domain: "Physical scales"
+    parameter: "Interlayer decay length"
+    key: "lambda_perp/a"
+    value_ref: null
+    units: null
+    allowed_region: "lambda_perp>0; for infinite exponential limit lambda_perp<R."
+    rationale: "Validation fixture uses 0.125; production unregistered."
+    source: "pp.10-11; p.17 Eq. (197)"
+    owner: "PI"
+    downstream_gate: "Before production spectrum"
+  PF-PHY-007:
+    freeze_id: PF-PHY-007
+    status: "Decision Required"
+    domain: "Physical scales"
+    parameter: "Coupling capacitance calibration"
+    key: "C_c"
+    value_ref: null
+    units: null
+    allowed_region: "epsilon_C<1 and calibration equation."
+    rationale: "Symbolic map exists; no production value."
+    source: "pp.5-6 Eqs. (26)-(37)"
+    owner: "Device"
+    downstream_gate: "Before hardware claim"
+  PF-PHY-008:
+    freeze_id: PF-PHY-008
+    status: "Decision Required"
+    domain: "Physical scales"
+    parameter: "Modal capacitance/impedance"
+    key: "C,Z"
+    value_ref: null
+    units: null
+    allowed_region: "Positive and consistent with omega0."
+    rationale: "Unregistered."
+    source: "p.15 Table II; pp.5-6"
+    owner: "Device"
+    downstream_gate: "Before hardware claim"
+  PF-PHY-009:
+    freeze_id: PF-PHY-009
+    status: "Decision Required"
+    domain: "Physical scales"
+    parameter: "Unused-mode separation"
+    key: "Delta_mode"
+    value_ref: null
+    units: null
+    allowed_region: "z_eff J_max << Delta_mode; Eq. (192)."
+    rationale: "Unregistered."
+    source: "pp.5,16"
+    owner: "Device"
+    downstream_gate: "Before multimode robustness"
+  PF-SCN-001:
+    freeze_id: PF-SCN-001
+    status: "Fixed"
+    domain: "Scan"
+    parameter: "Hyperbolic twist domain"
+    key: "theta_H_scan"
+    value_ref: "config/scan.yaml#/hyperbolic_twist/irreducible_interval"
+    units: "defined_at_value_ref"
+    allowed_region: "Signed theta internal; irreducible interval for scan."
+    rationale: "Irreducible interval fixed."
+    source: "p.53 Eq. (878)"
+    owner: "PI"
+    downstream_gate: "Before hyperbolic scan"
+  PF-SCN-002:
+    freeze_id: PF-SCN-002
+    status: "Fixed"
+    domain: "Scan"
+    parameter: "Euclidean square twist domain"
+    key: "theta_E_scan"
+    value_ref: "config/scan.yaml#/euclidean_twist/irreducible_interval"
+    units: "defined_at_value_ref"
+    allowed_region: "Exact CSL discrete; continuous scans require fixed Hilbert space."
+    rationale: "Irreducible interval fixed."
+    source: "p.53 Eq. (879)"
+    owner: "PI"
+    downstream_gate: "Before Euclidean scan"
+  PF-SCN-003:
+    freeze_id: PF-SCN-003
+    status: "Fixed"
+    domain: "Scan"
+    parameter: "Curvature coordinate"
+    key: "K/kappa/R"
+    value_ref: "config/scan.yaml#/curvature/primary_data_coordinate"
+    units: "defined_at_value_ref"
+    allowed_region: "K=-1/R^2, kappa=-K>=0; no exact-Bolza claim at intermediate kappa."
+    rationale: "Exact Bolza endpoint fixed; intermediate points are synthetic metric deformations."
+    source: "pp.14-17"
+    owner: "PI"
+    downstream_gate: "Before curvature scan"
+  PF-SCN-004:
+    freeze_id: PF-SCN-004
+    status: "Decision Required"
+    domain: "Scan"
+    parameter: "Curvature grid"
+    key: "kappa_grid"
+    value_ref: null
+    units: null
+    allowed_region: "Include endpoints; refine around score/fold features."
+    rationale: "Not registered."
+    source: "pp.53-65"
+    owner: "PI/Numerics"
+    downstream_gate: "Before curvature scan"
+  PF-SCN-005:
+    freeze_id: PF-SCN-005
+    status: "Decision Required"
+    domain: "Scan"
+    parameter: "w/t grid"
+    key: "omega_grid"
+    value_ref: null
+    units: null
+    allowed_region: "Must resolve candidate extrema; no post-hoc range changes."
+    rationale: "Not registered."
+    source: "pp.53-65"
+    owner: "PI/Numerics"
+    downstream_gate: "Before coupled scans"
+  PF-SCN-006:
+    freeze_id: PF-SCN-006
+    status: "Decision Required"
+    domain: "Scan"
+    parameter: "lambda_perp/a grid"
+    key: "eta_perp_grid"
+    value_ref: null
+    units: null
+    allowed_region: "Independent relevant coordinate; cannot absorb into curvature."
+    rationale: "Not registered."
+    source: "p.14 Eq. (166); universality section"
+    owner: "PI"
+    downstream_gate: "Before profile scans"
+  PF-SCN-007:
+    freeze_id: PF-SCN-007
+    status: "Decision Required"
+    domain: "Scan"
+    parameter: "h/a policy"
+    key: "eta_h_policy"
+    value_ref: null
+    units: null
+    allowed_region: "Primary comparison fixed h/a."
+    rationale: "Primary scan holds h/a fixed."
+    source: "p.17 Eq. (203)"
+    owner: "PI"
+    downstream_gate: "Before scans"
+  PF-SCN-008:
+    freeze_id: PF-SCN-008
+    status: "Decision Required"
+    domain: "Scan"
+    parameter: "Adaptive twist refinement"
+    key: "theta_refinement"
+    value_ref: null
+    units: null
+    allowed_region: "Must satisfy Eq. (914) and error targets."
+    rationale: "Analytic rule exists; thresholds unregistered."
+    source: "pp.55-56"
+    owner: "Numerics"
+    downstream_gate: "Before twist scan"
+  PF-SCN-009:
+    freeze_id: PF-SCN-009
+    status: "Decision Required"
+    domain: "Scan"
+    parameter: "Solver tolerances"
+    key: "solver_tol"
+    value_ref: null
+    units: null
+    allowed_region: "Small relative to every acceptance margin."
+    rationale: "Production tolerances unregistered."
+    source: "Methods pp.248-252"
+    owner: "Numerics"
+    downstream_gate: "Before production run"
+  PF-GRP-001:
+    freeze_id: PF-GRP-001
+    status: "Decision Required"
+    domain: "Finite quotient"
+    parameter: "Production quotient baseline"
+    key: "Q_N"
+    value_ref: null
+    units: null
+    allowed_region: "Must be quotient of declared surface group; multiplication data archived."
+    rationale: "Validation quotient (Z/4Z)^4 degree 256 is validation-only; production not fixed."
+    source: "p.13 Fig.1; p.15 Table II"
+    owner: "PI/Math"
+    downstream_gate: "Before hyperbolic production"
+  PF-GRP-002:
+    freeze_id: PF-GRP-002
+    status: "Decision Required"
+    domain: "Finite quotient"
+    parameter: "Production quotient size"
+    key: "N"
+    value_ref: null
+    units: null
+    allowed_region: "Large enough for cutoff/injectivity radius."
+    rationale: "Unregistered."
+    source: "p.8; bulk section"
+    owner: "PI/Math"
+    downstream_gate: "Before hyperbolic production"
+  PF-GRP-003:
+    freeze_id: PF-GRP-003
+    status: "Decision Required"
+    domain: "Finite quotient"
+    parameter: "Injectivity radius"
+    key: "r_inj,N"
+    value_ref: null
+    units: null
+    allowed_region: "Need r_inj>D_c locally; r_inj→∞ for bulk."
+    rationale: "Required but not production-frozen."
+    source: "p.9 Eq. (86); pp.130-151"
+    owner: "Math/Numerics"
+    downstream_gate: "Before cover use"
+  PF-GRP-004:
+    freeze_id: PF-GRP-004
+    status: "Decision Required"
+    domain: "Finite quotient"
+    parameter: "C8 automorphism compatibility"
+    key: "phi8_invariance"
+    value_ref: null
+    units: null
+    allowed_region: "phi8(Gamma_N)=Gamma_N for C8 claims."
+    rationale: "Required for exact C8 statements."
+    source: "p.8 Eqs. (73)-(75)"
+    owner: "Math"
+    downstream_gate: "Before symmetry claims"
+  PF-GRP-005:
+    freeze_id: PF-GRP-005
+    status: "Decision Required"
+    domain: "Finite quotient"
+    parameter: "Bipartite condition"
+    key: "Gamma_N_subset_ker_pi"
+    value_ref: null
+    units: null
+    allowed_region: "Only claim bipartite benchmark when condition holds."
+    rationale: "Used for exact ±8 adjacency benchmark."
+    source: "p.8 Eqs. (68)-(70)"
+    owner: "Math"
+    downstream_gate: "Before exact bandwidth benchmark"
+  PF-GRP-006:
+    freeze_id: PF-GRP-006
+    status: "Decision Required"
+    domain: "Finite quotient"
+    parameter: "Tower A"
+    key: "tower_A"
+    value_ref: null
+    units: null
+    allowed_region: "r_inj→∞; common model/cutoff/target."
+    rationale: "Absent."
+    source: "pp.130-151"
+    owner: "Math"
+    downstream_gate: "Before bulk certification"
+  PF-GRP-007:
+    freeze_id: PF-GRP-007
+    status: "Decision Required"
+    domain: "Finite quotient"
+    parameter: "Tower B"
+    key: "tower_B"
+    value_ref: null
+    units: null
+    allowed_region: "Not trivial relabeling of Tower A."
+    rationale: "Absent."
+    source: "pp.130-151"
+    owner: "Math"
+    downstream_gate: "Before bulk claim"
+  PF-GRP-008:
+    freeze_id: PF-GRP-008
+    status: "Decision Required"
+    domain: "Finite quotient"
+    parameter: "Mesoscopic shell schedule"
+    key: "L_N"
+    value_ref: null
+    units: null
+    allowed_region: "Both asymptotic conditions."
+    rationale: "Theory requires L_N→∞ and L_N/r_inj→0."
+    source: "p.250 Eq. (4182)"
+    owner: "Math/Numerics"
+    downstream_gate: "Before bulk runs"
+  PF-KER-001:
+    freeze_id: PF-KER-001
+    status: "Fixed"
+    domain: "Kernel"
+    parameter: "Production radial hopping law"
+    key: "T(D)"
+    value_ref: "config/kernel.yaml#/radial_hopping"
+    units: "defined_at_value_ref"
+    allowed_region: "No first-shell truncation in production."
+    rationale: "Baseline law is exponential full-distance kernel."
+    source: "p.10 Eq. (101); p.29 Eq. (429)"
+    owner: "PI"
+    downstream_gate: "Before coupled code"
+  PF-KER-002:
+    freeze_id: PF-KER-002
+    status: "Decision Required"
+    domain: "Kernel"
+    parameter: "Finite cutoff policy"
+    key: "D_c"
+    value_ref: null
+    units: null
+    allowed_region: "Same policy across comparisons; tail error reported."
+    rationale: "Finite circuit may use D_c or smooth support; production not frozen."
+    source: "p.10 Eq. (102); tail section"
+    owner: "PI/Numerics"
+    downstream_gate: "Before production Hamiltonian"
+  PF-KER-003:
+    freeze_id: PF-KER-003
+    status: "Fixed"
+    domain: "Kernel"
+    parameter: "Paired-cover distance rule"
+    key: "d_N_theta"
+    value_ref: "config/kernel.yaml#/paired_cover_distance"
+    units: "defined_at_value_ref"
+    allowed_region: "Implement Eq. (84), not Euclidean minimum-image approximation."
+    rationale: "Exact minimization over subgroup lifts defined."
+    source: "p.9 Eqs. (84)-(85)"
+    owner: "Math/Numerics"
+    downstream_gate: "Before kernel code"
+  PF-KER-004:
+    freeze_id: PF-KER-004
+    status: "Fixed"
+    domain: "Kernel"
+    parameter: "Full pair enumeration"
+    key: "pair_policy"
+    value_ref: "config/kernel.yaml#/pair_enumeration"
+    units: "defined_at_value_ref"
+    allowed_region: "No same-label-only or first-neighbor-only interlayer matrix."
+    rationale: "Production T_N is full matrix over all pairs within support."
+    source: "pp.9-12"
+    owner: "Numerics"
+    downstream_gate: "Before Hamiltonian code"
+  PF-KER-005:
+    freeze_id: PF-KER-005
+    status: "Decision Required"
+    domain: "Kernel"
+    parameter: "Tail certification"
+    key: "tail_budget"
+    value_ref: null
+    units: null
+    allowed_region: "Budgets close observable acceptance margins."
+    rationale: "Analytic exponential bound exists."
+    source: "pp.10-11; pp.139-149"
+    owner: "PI/Numerics"
+    downstream_gate: "Before shell convergence"
+  PF-EUC-001:
+    freeze_id: PF-EUC-001
+    status: "Fixed"
+    domain: "Euclidean"
+    parameter: "Production supercells"
+    key: "CSL_set"
+    value_ref: "config/euclidean.yaml#/production_supercells"
+    units: "defined_at_value_ref"
+    allowed_region: "45° is beat-only, not finite cell."
+    rationale: "All seven Nsc<100 cells exactly classified."
+    source: "pp.22-26 Table III"
+    owner: "PI"
+    downstream_gate: "Before Euclidean code"
+  PF-EUC-002:
+    freeze_id: PF-EUC-002
+    status: "Decision Required"
+    domain: "Euclidean"
+    parameter: "Nonzero-coupling interlayer kernel"
+    key: "T_E(D)"
+    value_ref: null
+    units: null
+    allowed_region: "Use exact 2Sigma×2Sigma Bloch H, not five-state."
+    rationale: "Exact supercell formalism exists; parameters missing."
+    source: "pp.29-35"
+    owner: "PI"
+    downstream_gate: "Before Q5 bands"
+  PF-EUC-003:
+    freeze_id: PF-EUC-003
+    status: "Decision Required"
+    domain: "Euclidean"
+    parameter: "mBZ 2D mesh"
+    key: "k_mesh"
+    value_ref: null
+    units: null
+    allowed_region: "Flatness extrema on complete 2D mBZ."
+    rationale: "Missing."
+    source: "p.32 Eqs. (477)-(481)"
+    owner: "Numerics"
+    downstream_gate: "Before Euclidean bands"
+  PF-EUC-004:
+    freeze_id: PF-EUC-004
+    status: "Decision Required"
+    domain: "Euclidean"
+    parameter: "Diffraction window"
+    key: "window"
+    value_ref: null
+    units: null
+    allowed_region: "Explicit convolution required."
+    rationale: "Ideal support solved; finite-window protocol unfrozen."
+    source: "pp.36-39 Prop.2"
+    owner: "PI/Numerics"
+    downstream_gate: "Before finite-window diffraction"
+  PF-TGT-001:
+    freeze_id: PF-TGT-001
+    status: "Decision Required"
+    domain: "Target tracking"
+    parameter: "Anchor point"
+    key: "anchor"
+    value_ref: null
+    units: null
+    allowed_region: "Must precede optimization and sector comparison."
+    rationale: "Framework exists; production anchor absent."
+    source: "pp.90-97"
+    owner: "PI"
+    downstream_gate: "Before tracking"
+  PF-TGT-002:
+    freeze_id: PF-TGT-002
+    status: "Decision Required"
+    domain: "Target tracking"
+    parameter: "Riesz contour"
+    key: "C_target"
+    value_ref: null
+    units: null
+    allowed_region: "Same scope across Abelian/full."
+    rationale: "Not frozen."
+    source: "pp.55,92-94"
+    owner: "PI/Numerics"
+    downstream_gate: "Before tracking"
+  PF-TGT-003:
+    freeze_id: PF-TGT-003
+    status: "Decision Required"
+    domain: "Target tracking"
+    parameter: "Target rank"
+    key: "r_C"
+    value_ref: null
+    units: null
+    allowed_region: "Preserve until certified transition."
+    rationale: "Not frozen."
+    source: "p.4 Eq. (7)"
+    owner: "PI"
+    downstream_gate: "Before tracking"
+  PF-TGT-004:
+    freeze_id: PF-TGT-004
+    status: "Decision Required"
+    domain: "Target tracking"
+    parameter: "Ancestry signature"
+    key: "s_C"
+    value_ref: null
+    units: null
+    allowed_region: "Identical across compared runs."
+    rationale: "Defined in manuscript."
+    source: "p.93 Eq. (1578)"
+    owner: "PI"
+    downstream_gate: "Before tracking"
+  PF-TGT-005:
+    freeze_id: PF-TGT-005
+    status: "Decision Required"
+    domain: "Target tracking"
+    parameter: "Projector step threshold"
+    key: "proj_step"
+    value_ref: null
+    units: null
+    allowed_region: "Must stay <1 with error margin."
+    rationale: "Theory uses <1; production margin absent."
+    source: "p.113; p.55"
+    owner: "Numerics"
+    downstream_gate: "Before tracking"
+  PF-FLT-001:
+    freeze_id: PF-FLT-001
+    status: "Decision Required"
+    domain: "Flatness"
+    parameter: "Physical score weights"
+    key: "w_score"
+    value_ref: null
+    units: null
+    allowed_region: "Strictly positive and fixed before scan."
+    rationale: "Must be predeclared."
+    source: "pp.60-68"
+    owner: "PI"
+    downstream_gate: "Before flatness optimization"
+  PF-FLT-002:
+    freeze_id: PF-FLT-002
+    status: "Decision Required"
+    domain: "Flatness"
+    parameter: "Bandwidth threshold"
+    key: "tau_W"
+    value_ref: null
+    units: null
+    allowed_region: "Use W^U/Delta^L."
+    rationale: "Not frozen."
+    source: "p.60 Eq. (1011)"
+    owner: "PI"
+    downstream_gate: "Before flatness run"
+  PF-FLT-003:
+    freeze_id: PF-FLT-003
+    status: "Decision Required"
+    domain: "Flatness"
+    parameter: "Velocity threshold"
+    key: "tau_v"
+    value_ref: null
+    units: null
+    allowed_region: "Use ħD_G v_max^U/Delta^L."
+    rationale: "Not frozen."
+    source: "p.60 Eq. (1011)"
+    owner: "PI"
+    downstream_gate: "Before flatness run"
+  PF-FLT-004:
+    freeze_id: PF-FLT-004
+    status: "Decision Required"
+    domain: "Flatness"
+    parameter: "Hessian threshold"
+    key: "tau_2"
+    value_ref: null
+    units: null
+    allowed_region: "Use all principal curvatures."
+    rationale: "Not frozen."
+    source: "p.60 Eq. (1011)"
+    owner: "PI"
+    downstream_gate: "Before flatness run"
+  PF-FLT-005:
+    freeze_id: PF-FLT-005
+    status: "Decision Required"
+    domain: "Flatness"
+    parameter: "DOS threshold"
+    key: "tau_rho"
+    value_ref: null
+    units: null
+    allowed_region: "Common eta and target/coherent normalization."
+    rationale: "Not frozen."
+    source: "p.60; pp.228-232"
+    owner: "PI"
+    downstream_gate: "Before flatness run"
+  PF-FLT-006:
+    freeze_id: PF-FLT-006
+    status: "Decision Required"
+    domain: "Flatness"
+    parameter: "Coherence threshold"
+    key: "tau_coh"
+    value_ref: null
+    units: null
+    allowed_region: "Basis-invariant coherence."
+    rationale: "Not frozen."
+    source: "p.60; p.232 onward"
+    owner: "PI"
+    downstream_gate: "Before flatness run"
+  PF-FLT-007:
+    freeze_id: PF-FLT-007
+    status: "Decision Required"
+    domain: "Flatness"
+    parameter: "Hybridization causality thresholds"
+    key: "delta_W/delta_v/delta_perp"
+    value_ref: null
+    units: null
+    allowed_region: "Reject w=0/intrinsic monolayer flatness."
+    rationale: "Definitions exist; thresholds absent."
+    source: "pp.44,67"
+    owner: "PI"
+    downstream_gate: "Before magic classification"
+  PF-REP-001:
+    freeze_id: PF-REP-001
+    status: "Decision Required"
+    domain: "Representation"
+    parameter: "Full irrep registry"
+    key: "irrep_register"
+    value_ref: null
+    units: null
+    allowed_region: "Pass character Gram and sum d_rho^2=|Q_N|."
+    rationale: "Production register absent."
+    source: "pp.90-94 Theorem 8"
+    owner: "Math"
+    downstream_gate: "Before full spectrum"
+  PF-REP-002:
+    freeze_id: PF-REP-002
+    status: "Decision Required"
+    domain: "Representation"
+    parameter: "Explicit matrices/projectors"
+    key: "rho_matrices"
+    value_ref: null
+    units: null
+    allowed_region: "Required for coherence/Hodge/local response."
+    rationale: "Needed for eigenvectors/projectors."
+    source: "pp.92-94"
+    owner: "Math/Numerics"
+    downstream_gate: "Before projector analysis"
+  PF-REP-003:
+    freeze_id: PF-REP-003
+    status: "Decision Required"
+    domain: "Representation"
+    parameter: "Abelian subset"
+    key: "irrep_1D"
+    value_ref: null
+    units: null
+    allowed_region: "No sampled/manual subset."
+    rationale: "Definition fixed."
+    source: "pp.89-96"
+    owner: "Math"
+    downstream_gate: "Before Abelian/full compare"
+  PF-REP-004:
+    freeze_id: PF-REP-004
+    status: "Decision Required"
+    domain: "Representation"
+    parameter: "Target representation support"
+    key: "R_C_N"
+    value_ref: null
+    units: null
+    allowed_region: "C_rep=1 required for full claim."
+    rationale: "Declared-support logic exists; production support absent."
+    source: "p.93"
+    owner: "PI/Math"
+    downstream_gate: "Before target full spectrum"
+  PF-REP-005:
+    freeze_id: PF-REP-005
+    status: "Decision Required"
+    domain: "Representation"
+    parameter: "Abelian torus fill-distance"
+    key: "h_Ab_N"
+    value_ref: null
+    units: null
+    allowed_region: "h_Ab,N→0 and isotropic directions."
+    rationale: "Required for continuum U(1) claim."
+    source: "p.90"
+    owner: "Math/Numerics"
+    downstream_gate: "Before Abelian continuum claim"
+  PF-HOD-001:
+    freeze_id: PF-HOD-001
+    status: "Decision Required"
+    domain: "Hodge"
+    parameter: "Harmonic tangent basis"
+    key: "H1_basis"
+    value_ref: null
+    units: null
+    allowed_region: "Span declared H1 tangent space."
+    rationale: "Needed for G-normalized derivatives."
+    source: "pp.65-87"
+    owner: "Math"
+    downstream_gate: "Before Hodge computation"
+  PF-HOD-002:
+    freeze_id: PF-HOD-002
+    status: "Decision Required"
+    domain: "Hodge"
+    parameter: "Hodge metric"
+    key: "G"
+    value_ref: null
+    units: null
+    allowed_region: "Positive definite; use G^-1/2 K G^-1/2."
+    rationale: "Canonical metric theory exists."
+    source: "pp.65-87"
+    owner: "Math/Numerics"
+    downstream_gate: "Before Hodge computation"
+  PF-HOD-003:
+    freeze_id: PF-HOD-003
+    status: "Decision Required"
+    domain: "Hodge"
+    parameter: "Independent Hodge interval"
+    key: "I_H"
+    value_ref: null
+    units: null
+    allowed_region: "Independent of physical score."
+    rationale: "Certificate needs compact interval."
+    source: "pp.66-69"
+    owner: "PI"
+    downstream_gate: "Before Hodge root run"
+  PF-HOD-004:
+    freeze_id: PF-HOD-004
+    status: "Decision Required"
+    domain: "Hodge"
+    parameter: "Hodge tail budgets"
+    key: "eps_b0/eps_b1"
+    value_ref: null
+    units: null
+    allowed_region: "Need positive certified slope."
+    rationale: "Theory exists; constants absent."
+    source: "pp.66-69"
+    owner: "Numerics"
+    downstream_gate: "Before Hodge root certification"
+  PF-DOS-001:
+    freeze_id: PF-DOS-001
+    status: "Decision Required"
+    domain: "DOS"
+    parameter: "Energy normalization"
+    key: "DOS_energy_scale"
+    value_ref: null
+    units: null
+    allowed_region: "Unit-mass or explicit cluster-rank normalization."
+    rationale: "Rules defined."
+    source: "pp.3-4; pp.228-232"
+    owner: "PI"
+    downstream_gate: "Before DOS code"
+  PF-DOS-002:
+    freeze_id: PF-DOS-002
+    status: "Decision Required"
+    domain: "DOS"
+    parameter: "KPM order"
+    key: "M_KPM"
+    value_ref: null
+    units: null
+    allowed_region: "Estimator error below budget."
+    rationale: "Validation=160; production absent."
+    source: "p.229"
+    owner: "Numerics"
+    downstream_gate: "Before production DOS"
+  PF-DOS-003:
+    freeze_id: PF-DOS-003
+    status: "Decision Required"
+    domain: "DOS"
+    parameter: "KPM probes"
+    key: "Nprobe_KPM"
+    value_ref: null
+    units: null
+    allowed_region: "Report stochastic SE separately."
+    rationale: "Validation=4×32; production absent."
+    source: "p.229"
+    owner: "Numerics"
+    downstream_gate: "Before production DOS"
+  PF-DOS-004:
+    freeze_id: PF-DOS-004
+    status: "Decision Required"
+    domain: "DOS"
+    parameter: "SLQ depth"
+    key: "m_SLQ"
+    value_ref: null
+    units: null
+    allowed_region: "Cross-check KPM/exact where feasible."
+    rationale: "Validation=64; production absent."
+    source: "p.229"
+    owner: "Numerics"
+    downstream_gate: "Before production DOS"
+  PF-DOS-005:
+    freeze_id: PF-DOS-005
+    status: "Decision Required"
+    domain: "DOS"
+    parameter: "SLQ probes"
+    key: "Nprobe_SLQ"
+    value_ref: null
+    units: null
+    allowed_region: "Independent RNG namespace."
+    rationale: "Validation=4×32; production absent."
+    source: "p.229"
+    owner: "Numerics"
+    downstream_gate: "Before production DOS"
+  PF-DOS-006:
+    freeze_id: PF-DOS-006
+    status: "Decision Required"
+    domain: "DOS"
+    parameter: "Broadening schedule"
+    key: "eta_schedule"
+    value_ref: null
+    units: null
+    allowed_region: "N→∞ fixed eta, then eta→0 only."
+    rationale: "Validation has 3 widths; production absent."
+    source: "pp.229-232"
+    owner: "PI/Numerics"
+    downstream_gate: "Before production DOS"
+  PF-DOS-007:
+    freeze_id: PF-DOS-007
+    status: "Decision Required"
+    domain: "DOS"
+    parameter: "RNG seeds"
+    key: "rng_DOS"
+    value_ref: null
+    units: null
+    allowed_region: "KPM/SLQ independent; archive versions."
+    rationale: "Namespaces documented."
+    source: "p.229"
+    owner: "Numerics"
+    downstream_gate: "Before DOS run"
+  PF-FLD-001:
+    freeze_id: PF-FLD-001
+    status: "Decision Required"
+    domain: "Fold"
+    parameter: "Branch equation"
+    key: "F_nu"
+    value_ref: null
+    units: null
+    allowed_region: "No score/branch changes after candidate."
+    rationale: "Defined from fixed strong score."
+    source: "pp.110-114"
+    owner: "PI"
+    downstream_gate: "Before fold search"
+  PF-FLD-002:
+    freeze_id: PF-FLD-002
+    status: "Decision Required"
+    domain: "Fold"
+    parameter: "Fold domain"
+    key: "A_nu"
+    value_ref: null
+    units: null
+    allowed_region: "Interior fold; exclude endpoint/gap/coherence/rep boundaries."
+    rationale: "Not frozen."
+    source: "pp.110-114"
+    owner: "PI"
+    downstream_gate: "Before fold search"
+  PF-FLD-003:
+    freeze_id: PF-FLD-003
+    status: "Decision Required"
+    domain: "Fold"
+    parameter: "Interval-Newton tolerances"
+    key: "fold_tol"
+    value_ref: null
+    units: null
+    allowed_region: "Same-point F=F_theta=0 certificate."
+    rationale: "Theory specified, numbers absent."
+    source: "pp.111-114"
+    owner: "Numerics"
+    downstream_gate: "Before fold certification"
+  PF-FLD-004:
+    freeze_id: PF-FLD-004
+    status: "Decision Required"
+    domain: "Fold"
+    parameter: "Branch ancestry tolerance"
+    key: "fold_projector_tol"
+    value_ref: null
+    units: null
+    allowed_region: "Both branches converge to same critical projector."
+    rationale: "Riesz continuity required."
+    source: "p.113"
+    owner: "Numerics"
+    downstream_gate: "Before branch classification"
+  PF-ROB-001:
+    freeze_id: PF-ROB-001
+    status: "Decision Required"
+    domain: "Robustness"
+    parameter: "Frequency disorder"
+    key: "sigma_omega"
+    value_ref: null
+    units: null
+    allowed_region: "Use declared truncated Gaussian or measured replacement."
+    rationale: "Law specified, scale absent."
+    source: "pp.15-16; robustness"
+    owner: "Device/PI"
+    downstream_gate: "Before Monte Carlo"
+  PF-ROB-002:
+    freeze_id: PF-ROB-002
+    status: "Decision Required"
+    domain: "Robustness"
+    parameter: "Coupling disorder"
+    key: "sigma_t/sigma_perp"
+    value_ref: null
+    units: null
+    allowed_region: "Keep intra/inter explicit."
+    rationale: "Law specified, scales absent."
+    source: "pp.15-16"
+    owner: "Device/PI"
+    downstream_gate: "Before Monte Carlo"
+  PF-ROB-003:
+    freeze_id: PF-ROB-003
+    status: "Decision Required"
+    domain: "Robustness"
+    parameter: "Twist calibration error"
+    key: "sigma_theta"
+    value_ref: null
+    units: null
+    allowed_region: "Propagate to root/flat angle."
+    rationale: "Law form exists, scale absent."
+    source: "p.15 Eq. (182)"
+    owner: "Device"
+    downstream_gate: "Before Monte Carlo"
+  PF-ROB-004:
+    freeze_id: PF-ROB-004
+    status: "Decision Required"
+    domain: "Robustness"
+    parameter: "Photon loss distribution"
+    key: "gamma"
+    value_ref: null
+    units: null
+    allowed_region: "Uniform and nonuniform branches separate."
+    rationale: "Framework exists; scale/covariance absent."
+    source: "p.15 Eq. (183)"
+    owner: "Device"
+    downstream_gate: "Before open-system MC"
+  PF-ROB-005:
+    freeze_id: PF-ROB-005
+    status: "Decision Required"
+    domain: "Robustness"
+    parameter: "Monte Carlo sample/confidence"
+    key: "n_MC/alpha"
+    value_ref: null
+    units: null
+    allowed_region: "Exact binomial intervals."
+    rationale: "Not frozen."
+    source: "pp.163-165"
+    owner: "PI/Numerics"
+    downstream_gate: "Before MC"
+  PF-ROB-006:
+    freeze_id: PF-ROB-006
+    status: "Decision Required"
+    domain: "Robustness"
+    parameter: "Higher-mode registry"
+    key: "multimode_registry"
+    value_ref: null
+    units: null
+    allowed_region: "Required for device-specific single-mode license."
+    rationale: "Absent."
+    source: "pp.164-165"
+    owner: "Device"
+    downstream_gate: "Before multimode claim"
+  PF-SPC-001:
+    freeze_id: PF-SPC-001
+    status: "Decision Required"
+    domain: "Spectroscopy"
+    parameter: "Port matrix"
+    key: "K_ports"
+    value_ref: null
+    units: null
+    allowed_region: "Need rank(P_C K)=r_C."
+    rationale: "Analytical only; uninstantiated."
+    source: "pp.166-180"
+    owner: "Device/PI"
+    downstream_gate: "Before spectroscopy"
+  PF-SPC-002:
+    freeze_id: PF-SPC-002
+    status: "Decision Required"
+    domain: "Spectroscopy"
+    parameter: "Internal loss matrix"
+    key: "Gamma_int"
+    value_ref: null
+    units: null
+    allowed_region: "PSD; uniform loss only sensitivity study."
+    rationale: "Unregistered."
+    source: "p.166 onward"
+    owner: "Device"
+    downstream_gate: "Before S-matrix"
+  PF-SPC-003:
+    freeze_id: PF-SPC-003
+    status: "Decision Required"
+    domain: "Spectroscopy"
+    parameter: "Frequency grid"
+    key: "Omega_grid"
+    value_ref: null
+    units: null
+    allowed_region: "Resolve narrowest retained linewidth."
+    rationale: "Unregistered."
+    source: "pp.166-180"
+    owner: "Numerics"
+    downstream_gate: "Before spectroscopy"
+  PF-QUB-001:
+    freeze_id: PF-QUB-001
+    status: "Decision Required"
+    domain: "Qubit"
+    parameter: "Transmon placement"
+    key: "sites_q"
+    value_ref: null
+    units: null
+    allowed_region: "Fixed before seeing J."
+    rationale: "Absent."
+    source: "pp.181-201"
+    owner: "PI/Device"
+    downstream_gate: "Before qubit run"
+  PF-QUB-002:
+    freeze_id: PF-QUB-002
+    status: "Decision Required"
+    domain: "Qubit"
+    parameter: "Transmon frequencies"
+    key: "omega_q"
+    value_ref: null
+    units: null
+    allowed_region: "Dispersive relative to photonic spectrum."
+    rationale: "Absent."
+    source: "pp.181-201"
+    owner: "Device"
+    downstream_gate: "Before qubit run"
+  PF-QUB-003:
+    freeze_id: PF-QUB-003
+    status: "Decision Required"
+    domain: "Qubit"
+    parameter: "Anharmonicities"
+    key: "alpha_q"
+    value_ref: null
+    units: null
+    allowed_region: "Duffing adjacent-transition conditions."
+    rationale: "Absent."
+    source: "pp.181-201"
+    owner: "Device"
+    downstream_gate: "Before qubit run"
+  PF-QUB-004:
+    freeze_id: PF-QUB-004
+    status: "Decision Required"
+    domain: "Qubit"
+    parameter: "Couplings/phases"
+    key: "g_q"
+    value_ref: null
+    units: null
+    allowed_region: "Full placement matrix with uncertainty."
+    rationale: "Absent."
+    source: "pp.181-201"
+    owner: "Device"
+    downstream_gate: "Before qubit run"

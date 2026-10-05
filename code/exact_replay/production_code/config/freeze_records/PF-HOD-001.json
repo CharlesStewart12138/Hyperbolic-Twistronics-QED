@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "parameter_id": "PF-HOD-001",
+  "immutable_record": true,
+  "authority": "2026-09-04 highest-priority theory-production directive",
+  "classification": "THEORY_PRODUCTION",
+  "disposition": "BLOCKED",
+  "status": "Blocked",
+  "exact_source": "pp.65-87",
+  "exact_dependency": "Before Hodge computation",
+  "rationale": "The harmonic tangent basis/transport depends on the missing production quotient and representation construction.",
+  "frozen_value": null,
+  "partial_directive_values": null,
+  "production_scope": "blocked dependent theory branch",
+  "validation": "PASSED"
+}

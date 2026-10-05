@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "parameter_id": "PF-DOS-002",
+  "immutable_record": true,
+  "authority": "2026-09-04 highest-priority theory-production directive",
+  "classification": "THEORY_PRODUCTION",
+  "disposition": "FREEZE",
+  "status": "Fixed",
+  "exact_source": "p.229",
+  "exact_dependency": "Before production DOS",
+  "rationale": "Freeze primary KPM moments=8192 and holdouts [4096,8192,16384].",
+  "frozen_value": {
+    "primary_moments": 8192,
+    "holdout_moments": [
+      4096,
+      8192,
+      16384
+    ],
+    "kernel": "Jackson"
+  },
+  "partial_directive_values": null,
+  "production_scope": "dimensionless theory production",
+  "validation": "PASSED"
+}

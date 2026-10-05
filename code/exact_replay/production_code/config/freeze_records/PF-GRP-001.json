@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "parameter_id": "PF-GRP-001",
+  "immutable_record": true,
+  "authority": "2026-09-04 highest-priority theory-production directive",
+  "classification": "THEORY_PRODUCTION",
+  "disposition": "BLOCKED",
+  "status": "Blocked",
+  "exact_source": "p.13 Fig.1; p.15 Table II",
+  "exact_dependency": "Before hyperbolic production",
+  "rationale": "No finite normal quotient has yet passed every production relation, connectivity, degree, bipartite, C8, and injectivity certificate.",
+  "frozen_value": null,
+  "partial_directive_values": null,
+  "production_scope": "blocked dependent theory branch",
+  "validation": "PASSED"
+}

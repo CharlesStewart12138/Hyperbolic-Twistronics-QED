@@ -1,0 +1,39 @@
+schema_version: 1
+freeze_status: partial
+radial_hopping:
+  family: exponential_full_distance
+  exact_formula: "T(D)=w*exp(-(D-h)/lambda_perp)"
+  amplitude_key: w
+  vertical_distance_key: h
+  decay_length_key: lambda_perp
+  domain: "D>=h"
+  derivatives_required: [theta_first, theta_second, curvature_as_required]
+  alternate_profile_policy: separate_model_freeze_required
+cutoff: null
+paired_cover_distance:
+  method: exact_paired_cover_subgroup_lift_minimization
+  formula: "d_N_theta(q,q')=min_{gamma in Gamma_N} d_H(z_q, gamma*R_theta*z_q')"
+  quotient_action: right_regular
+  lift_domain: certified_normal_subgroup
+  tie_detection: exact_or_certified_interval_overlap
+  tie_action: retain_all_minimizers
+  derivative_at_tie: require_minimizer_derivative_agreement_else_mark_nondifferentiable
+  forbidden_approximations:
+    - euclidean_minimum_image
+    - graph_shortest_path
+    - one_representative_without_lift_search
+pair_enumeration:
+  domain: all_ordered_layer1_layer2_site_pairs
+  inclusion_rule: paired_cover_distance_within_frozen_support
+  diagonal_label_special_case: false
+  first_neighbor_special_case: false
+  storage:
+    format: CSR
+    construction_order: quotient_row_then_quotient_column
+    preserve_all_supported_entries: true
+  forbidden:
+    - same_label_only
+    - first_neighbor_only
+    - selected_pairs_only
+tail_budget: null
+

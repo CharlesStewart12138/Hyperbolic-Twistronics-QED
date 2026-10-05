@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "parameter_id": "PF-PHY-003",
+  "immutable_record": true,
+  "authority": "2026-09-04 highest-priority theory-production directive",
+  "classification": "DEVICE_ONLY",
+  "disposition": "DEFER",
+  "status": "Deferred",
+  "exact_source": "p.15 Table II; Eq. (192)",
+  "exact_dependency": "Before production spectrum",
+  "rationale": "The physical MHz hopping calibration is device-only; theory uses t=1 as an energy unit, never as an MHz claim.",
+  "frozen_value": null,
+  "partial_directive_values": null,
+  "production_scope": "device-only downstream",
+  "validation": "PASSED"
+}

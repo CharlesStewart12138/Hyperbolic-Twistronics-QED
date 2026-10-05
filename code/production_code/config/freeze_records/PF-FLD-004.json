@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "parameter_id": "PF-FLD-004",
+  "immutable_record": true,
+  "authority": "2026-09-04 highest-priority theory-production directive",
+  "classification": "THEORY_PRODUCTION",
+  "disposition": "FREEZE",
+  "status": "Fixed",
+  "exact_source": "p.113",
+  "exact_dependency": "Before branch classification",
+  "rationale": "Freeze branch projector-step target 0.20, strict <1 margin, and common-critical-projector requirement.",
+  "frozen_value": {
+    "projector_step_target": 0.2,
+    "hard_limit": 1,
+    "branches_must_share_critical_projector": true,
+    "eigenvalue_ordering_forbidden": true
+  },
+  "partial_directive_values": null,
+  "production_scope": "dimensionless theory production",
+  "validation": "PASSED"
+}

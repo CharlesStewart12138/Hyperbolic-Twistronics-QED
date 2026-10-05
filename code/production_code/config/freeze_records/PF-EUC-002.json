@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "parameter_id": "PF-EUC-002",
+  "immutable_record": true,
+  "authority": "2026-09-04 highest-priority theory-production directive",
+  "classification": "THEORY_PRODUCTION",
+  "disposition": "FREEZE",
+  "status": "Fixed",
+  "exact_source": "pp.29-35",
+  "exact_dependency": "Before Q5 bands",
+  "rationale": "Freeze the same exponential radial kernel with h/a=0.50, primary lambda_perp/a=0.20, locked holdouts, and the preregistered w/t scan in the exact 2Sigma model.",
+  "frozen_value": {
+    "model_dimension": "2*Sigma",
+    "kernel_family": "w*exp(-(D-h)/lambda_perp)",
+    "h_over_a": 0.5,
+    "primary_lambda_perp_over_a": 0.2,
+    "locked_lambda_holdouts": [
+      0.125,
+      0.25
+    ],
+    "coupling_grid_ref": "PF-SCN-005",
+    "five_state_production_forbidden": true
+  },
+  "partial_directive_values": null,
+  "production_scope": "dimensionless theory production",
+  "validation": "PASSED"
+}

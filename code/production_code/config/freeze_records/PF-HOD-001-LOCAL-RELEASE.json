@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "parameter_id": "PF-HOD-001",
+  "release_id": "PF-HOD-001-LOCAL-2026-09-05",
+  "immutable_record": true,
+  "supersedes_disposition_for_scope": "production_code/config/freeze_records/PF-HOD-001.json",
+  "authority": "2026-09-05 geometric physical-shell contract repair directive, Section 16",
+  "classification": "THEORY_PRODUCTION_LOCAL",
+  "status": "Fixed",
+  "scope": "LOCAL_SCALAR_CHARACTER",
+  "frozen_value": {
+    "H1_basis": ["eta_a1", "eta_b1", "eta_a2", "eta_b2"],
+    "dimension_real": 4,
+    "evaluation_matrix": "I_4",
+    "geometric_to_standard_homology_matrix": [[1, 0, 1, -1], [0, 1, 1, -1], [0, 0, 1, 0], [0, 0, 0, 1]],
+    "standard_cohomology_in_geometric_dual": [[1, 0, 0, 0], [0, 1, 0, 0], [-1, -1, 1, 0], [1, 1, 0, 1]],
+    "transport": "I_4",
+    "period_real_determinant_geometric": -8,
+    "period_real_determinant_standard": -8
+  },
+  "acceptance": "PASSED",
+  "scope_boundary": {
+    "general_nonabelian_Ad_rho": "not asserted",
+    "PF_HOD_002_metric": "separate next atomic task",
+    "finite_quotient": "not required",
+    "physical_magic_angle": "not claimed",
+    "main_tex_modified": false
+  }
+}
+

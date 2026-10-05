@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "parameter_id": "PF-DOS-003",
+  "immutable_record": true,
+  "authority": "2026-09-04 highest-priority theory-production directive",
+  "classification": "THEORY_PRODUCTION",
+  "disposition": "FREEZE",
+  "status": "Fixed",
+  "exact_source": "p.229",
+  "exact_dependency": "Before production DOS",
+  "rationale": "Freeze primary KPM probes=64 and holdouts [32,64,128], with per-probe stochastic SE separate.",
+  "frozen_value": {
+    "primary_probes": 64,
+    "holdout_probes": [
+      32,
+      64,
+      128
+    ],
+    "uncertainty": "per-probe stochastic standard error separate from estimator bias"
+  },
+  "partial_directive_values": null,
+  "production_scope": "dimensionless theory production",
+  "validation": "PASSED"
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "parameter_id": "PF-FLD-002",
+  "immutable_record": true,
+  "authority": "2026-09-04 highest-priority theory-production directive",
+  "classification": "THEORY_PRODUCTION",
+  "disposition": "FREEZE",
+  "status": "Fixed",
+  "exact_source": "pp.110-114",
+  "exact_dependency": "Before fold search",
+  "rationale": "Freeze theta in [0,pi/8], kappa_a/kappa_B in [0,1], the preregistered coupling domain, and exclude all endpoint/gap/coherence/representation boundaries.",
+  "frozen_value": {
+    "theta": [
+      "0",
+      "pi/8"
+    ],
+    "kappa_a_over_kappa_B": [
+      0,
+      1
+    ],
+    "coupling_initial": [
+      0,
+      2
+    ],
+    "coupling_units": "omega/omega_ref",
+    "single_expansion": [
+      0.125,
+      4
+    ],
+    "required_interior_margins": [
+      "theta endpoint",
+      "kappa endpoint",
+      "coupling endpoint",
+      "gap boundary",
+      "coherence boundary",
+      "representation boundary"
+    ]
+  },
+  "partial_directive_values": null,
+  "production_scope": "dimensionless theory production",
+  "validation": "PASSED"
+}

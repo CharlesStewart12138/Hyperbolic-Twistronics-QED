@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "parameter_id": "PF-TGT-001",
+  "immutable_record": true,
+  "authority": "2026-09-04 highest-priority theory-production directive",
+  "classification": "THEORY_PRODUCTION",
+  "disposition": "BLOCKED",
+  "status": "Blocked",
+  "exact_source": "pp.90-97",
+  "exact_dependency": "Before tracking",
+  "rationale": "No ex-ante physical target anchor is identified independently of production spectrum inspection.",
+  "frozen_value": null,
+  "partial_directive_values": null,
+  "production_scope": "blocked dependent theory branch",
+  "validation": "PASSED"
+}

@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "parameter_id": "PF-FLT-002",
+  "immutable_record": true,
+  "authority": "2026-09-04 highest-priority theory-production directive",
+  "classification": "THEORY_PRODUCTION",
+  "disposition": "FREEZE",
+  "status": "Fixed",
+  "exact_source": "p.60 Eq. (1011)",
+  "exact_dependency": "Before flatness run",
+  "rationale": "Freeze basic W/Delta<=0.10 and strong W/Delta<=0.05.",
+  "frozen_value": {
+    "metric": "W_upper/Delta_lower",
+    "basic_max": 0.1,
+    "strong_max": 0.05
+  },
+  "partial_directive_values": null,
+  "production_scope": "dimensionless theory production",
+  "validation": "PASSED"
+}

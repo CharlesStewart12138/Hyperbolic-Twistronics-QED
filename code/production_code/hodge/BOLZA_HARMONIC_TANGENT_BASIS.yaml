@@ -1,0 +1,62 @@
+schema_version: "1.0"
+registry_id: "PF-HOD-001-LOCAL"
+status: "exact-local-harmonic-tangent-basis-frozen"
+scope: "LOCAL_SCALAR_CHARACTER"
+claim_boundary:
+  finite_quotient_required: false
+  finite_device_claim: false
+  representation_complete_claim: false
+  nonabelian_Ad_rho_basis: false
+  physical_magic_angle_claim: false
+surface_group:
+  presentation: "<a1,b1,a2,b2 | [a1,b1][a2,b2]=e>"
+  abelianization: "Z^4"
+  H1_real_dimension: 4
+geometric_homology_marking:
+  ordered_cycles: ["delta0=h0", "delta1=h1", "delta2=h2", "delta3=h3"]
+  source_registry: "production_code/group/BOLZA_NIELSEN_MAP.yaml"
+  standard_generators_in_geometric_coordinates:
+    rows: [h0, h1, h2, h3]
+    columns: [a1, b1, a2, b2]
+    matrix:
+      - [1, 0, 1, -1]
+      - [0, 1, 1, -1]
+      - [0, 0, 1, 0]
+      - [0, 0, 0, 1]
+    determinant: 1
+standard_cohomology_basis:
+  ordered_basis: [eta_a1, eta_b1, eta_a2, eta_b2]
+  defining_evaluation: "eta_x([y])=delta_xy"
+  geometric_dual_coordinates_M_inverse_transpose:
+    - [1, 0, 0, 0]
+    - [0, 1, 0, 0]
+    - [-1, -1, 1, 0]
+    - [1, 1, 0, 1]
+  representative: "unique harmonic representative supplied by Hodge theorem"
+period_certificate:
+  zeta8: "exp(i*pi/4)=(1+i)/sqrt(2)"
+  holomorphic_forms: ["omega0=dx/y", "omega1=zeta8^3*x*dx/y"]
+  common_scale: "one for rank certification; any nonzero common scale is equivalent"
+  geometric_columns: "p_k=(zeta8^(3k)(zeta8+zeta8^2), zeta8^k(zeta8^3-zeta8^2))^T"
+  geometric_real_determinant: -8
+  standard_real_determinant: -8
+  real_rank: 4
+transport:
+  branch: "one-dimensional unitary characters"
+  reason: "Ad rho is trivial on u(1), hence V_theta=H^1(Gamma_B;R)"
+  T_theta: "I_4"
+  exact: true
+acceptance:
+  relator_abelianization_zero: true
+  full_four_direction_basis: true
+  no_single_direction_surrogate: true
+  Nielsen_transport_unimodular: true
+  period_map_real_rank_four: true
+  identity_transport_exact: true
+  passed: true
+sources:
+  manuscript: "source_current_195/main.tex, eq:hodge-physical-tangent-space and eq:hodge-tangent-transport"
+  companion: "source_companion_471/main.tex, Theorems 83-84"
+  period_reference: "J. R. Quine, Systoles of Two Extremal Riemann Surfaces, Sec. 6, formulas (8)-(9)"
+main_tex_modified: false
+

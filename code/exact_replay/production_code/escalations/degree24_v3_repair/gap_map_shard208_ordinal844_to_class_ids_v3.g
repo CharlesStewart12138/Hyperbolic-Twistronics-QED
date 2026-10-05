@@ -1,0 +1,33 @@
+# Map three independently observed ordinal-844 objects to the frozen Route-B manifest.
+SetInfoLevel(InfoWarning,0); SizeScreen([1000000,1000000]);
+if GAPInfo.Version<>"4.12.1" then Error("GAP version mismatch"); fi;
+if not IsBound(MAPPING_OUT) then Error("MAPPING_OUT missing"); fi;
+if IsExistingFile(MAPPING_OUT) then Error("refusing to overwrite mapping certificate"); fi;
+Read("/mnt/d/work/revise/production_code/escalations/degree24_v3_repair/DEG24_SHARD208_ORDINAL844_FORENSIC_ROWS_V3.g");
+Read("/mnt/d/work/revise/production_code/escalations/degree24_v3_repair/manifests/24T13493/DEG24_KEY_24T13493_CLASS_MANIFEST_V3.g");
+G0:=TransitiveGroup(24,13493); gens0:=GeneratorsOfGroup(G0); isoG:=IsomorphismPcGroup(G0); G:=Image(isoG); gensG:=GeneratorsOfGroup(G);
+A:=AutomorphismGroup(G); isoA:=IsomorphismPcGroup(A); AP:=Image(isoA); preG:=List(gensG,g->PreImagesRepresentative(isoG,g));
+ToAP:=function(images) local alpha0,imgsG,alphaG;
+ alpha0:=GroupHomomorphismByImages(G0,G0,gens0,List(images,PermList));
+ if alpha0=fail or not IsBijective(alpha0) or Order(alpha0)<>8 then Error("original representative reconstruction failure"); fi;
+ imgsG:=List(preG,x0->Image(isoG,Image(alpha0,x0)));
+ alphaG:=GroupHomomorphismByImages(G,G,gensG,imgsG);
+ if alphaG=fail or not IsBijective(alphaG) or not (alphaG in A) then Error("transport failure"); fi;
+ return Image(isoA,alphaG);
+end;
+manifestRows:=List(D24C8_MANIFEST_RECORDS,row->rec(classId:=row.classId,classSize:=row.classSize,centralizerSize:=row.centralizerSize,ap:=ToAP(row.images)));
+mapped:=[];
+for forensic in D24C8_ORDINAL844_FORENSIC_ROWS do
+ target:=ToAP(forensic.images); targetClass:=ConjugacyClass(AP,target);
+ matches:=Filtered(manifestRows,row->row.classSize=forensic.classSize and row.ap in targetClass);
+ if Length(matches)<>1 then Error("forensic class did not match exactly one frozen manifest row"); fi;
+ match:=matches[1];
+ if Size(targetClass)<>forensic.classSize or Size(AP)/Size(targetClass)<>forensic.centralizerSize or match.centralizerSize<>forensic.centralizerSize then Error("forensic metadata mismatch"); fi;
+ Add(mapped,rec(runId:=forensic.runId,seed:=forensic.seed,classSize:=forensic.classSize,classId:=match.classId));
+od;
+if Length(Set(List(mapped,row->row.classId)))<2 then Error("ordinal instability did not map to distinct persistent class IDs"); fi;
+for i in [1..Length(mapped)] do for j in [i+1..Length(mapped)] do if mapped[i].classSize<>mapped[j].classSize and mapped[i].classId=mapped[j].classId then Error("different-size classes share a persistent ID"); fi; od; od;
+PrintTo(MAPPING_OUT,"CERTIFICATE\tDEG24_SHARD208_ORDINAL844_CLASS_ID_MAPPING_V3\nGAP_VERSION\t",GAPInfo.Version,"\nKEY_ID\t24T13493\nPROCESS_COUNT\t",Length(mapped),"\n");
+for row in mapped do AppendTo(MAPPING_OUT,"PROCESS\t",row.runId,"\tSEED\t",row.seed,"\tSOURCE_ORDINAL_DIAGNOSTIC\t844\tCLASS_SIZE\t",row.classSize,"\tCLASS_ID_V3\t",row.classId,"\n"); od;
+AppendTo(MAPPING_OUT,"DISTINCT_CLASS_ID_COUNT\t",Length(Set(List(mapped,row->row.classId))),"\nPERSISTENT_IDENTITY_USES_ORDINAL\tfalse\nSTATUS\tPASS\nDONE\n");
+Print("SHARD208_ORDINAL844_CLASS_ID_MAPPING_PASS\tDISTINCT_IDS\t",Length(Set(List(mapped,row->row.classId))),"\n"); QUIT_GAP(0);

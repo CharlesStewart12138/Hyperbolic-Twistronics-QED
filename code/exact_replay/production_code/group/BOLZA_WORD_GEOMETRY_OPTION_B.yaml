@@ -1,0 +1,41 @@
+schema_version: "1.0"
+registry_id: "PF-GRP-001-INJ-BOUND"
+construction: "Option B finite-radius theorem via disjoint inballs in a hyperbolic geodesic tube"
+curvature: "-1/R^2"
+exact_constants:
+  a_B_over_R: "2*acosh(1+sqrt(2))"
+  r_in_over_R: "acosh(1+sqrt(2)) = a_B/(2R)"
+  r_out_over_R: "acosh((1+sqrt(2))^2)"
+  tube_radius_over_R: "r_out/R + a_B/(2R)"
+area_formulas:
+  inball_over_R2: "2*pi*(cosh(r_in/R)-1)"
+  tube_over_R2: "2*(D/R)*sinh(W/R)+2*pi*(cosh(W/R)-1)"
+based_cutoff:
+  physical_condition: "r_inj_based_geo/a_B > 3"
+  forbidden_displacement: "d_H(0,gamma*0) <= 6*a_B"
+  interval_packing_ratio:
+    lower: "128.27236858213370429984376752129754997361560228401220559519978398"
+    upper: "128.27236858213370429984376752129754997361560228401220559520034157"
+  maximum_crossed_tiles: 128
+  L_cert_based: 127
+  theorem: "d_H(0,gamma*0)<=6*a_B implies |gamma|_Sgeo<=127"
+global_cutoff:
+  physical_condition: "r_inj_global_geo/a_B > 3"
+  axis_conjugation: "for normal K, conjugate a shortest axis to meet the fundamental octagon"
+  conjugate_based_displacement_bound: "d_H(0,delta*gamma*delta^-1*0) <= 6*a_B+2*r_out"
+  interval_packing_ratio:
+    lower: "157.66737359483359078640820773003590086519934081039707434263169673"
+    upper: "157.66737359483359078640820773003590086519934081039707434263235388"
+  maximum_crossed_tiles: 157
+  L_cert_global: 156
+  theorem: "if normal K contains ell(gamma)<=6*a_B, K contains a nontrivial word of Sgeo-length <=156"
+acceptance_use:
+  based: "absence of nontrivial kernel words through length 127 certifies r_inj_based_geo/a_B>3"
+  global: "absence of nontrivial kernel words through length 156 certifies r_inj_global_geo/a_B>3"
+  current_universal_cover_radius: 6
+  current_radius_sufficient: false
+proof_scope:
+  new_construction_not_manuscript_derived: true
+  finite_quotient_enumerated: false
+  manuscript_main_tex_modified: false
+

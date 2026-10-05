@@ -1,0 +1,52 @@
+\section{An operational definition of non-Bloch magic}
+\label{sec:r7-definition}
+
+Fix a site $x$, the layer-even local state
+\begin{equation}
+ \psi_x^+=|x\rangle\otimes(|1\rangle+|2\rangle)/\sqrt2,
+\end{equation}
+an energy resolution $\eta>0$, a time horizon $T>0$, an observation radius
+$\ell>0$, and the anchor isolation scale $g_*>0$.  Let $W_\ell$ be the
+diagonal contraction
+$W_\ell(y)=\min\{1,d(x,y)^2/\ell^2\}$ (with $W_\ell(x)=0$).  Define
+\begin{align}
+ S_{\rm spec}(H)&=g_*^{-2}
+ \left(\langle H^2\rangle_{\psi_x^+}
+       -\langle H\rangle_{\psi_x^+}^2\right),\\
+ S_{\rm prop}(H)&=T^{-1}\int_0^T
+ \langle e^{-itH}\psi_x^+,W_\ell e^{-itH}\psi_x^+\rangle\,dt,\\
+ R_{\rm ret}(H)&=T^{-1}\int_0^T
+ |\langle\psi_x^+,e^{-itH}\psi_x^+\rangle|^2\,dt,\\
+ C_{\rm layer}(H)&=T^{-1}\int_0^T
+ \langle e^{-itH}\psi_x^+,
+ (I\otimes\sigma_x)e^{-itH}\psi_x^+\rangle\,dt,\\
+ L_{\rm res}(H;E_*)&=-\eta\,
+ \Im\langle\psi_x^+,(E_*+i\eta-H)^{-1}\psi_x^+\rangle.
+ \label{eq:r7-magic-vector}
+\end{align}
+The dimensionless vector
+\begin{equation}
+ \mathcal M_{\rm NB}=(S_{\rm spec},S_{\rm prop},R_{\rm ret},
+ C_{\rm layer},L_{\rm res})
+\end{equation}
+is the non-Bloch magic certificate.  It requires no quasimomentum, Bloch
+velocity, Bloch Hessian, or finite cell.
+
+\begin{definition}[Strict operational non-Bloch magic]
+For thresholds fixed independently of the tested parameter point, $H$ is
+operationally magic at resolution $(\ell,\eta,T)$ if
+\begin{equation}
+ S_{\rm spec}<s_*,\quad S_{\rm prop}<p_*,\quad
+ R_{\rm ret}>r_*,\quad C_{\rm layer}>c_*,\quad L_{\rm res}>l_*.
+ \label{eq:r7-strict-magic}
+\end{equation}
+It is \emph{non-Bloch magic} at angle $\theta$ if, in addition,
+$\theta\notin\Theta_C$, the exact-common-cover angle set of R5.
+\end{definition}
+
+These objects are exact observables of the infinite operator.  Finite-ball
+matrices are used only to approximate them with the errors proved in
+Sections~\ref{sec:r7-resolvent} and~\ref{sec:r7-dynamics}.  In a periodic
+model, spectral concentration and propagation suppression recover the usual
+flat-band implications after Bloch decomposition, but that decomposition is
+not part of the definition.

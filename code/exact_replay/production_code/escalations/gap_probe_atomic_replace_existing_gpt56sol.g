@@ -1,0 +1,10 @@
+if LoadPackage("io")=fail then Error("io unavailable"); fi;
+tmp:="/mnt/d/work/revise/production_code/escalations/GAP_ATOMIC_REPLACE_TMP_GPT56SOL.txt";
+dst:="/mnt/d/work/revise/production_code/escalations/GAP_ATOMIC_REPLACE_DEST_GPT56SOL.txt";
+if IsExistingFile(tmp) then RemoveFile(tmp); fi;
+if IsExistingFile(dst) then RemoveFile(dst); fi;
+PrintTo(dst,"OLD\n"); PrintTo(tmp,"NEW\n");
+if not IO_rename(tmp,dst) then Error("replace rename failed"); fi;
+if IsExistingFile(tmp) or StringFile(dst)<>"NEW\n" then Error("replace semantics failed"); fi;
+Print("ATOMIC_REPLACE_EXISTING_PASS\t",HexSHA256(StringFile(dst)),"\n");
+RemoveFile(dst); QUIT;

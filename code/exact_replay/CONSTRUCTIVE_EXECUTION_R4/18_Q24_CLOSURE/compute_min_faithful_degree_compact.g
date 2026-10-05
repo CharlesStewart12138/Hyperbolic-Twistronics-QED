@@ -1,0 +1,13 @@
+Read("CONSTRUCTIVE_EXECUTION_R4/18_Q24_CLOSURE/minimal_factor_images.g");;
+Qcompact := DirectProduct(Amin, Bmin);;
+Print("Q_COMPACT_ORDER=", Size(Qcompact), "\n");
+Print("Q_COMPACT_INPUT_DEGREE=", LargestMovedPoint(Qcompact), "\n");
+muQ := MinimalFaithfulPermutationDegree(Qcompact);;
+Print("MU_Q=", muQ, "\n");
+repQ := MinimalFaithfulPermutationRepresentation(Qcompact);;
+if IsMapping(repQ) then imageQ := Image(repQ);; else imageQ := repQ;; fi;
+Print("REP_IMAGE_ORDER=", Size(imageQ), "\n");
+Print("REP_DEGREE=", LargestMovedPoint(imageQ), "\n");
+Print("REP_ORBIT_SIZES=", List(Orbits(imageQ,MovedPoints(imageQ)),Length), "\n");
+PrintTo("CONSTRUCTIVE_EXECUTION_R4/18_Q24_CLOSURE/minimal_Q_image.g", "Qmin := ", imageQ, ";;\n");;
+QUIT_GAP(0);

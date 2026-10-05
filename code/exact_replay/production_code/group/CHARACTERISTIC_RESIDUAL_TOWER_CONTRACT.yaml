@@ -1,0 +1,52 @@
+schema_version: "1.0"
+registry_id: "PF-GRP-001-CHAR-TOWER-V2"
+evidence_class: "THEORETICAL_TOWER_DEFINITION"
+provenance: "new construction; not attributed to the frozen manuscript"
+group: "Gamma_B=<a1,b1,a2,b2 | [a1,b1][a2,b2]=1>"
+definition:
+  parameter: "integer M>=1"
+  formula: "K_M = intersection_{finite F, |F|<=M} intersection_{rho in Hom(Gamma_B,F)} ker(rho)"
+theorems:
+  T-CR01:
+    result: "K_M is normal"
+    proof_key: "intersection of normal kernels"
+    passed: true
+  T-CR02:
+    result: "K_M has finite index"
+    proof_key: "finitely many bounded-order finite groups and at most |F|^4 generator maps; finite intersection of finite-index kernels"
+    passed: true
+  T-CR03:
+    result: "K_(M+1) is a subgroup of K_M"
+    proof_key: "the indexed kernel family only expands"
+    passed: true
+  T-CR04:
+    result: "K_M is characteristic"
+    proof_key: "precomposition by any automorphism permutes Hom(Gamma_B,F)"
+    passed: true
+  T-CR05:
+    result: "phi8(K_M)=K_M"
+    proof_key: "phi8 is an automorphism and K_M is characteristic"
+    passed: true
+  T-CR06:
+    hypotheses: "M>=2"
+    result: "K_M is a subgroup of ker(pi)"
+    proof_key: "pi:Gamma_B->Z2 occurs among the defining homomorphisms"
+    passed: true
+  T-CR07:
+    result: "intersection_{M>=1} K_M = {e}"
+    proof_key: "residual finiteness separates every nonidentity element in some finite target"
+    passed: true
+consequences:
+  canonical: true
+  nested: true
+  finite_index: true
+  residual: true
+  c8_invariant: true
+  parity_compatible_from_M: 2
+scope_boundary:
+  explicit_finite_groups_enumerated: false
+  explicit_homomorphisms_enumerated: false
+  quotient_orders_available: false
+  production_level_available: false
+  manuscript_main_tex_modified: false
+

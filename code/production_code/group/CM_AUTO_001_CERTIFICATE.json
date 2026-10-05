@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CM-AUTO-001",
+  "classification": "BOUNDED_CANONICAL_ENGINE_CERTIFIED",
+  "status": "Done",
+  "scientific_scope": "exact physical Bolza shell; bounded word-length regression only",
+  "canonical_order": "breadth-first minimum physical-geometric word length, then generator order g0<...<g7",
+  "identity_semantics": "normalized exact Q(sqrt(2),sqrt(2+2sqrt(2)),i) SU(1,1) matrix equality",
+  "certified_unique_domain": {
+    "minimum_geometric_word_length_maximum": 6,
+    "elements": 155577
+  },
+  "shell_counts": [
+    1,
+    8,
+    56,
+    392,
+    2736,
+    19096,
+    133288
+  ],
+  "ball_counts": [
+    1,
+    9,
+    65,
+    457,
+    3193,
+    22289,
+    155577
+  ],
+  "shortest_relation_length": 8,
+  "ordered_exact_matrix_sha256": "42e95cf6eccbc93ed966756b26c152d4aae6c327d5e9407ef4e611cd7b265fba",
+  "automatic_group_environment": {
+    "GAP": false,
+    "KBMAG": false,
+    "SageMath": false,
+    "libgap": false
+  },
+  "tests": {
+    "shell_counts_exact": true,
+    "ball_counts_exact": true,
+    "shortlex_first_discovery_unique_in_certified_domain": true,
+    "inverse_pairing_exact": true,
+    "registered_surface_relator_exact": true,
+    "generator_inverse_products_exact": true,
+    "exact_orbit_coordinate_inputs": true,
+    "physical_degree_eight": true,
+    "C8_action_exact": true,
+    "physical_shell_nielsen_transport_exact": true,
+    "physical_shell_parity_odd": true,
+    "deterministic_repeat_prefix": true
+  },
+  "large_state_policy": {
+    "python_per_state_objects_permitted_here": true,
+    "reason": "The complete regression domain has 155,577 states, below the 10^6 directive threshold.",
+    "per_state_python_objects_permitted_above_1e6": false
+  },
+  "nonclaims": [
+    "No complete shortlex/geodesic automatic structure beyond depth 6 is claimed.",
+    "No global systole proof or m=7 tensor result is issued by this task.",
+    "No approximate matrix or disk-coordinate identity is used."
+  ],
+  "next_gate": {
+    "CM_STREAM_001_released": true,
+    "deep_proof_search_released": false
+  },
+  "main_tex_modified": false
+}

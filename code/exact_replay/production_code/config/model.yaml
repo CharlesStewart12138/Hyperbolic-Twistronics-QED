@@ -1,0 +1,56 @@
+schema_version: 1
+freeze_status: partial
+source_version:
+  manuscript_role: authoritative_current_model
+  tex_path: source_current_195/main.tex
+  tex_sha256: deda1e6c3d6162f210b21422405d5c032a8a20e809a0e9d6f5bd06f9d4b6c8c7
+  tex_bytes: 1522968
+  pdf_path: source_current_195/main.pdf
+  pdf_sha256: 21430b3b2d5acbf5973e73660dac5e4be1e9a030c6e57f9cc1ab6acd8f4bf410
+  pdf_bytes: 3439195
+  pdf_pages: 256
+  pdf_creation_time: "2026-09-03T20:04:37+08:00"
+  repository_commit: null
+  repository_state: not_a_git_repository
+model_class:
+  production_hyperbolic:
+    layers: 2
+    orbitals_per_site: 1
+    intralayer_degree: 8
+    lattice: genus_two_Bolza_orbit_quotient
+    hamiltonian: full_2N_bilayer_block_matrix
+    interlayer: paired_cover_full_radial_all_pairs
+    representation_scope: every_inequivalent_irrep
+  production_euclidean:
+    lattice: exact_square_CSL_supercell
+    hamiltonian: full_2Sigma_bilayer_Bloch_matrix
+    interlayer: nonzero_full_radial_all_pairs
+    extrema_domain: full_2d_mini_Brillouin_zone
+  validation_only:
+    - square_five_state
+    - first_shell_hyperbolic
+    - zero_interlayer_folding
+    - cleanroom_512_fixture
+  forbidden_production_substitutes:
+    - continuum_effective_model
+    - first_shell_only
+    - five_state_only
+    - zero_interlayer
+units:
+  one_particle_matrix: rad_per_s
+  omega0: rad_per_s
+  intralayer_hopping_t: rad_per_s
+  interlayer_hopping_w: rad_per_s
+  second_quantized_energy: hbar_times_one_particle_matrix
+  dimensionless_ratios:
+    - w_over_t
+    - h_over_a
+    - lambda_perp_over_a
+  display_frequency:
+    accepted_units: [Hz, kHz, MHz, GHz]
+    conversion_to_internal: multiply_by_2pi
+    label_requirement: display_values_are_omega_over_2pi
+  forbidden:
+    - implicit_Hz_to_rad_per_s
+    - implicit_energy_to_angular_frequency
+

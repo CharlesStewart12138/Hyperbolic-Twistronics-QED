@@ -1,0 +1,1 @@
+for dk in [[21,50],[21,79],[21,80],[21,85],[22,18],[22,20],[22,26],[22,27]]do G:=TransitiveGroup(dk[1],dk[2]);Print(dk[1],"T",dk[2]," ORDER ",Size(G)," STRUCTURE ",StructureDescription(G)," AB ",AbelianInvariants(G),"\n");od;QUIT;

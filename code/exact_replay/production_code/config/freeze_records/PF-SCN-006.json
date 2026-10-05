@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "parameter_id": "PF-SCN-006",
+  "immutable_record": true,
+  "authority": "2026-09-04 highest-priority theory-production directive",
+  "classification": "THEORY_PRODUCTION",
+  "disposition": "FREEZE",
+  "status": "Fixed",
+  "exact_source": "p.14 Eq. (166); universality section",
+  "exact_dependency": "Before profile scans",
+  "rationale": "Freeze primary lambda_perp/a=0.20 and locked holdouts [0.125,0.25].",
+  "frozen_value": {
+    "primary_lambda_perp_over_a": 0.2,
+    "locked_holdouts": [
+      0.125,
+      0.25
+    ],
+    "coordinate_independent_of_curvature": true
+  },
+  "partial_directive_values": null,
+  "production_scope": "dimensionless theory production",
+  "validation": "PASSED"
+}

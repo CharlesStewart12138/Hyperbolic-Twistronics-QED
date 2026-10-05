@@ -1,0 +1,12 @@
+if LoadPackage("io")=fail then Error("io unavailable"); fi;
+Print("QUIT_GAP\t",IsBoundGlobal("QUIT_GAP"),"\n");
+Print("FORCE_QUIT_GAP\t",IsBoundGlobal("FORCE_QUIT_GAP"),"\n");
+tmp:="/mnt/d/work/revise/production_code/escalations/GAP_ATOMIC_RENAME_PROBE_TMP_GPT56SOL.txt";
+dst:="/mnt/d/work/revise/production_code/escalations/GAP_ATOMIC_RENAME_PROBE_GPT56SOL.txt";
+if IsExistingFile(tmp) then RemoveFile(tmp); fi;
+if IsExistingFile(dst) then RemoveFile(dst); fi;
+PrintTo(tmp,"ATOMIC_RENAME_PROBE\n");
+ok:=IO_rename(tmp,dst);
+Print("RENAME\t",ok,"\tSHA256\t",HexSHA256(StringFile(dst)),"\n");
+RemoveFile(dst);
+QUIT;

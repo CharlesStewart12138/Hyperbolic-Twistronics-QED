@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "parameter_id": "PF-DOS-001",
+  "immutable_record": true,
+  "authority": "2026-09-04 highest-priority theory-production directive",
+  "classification": "THEORY_PRODUCTION",
+  "disposition": "FREEZE",
+  "status": "Fixed",
+  "exact_source": "pp.3-4; pp.228-232",
+  "exact_dependency": "Before DOS code",
+  "rationale": "Freeze energy in E/t, global DOS to unit trace mass, and target/projector DOS normalized by its declared rank.",
+  "frozen_value": {
+    "energy_coordinate": "E/t",
+    "global_mass_normalization": 1,
+    "target_normalization": "divide by declared projector rank",
+    "layer_sum_rule": "layer masses sum to total",
+    "units": {
+      "energy": "t",
+      "density": "t^-1",
+      "cdf": "dimensionless"
+    }
+  },
+  "partial_directive_values": null,
+  "production_scope": "dimensionless theory production",
+  "validation": "PASSED"
+}

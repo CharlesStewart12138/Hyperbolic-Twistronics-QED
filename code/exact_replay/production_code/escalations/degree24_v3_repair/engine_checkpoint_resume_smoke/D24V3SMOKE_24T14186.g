@@ -1,0 +1,11 @@
+D24C8_SEGMENT_META:=rec(
+ segmentId:="D24V3SMOKE_24T14186", key:=14186, route:="pc", representation:="pc_transport",
+ groupOrder:=36864, autOrder:=73728, parity:=7, schema:="D24C8-FROZEN-ORIGINAL-GENERATOR-IMAGES-V3",
+ generatorTupleSha256:="dc73704aba7a5249f033512ba92866d3ce24faf9c260d17a96dfc2fa4b84703a", manifestSha256:="b9439c55a4813d875afd1f0e8c425a2593472dceeadb81f535b801c828da8cc8", classIdListSha256:="b2486151a13bb08542e5fde82569659f2c2c4fd4e11bbf41fc828a9a6e5e2b51", classCount:=5, rawPairs:=184320);
+D24C8_SEGMENT_RECORDS:=[
+rec(classId:="d32f83afdcc14f39e2409a9372066eebbc9a8977457e8b8c636c749fd90f0768",manifestPositionDiagnostic:=1,images:=[[13,14,18,17,15,16,7,8,10,9,11,12,2,1,5,6,3,4,19,20,21,22,24,23],[21,22,24,23,19,20,4,3,1,2,5,6,12,11,7,8,9,10,13,14,18,17,15,16],[8,7,9,10,11,12,4,3,6,5,2,1,22,21,23,24,19,20,14,13,16,15,18,17]],classSize:=2304,centralizerSize:=32,order:=8),
+rec(classId:="d6b48b0dcef430ad1b1b877682b3a2af406fa170da5d800123ee8be760d0c2c0",manifestPositionDiagnostic:=2,images:=[[17,18,16,15,13,14,7,8,10,9,11,12,6,5,3,4,1,2,19,20,21,22,24,23],[19,20,24,23,22,21,6,5,2,1,3,4,11,12,10,9,8,7,15,16,17,18,13,14],[10,9,8,7,11,12,5,6,3,4,1,2,19,20,23,24,21,22,15,16,13,14,17,18]],classSize:=2304,centralizerSize:=32,order:=8),
+rec(classId:="bbedff47d4aae8c4b29cefdda9c4e2c53e6f5bf53bf2b772705090a06361f003",manifestPositionDiagnostic:=3,images:=[[17,18,16,15,13,14,7,8,10,9,11,12,6,5,3,4,1,2,19,20,21,22,24,23],[7,8,12,11,9,10,15,16,17,18,14,13,23,24,21,22,20,19,6,5,2,1,4,3],[22,21,20,19,24,23,16,15,14,13,18,17,7,8,12,11,9,10,6,5,4,3,2,1]],classSize:=2304,centralizerSize:=32,order:=8),
+rec(classId:="6e5eb15667bf966b4186335bdb7ae8020f3596b1c32a4be911319bddc28a3018",manifestPositionDiagnostic:=4,images:=[[17,18,16,15,13,14,7,8,9,10,12,11,6,5,3,4,1,2,19,20,22,21,23,24],[19,20,24,23,22,21,5,6,1,2,3,4,12,11,10,9,7,8,15,16,18,17,14,13],[9,10,7,8,11,12,5,6,3,4,1,2,19,20,24,23,22,21,16,15,13,14,18,17]],classSize:=4608,centralizerSize:=16,order:=8),
+rec(classId:="63deec1e7132c90c5cc23ec34fd5a9e1796799a80388273c4c4ffbf5dd8d679e",manifestPositionDiagnostic:=5,images:=[[17,18,16,15,13,14,7,8,9,10,12,11,6,5,3,4,1,2,19,20,22,21,23,24],[8,7,11,12,9,10,16,15,18,17,14,13,23,24,21,22,20,19,6,5,1,2,3,4],[21,22,20,19,23,24,16,15,14,13,18,17,8,7,12,11,10,9,5,6,4,3,1,2]],classSize:=4608,centralizerSize:=16,order:=8)
+];

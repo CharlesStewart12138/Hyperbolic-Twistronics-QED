@@ -1,0 +1,109 @@
+schema_version: "1.0"
+registry_id: "PF-GRP-001-SHELL-REGISTRY"
+status: "exact-two-shell-contract-certified"
+constants:
+  alpha: "1+sqrt(2)"
+  beta: "sqrt(2+2*sqrt(2))"
+  zeta8: "exp(i*pi/4)"
+shells:
+  S8_GEOMETRIC:
+    role: "physical side-sharing nearest-neighbour shell"
+    members: [g0, g1, g2, g3, g4, g5, g6, g7]
+    use_in_physical_nearest_neighbour_hamiltonian: true
+  S8_PRESENTATION:
+    role: "standard genus-two algebraic presentation basis"
+    members: [a1, a1_inv, b1, b1_inv, a2, a2_inv, b2, b2_inv]
+    use_in_physical_nearest_neighbour_hamiltonian: false
+geometric_generators:
+  - id: g0
+    exact_matrix: [["alpha", "beta"], ["beta", "alpha"]]
+    inverse: g4
+    standard_word: [a1]
+    phi8_image: g1
+    parity: 1
+    use_in_physical_nearest_neighbour_hamiltonian: true
+    presentation_letter_is_physical_nearest_neighbour: false
+    presentation_word_length: 1
+    geometric_word_length: 1
+  - id: g1
+    exact_matrix: [["alpha", "beta*zeta8"], ["beta*zeta8^(-1)", "alpha"]]
+    inverse: g5
+    standard_word: [b1_inv]
+    phi8_image: g2
+    parity: 1
+    use_in_physical_nearest_neighbour_hamiltonian: true
+    presentation_letter_is_physical_nearest_neighbour: false
+    presentation_word_length: 1
+    geometric_word_length: 1
+  - id: g2
+    exact_matrix: [["alpha", "beta*zeta8^2"], ["beta*zeta8^(-2)", "alpha"]]
+    inverse: g6
+    standard_word: [a1_inv, b1_inv, a2]
+    phi8_image: g3
+    parity: 1
+    use_in_physical_nearest_neighbour_hamiltonian: true
+    presentation_letter_is_physical_nearest_neighbour: false
+    presentation_word_length: 3
+    geometric_word_length: 1
+  - id: g3
+    exact_matrix: [["alpha", "beta*zeta8^3"], ["beta*zeta8^(-3)", "alpha"]]
+    inverse: g7
+    standard_word: [a1_inv, b1_inv, b2_inv]
+    phi8_image: g4
+    parity: 1
+    use_in_physical_nearest_neighbour_hamiltonian: true
+    presentation_letter_is_physical_nearest_neighbour: false
+    presentation_word_length: 3
+    geometric_word_length: 1
+  - id: g4
+    exact_matrix: [["alpha", "beta*zeta8^4"], ["beta*zeta8^(-4)", "alpha"]]
+    inverse: g0
+    standard_word: [a1_inv]
+    phi8_image: g5
+    parity: 1
+    use_in_physical_nearest_neighbour_hamiltonian: true
+    presentation_letter_is_physical_nearest_neighbour: false
+    presentation_word_length: 1
+    geometric_word_length: 1
+  - id: g5
+    exact_matrix: [["alpha", "beta*zeta8^5"], ["beta*zeta8^(-5)", "alpha"]]
+    inverse: g1
+    standard_word: [b1]
+    phi8_image: g6
+    parity: 1
+    use_in_physical_nearest_neighbour_hamiltonian: true
+    presentation_letter_is_physical_nearest_neighbour: false
+    presentation_word_length: 1
+    geometric_word_length: 1
+  - id: g6
+    exact_matrix: [["alpha", "beta*zeta8^6"], ["beta*zeta8^(-6)", "alpha"]]
+    inverse: g2
+    standard_word: [a2_inv, b1, a1]
+    phi8_image: g7
+    parity: 1
+    use_in_physical_nearest_neighbour_hamiltonian: true
+    presentation_letter_is_physical_nearest_neighbour: false
+    presentation_word_length: 3
+    geometric_word_length: 1
+  - id: g7
+    exact_matrix: [["alpha", "beta*zeta8^7"], ["beta*zeta8^(-7)", "alpha"]]
+    inverse: g3
+    standard_word: [b2, b1, a1]
+    phi8_image: g0
+    parity: 1
+    use_in_physical_nearest_neighbour_hamiltonian: true
+    presentation_letter_is_physical_nearest_neighbour: false
+    presentation_word_length: 3
+    geometric_word_length: 1
+presentation_generators:
+  - {id: a1, geometric_word: [g0], parity: 1, use_in_physical_nearest_neighbour_hamiltonian: false, presentation_letter_is_physical_nearest_neighbour: true, presentation_word_length: 1, geometric_word_length: 1}
+  - {id: a1_inv, geometric_word: [g4], parity: 1, use_in_physical_nearest_neighbour_hamiltonian: false, presentation_letter_is_physical_nearest_neighbour: true, presentation_word_length: 1, geometric_word_length: 1}
+  - {id: b1, geometric_word: [g5], parity: 1, use_in_physical_nearest_neighbour_hamiltonian: false, presentation_letter_is_physical_nearest_neighbour: true, presentation_word_length: 1, geometric_word_length: 1}
+  - {id: b1_inv, geometric_word: [g1], parity: 1, use_in_physical_nearest_neighbour_hamiltonian: false, presentation_letter_is_physical_nearest_neighbour: true, presentation_word_length: 1, geometric_word_length: 1}
+  - {id: a2, geometric_word: [g5, g0, g2], parity: 1, use_in_physical_nearest_neighbour_hamiltonian: false, presentation_letter_is_physical_nearest_neighbour: false, presentation_word_length: 1, geometric_word_length: 3}
+  - {id: a2_inv, geometric_word: [g6, g4, g1], parity: 1, use_in_physical_nearest_neighbour_hamiltonian: false, presentation_letter_is_physical_nearest_neighbour: false, presentation_word_length: 1, geometric_word_length: 3}
+  - {id: b2, geometric_word: [g7, g4, g1], parity: 1, use_in_physical_nearest_neighbour_hamiltonian: false, presentation_letter_is_physical_nearest_neighbour: false, presentation_word_length: 1, geometric_word_length: 3}
+  - {id: b2_inv, geometric_word: [g5, g0, g3], parity: 1, use_in_physical_nearest_neighbour_hamiltonian: false, presentation_letter_is_physical_nearest_neighbour: false, presentation_word_length: 1, geometric_word_length: 3}
+scope_boundary:
+  unqualified_S8_allowed_in_production_code: false
+  manuscript_main_tex_modified: false

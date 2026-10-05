@@ -1,0 +1,6 @@
+SEGMENT_FILE:="/mnt/d/work/revise/production_code/escalations/degree24_v3_repair/repair_plan_segments/D24V3S0809_24T15796.g"; EXPECTED_SEGMENT_FILE_SHA256:="58cf4d9e5864c63fd5ea8c6241dc48756e45c9209e2074cb5ddb08242fe97dfa";
+OUT:="/mnt/d/work/revise/production_code/escalations/degree24_v3_repair/repair_outputs/D24V3S0809_24T15796_ATTEMPT002_V3.txt"; CHECKPOINT_FILE:="/mnt/d/work/revise/production_code/escalations/degree24_v3_repair/repair_checkpoints/D24V3S0809_24T15796_CHECKPOINT_V3.txt"; CHECKPOINT_TMP:="/mnt/d/work/revise/production_code/escalations/degree24_v3_repair/repair_checkpoints/D24V3S0809_24T15796_CHECKPOINT_TMP_V3.txt";
+START_INDEX:=140; INITIAL_COUNTERS:=[139,6832128,139,3,409216,402528,73472,45824,0,0,0,0]; PREVIOUS_CHECKPOINT_SHA256:="1128941418998f6bcceb5cf3aeeba79c7a74a811befcf5336500ba8181739a4d";
+PREVIOUS_OUTPUT_FILE:="/mnt/d/work/revise/production_code/escalations/degree24_v3_repair/repair_outputs/D24V3S0809_24T15796_ATTEMPT001_V3.txt"; PREVIOUS_OUTPUT_PREFIX_BYTES:=126597; PREVIOUS_OUTPUT_PREFIX_SHA256:="1b36a26ba6f9b9a36622ee4ae0c4a29598491958c8f08d6d3f7ccd25c1c5fd08";
+INTERNAL_GUARD_MS:=1320000; STOP_AFTER_INDEX:=fail;
+Read("/mnt/d/work/revise/production_code/escalations/degree24_v3_repair/gap_run_degree24_split_heavy_segment_v3.g");

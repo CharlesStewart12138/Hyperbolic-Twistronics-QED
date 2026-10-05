@@ -1,0 +1,38 @@
+schema_version: "1.0"
+registry_id: "PF-GRP-001-CORE"
+construction: "practical C8/parity core of an exact finite quotient kernel"
+definition:
+  base: "N=ker(q), q:Gamma_B->Q finite"
+  formula: "N_core=ker(pi) intersect intersection_{j=0}^7 phi8^j(N)"
+  executable_signature: "(pi(x), q(phi8^0(x)), q(phi8^-1(x)), ..., q(phi8^-7(x)))"
+  membership: "all nine signature components are identities"
+proofs:
+  CORE-01:
+    result: "normal"
+    reason: "intersection of normal kernels"
+    passed: true
+  CORE-02:
+    result: "N_core subset ker(pi)"
+    reason: "ker(pi) is an explicit intersection factor"
+    passed: true
+  CORE-03:
+    result: "phi8(N_core)=N_core"
+    reason: "phi8 preserves parity and cyclically permutes the eight rotated kernels"
+    passed: true
+  CORE-04:
+    result: "finite-index quotient consistency"
+    reason: "N_core is the kernel of a diagonal homomorphism into Z2 times Q^8"
+    index_upper_bound: "2*|Q|^8"
+    upper_bound_is_exact_order: false
+    passed: true
+  CORE-05:
+    result: "nested-core construction"
+    reason: "nested base kernels give nested cores; cumulative intersections enforce nesting and preserve residuality"
+    passed: true
+scope_boundary:
+  base_candidate_required: true
+  core_quotient_materialized: false
+  production_candidate_accepted: false
+  new_construction_not_manuscript_derived: true
+  manuscript_main_tex_modified: false
+

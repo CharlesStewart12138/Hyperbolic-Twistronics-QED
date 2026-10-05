@@ -1,0 +1,68 @@
+schema_version: "1.1"
+registry_id: "PF-GRP-001-NIELSEN"
+status: "exact-invertible-parity-compatible-nielsen-map-certified"
+word_convention: "words multiply left to right in the same order as matrix products"
+bases:
+  geometric_oriented:
+    generators: ["h0", "h1", "h2", "h3"]
+    relation: "h0*h1*h2*h3*h0^(-1)*h1^(-1)*h2^(-1)*h3^(-1)=1"
+    relation_to_side_pairings: {h0: "g0", h1: "g1^(-1)", h2: "g2", h3: "g3^(-1)"}
+  standard_genus_two:
+    generators: ["a1", "b1", "a2", "b2"]
+    relation: "[a1,b1]*[a2,b2]=1"
+standard_to_geometric:
+  a1: ["h0"]
+  b1: ["h1"]
+  a2: ["h1", "h0", "h2"]
+  b2: ["h3", "h0_inv", "h1_inv"]
+geometric_to_standard:
+  h0: ["a1"]
+  h1: ["b1"]
+  h2: ["a1_inv", "b1_inv", "a2"]
+  h3: ["b2", "b1", "a1"]
+geometric_side_pairings_in_standard_basis:
+  g0: ["a1"]
+  g1: ["b1_inv"]
+  g2: ["a1_inv", "b1_inv", "a2"]
+  g3: ["a1_inv", "b1_inv", "b2_inv"]
+  g4: ["a1_inv"]
+  g5: ["b1"]
+  g6: ["a2_inv", "b1", "a1"]
+  g7: ["b2", "b1", "a1"]
+standard_generators_in_geometric_side_pairings:
+  a1: ["g0"]
+  b1: ["g1_inv"]
+  a2: ["g1_inv", "g0", "g2"]
+  b2: ["g3_inv", "g0_inv", "g1"]
+relator_factorization:
+  notation: "a=h0, b=h1, c=h2, d=h3 and capitals denote inverses"
+  identity: "a*b*c*d*A*B*C*D = [a,b]*[b*a*c,d*A*B]"
+  proof_mode: "literal free cancellation"
+abelianization:
+  rows: ["h0", "h1", "h2", "h3"]
+  columns: ["a1", "b1", "a2", "b2"]
+  matrix:
+    - [1, 0, 1, -1]
+    - [0, 1, 1, -1]
+    - [0, 0, 1, 0]
+    - [0, 0, 0, 1]
+  determinant: 1
+  geometric_parity_of_each_standard_generator: [1, 1, 1, 1]
+certificates:
+  free_group_standard_roundtrip: true
+  free_group_geometric_roundtrip: true
+  exact_standard_relator_to_geometric_relator: true
+  exact_geometric_relator_to_standard_relator: true
+  exact_su11_matrix_reconstruction: true
+  exact_standard_commutator_relation: true
+  parity_compatible_basis_choice: true
+  independent_numeric_backend: "mpmath; geometric matrices reconstructed independently"
+  independent_numeric_decimal_digits: 140
+  independent_numeric_max_entrywise_residual: "1.917613282706750532739060853605e-137"
+  acceptance_threshold: "1e-120"
+scope_boundary:
+  c8_automorphism: "not asserted here; requires PF-GRP-001-PHI8"
+  phi8_parity_invariance: "not asserted here; requires P8-07"
+  standard_s8_equals_geometric_first_shell: "not asserted; requires P8-05"
+  manuscript_main_tex_modified: false
+

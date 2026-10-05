@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "parameter_id": "PF-KER-005",
+  "immutable_record": true,
+  "authority": "2026-09-04 highest-priority theory-production directive",
+  "classification": "THEORY_PRODUCTION",
+  "disposition": "BLOCKED",
+  "status": "Blocked",
+  "exact_source": "pp.10-11; pp.139-149",
+  "exact_dependency": "Before shell convergence",
+  "rationale": "The directive requires C0/C1/C2 closure but supplies no numerical allocation of epsilon_tail^(0,1,2) against observable margins.",
+  "frozen_value": null,
+  "partial_directive_values": null,
+  "production_scope": "blocked dependent theory branch",
+  "validation": "PASSED"
+}

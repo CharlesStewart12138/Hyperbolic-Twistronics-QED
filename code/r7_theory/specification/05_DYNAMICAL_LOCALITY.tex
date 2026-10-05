@@ -1,0 +1,59 @@
+\section{Finite-time dynamical locality}
+\label{sec:r7-dynamics}
+
+\begin{theorem}[Exponential-hopping light cone]
+\label{thm:r7-dyn}
+For $0<q<\mu-\kappa$,
+\begin{equation}
+ \|\chi_Xe^{-itH(\theta)}\chi_Y\|
+ \le \exp\{-qd(X,Y)+|t|\Phi(q)\}.
+ \label{eq:r7-dyn-cone}
+\end{equation}
+If $X\subset B_\ell(o)$, $b=L-\ell>0$, then for $|t|\le T$,
+\begin{equation}
+ \|\chi_X[e^{-itH}-e^{-itH_L}]\chi_X\|
+ \le\varepsilon_{\rm dyn}(b,T,q),
+ \label{eq:r7-dyn-trunc}
+\end{equation}
+where
+\begin{equation}
+ \varepsilon_{\rm dyn}=
+ (M+\Phi(q))e^{-qb}
+ \begin{cases}
+ (e^{T\Phi(q)}-1)/\Phi(q),&\Phi(q)>0,\\
+ T,&\Phi(q)=0.
+ \end{cases}
+ \label{eq:r7-eps-dyn}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Conjugate the propagator by $e^{qf}$ and apply Gronwall's inequality to the
+bounded perturbation $e^{qf}He^{-qf}-H$, whose norm is at most $\Phi(q)$.
+This proves \eqref{eq:r7-dyn-cone}.  For the second claim compare $H$ with
+the block-decoupled $\widehat H_L$ and use Duhamel's formula.  Moving the
+weighted boundary block through the finite-side propagator costs at most
+$M+\Phi(q)$, while the distance from $X$ to the complement supplies
+$e^{-qb}$.  Integration over $0\le s\le |t|$ gives
+\eqref{eq:r7-eps-dyn}.
+\end{proof}
+
+Let $\psi$ be supported in $X$, $\|\psi\|=1$, and let $A$ be a local
+contraction.  Then
+\begin{equation}
+ |\langle A\rangle_{H,t}-\langle A\rangle_{H_L,t}|
+ \le2\varepsilon_{\rm dyn}.
+ \label{eq:r7-local-A}
+\end{equation}
+For two finite compressions differing by $V$,
+\begin{align}
+ \|(e^{-itA}-e^{-itB})\psi\|&\le |t|\|V\|,\\
+ |\mathcal A_A(t)-\mathcal A_B(t)|&\le |t|\|V\|,\\
+ ||\mathcal A_A(t)|^2-|\mathcal A_B(t)|^2|&\le2|t|\|V\|.
+ \label{eq:r7-dyn-lip}
+\end{align}
+Equations~\eqref{eq:r7-local-A}--\eqref{eq:r7-dyn-lip}, with
+$\|V\|\le C_L|\theta-\theta'|+C_p\|p-p'\|$, cover return amplitude,
+return probability, local layer coherence, and every bounded compact-wavepacket
+propagation observable.  They concern finite time.  Infinite-time localization
+is not inferred.

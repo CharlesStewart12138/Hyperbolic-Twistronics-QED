@@ -1,0 +1,40 @@
+{
+  "status": "pass",
+  "file_count": 9431,
+  "total_bytes": 421754464,
+  "sections": {
+    ".github": 1,
+    "code": 9415,
+    "docs": 5,
+    "release_root": 8,
+    "tools": 2
+  },
+  "extensions": {
+    ".cpp": 95,
+    ".g": 6765,
+    ".json": 228,
+    ".md": 14,
+    ".ps1": 37,
+    ".py": 1215,
+    ".sh": 953,
+    ".slurm": 1,
+    ".tex": 21,
+    ".toml": 1,
+    ".tsv": 2,
+    ".txt": 1,
+    ".yaml": 93,
+    ".yml": 4,
+    "[none]": 1
+  },
+  "source_counts": {
+    "python": 1215,
+    "gap": 6765,
+    "shell_sh": 953,
+    "powershell": 37,
+    "native_c_cpp_headers": 95,
+    "exact_replay_files": 8583
+  },
+  "forbidden_result_or_binary_files": [],
+  "node_source_or_lockfiles": [],
+  "removed_manifest_residue": []
+}

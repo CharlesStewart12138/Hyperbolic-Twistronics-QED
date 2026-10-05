@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "parameter_id": "PF-ROB-005",
+  "immutable_record": true,
+  "authority": "2026-09-04 highest-priority theory-production directive",
+  "classification": "THEORY_PRODUCTION",
+  "disposition": "BLOCKED",
+  "status": "Blocked",
+  "exact_source": "pp.163-165",
+  "exact_dependency": "Before MC",
+  "rationale": "Sample counts 64/256 are supplied, but confidence level alpha and the yield acceptance threshold are not fixed.",
+  "frozen_value": null,
+  "partial_directive_values": {
+    "screening_samples_per_point": 64,
+    "final_samples": {
+      "optimum": 256,
+      "detuned_negative_control": 256,
+      "stress_negative_control": 256
+    },
+    "missing": [
+      "confidence level alpha",
+      "yield acceptance threshold"
+    ]
+  },
+  "production_scope": "blocked dependent theory branch",
+  "validation": "PASSED"
+}

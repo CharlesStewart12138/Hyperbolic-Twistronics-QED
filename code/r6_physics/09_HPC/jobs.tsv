@@ -1,0 +1,10 @@
+job_id	mode	theta_label	depth	kpm_order	probes
+1	local_radius	g_exp2	4	2048	32
+2	local_radius	g_exp2	5	2048	32
+3	local_radius	g_exp2	6	2048	32
+4	local_radius	g_inv2pi	4	2048	32
+5	local_radius	g_inv2pi	5	2048	32
+6	local_radius	g_inv2pi	6	2048	32
+7	local_radius	g_inv3pi	4	2048	32
+8	local_radius	g_inv3pi	5	2048	32
+9	local_radius	g_inv3pi	6	2048	32

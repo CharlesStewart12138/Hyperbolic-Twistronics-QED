@@ -1,0 +1,39 @@
+schema_version: 1
+freeze_status: partial
+hyperbolic_twist:
+  coordinate: theta_H
+  internal_coordinate: signed_radians
+  irreducible_interval:
+    lower_exact: "0"
+    upper_exact: "pi/8"
+    lower_inclusive: true
+    upper_inclusive: true
+  coverage_policy: full_interval
+  grid: null
+  refinement: null
+euclidean_twist:
+  coordinate: theta_E
+  internal_coordinate: signed_radians
+  irreducible_interval:
+    lower_exact: "0"
+    upper_exact: "pi/4"
+    lower_inclusive: true
+    upper_inclusive: true
+  commensurate_policy: exact_CSL_points_only
+  generic_angle_policy: fixed_Hilbert_space_no_CSL_index
+curvature:
+  primary_data_coordinate: kappa_a
+  primary_definition: "kappa_a=a*sqrt(kappa)=a/R"
+  signed_gaussian_curvature: "K=-1/R^2"
+  nonnegative_dimensional_magnitude: "kappa=-K=1/R^2"
+  fixed_length_derivative_conversions:
+    d_dK: "-d_dkappa"
+    d_dR: "-2*R^-3*d_dkappa"
+  scan_interval_exact: ["0", "kappa_B"]
+  endpoint_scope:
+    zero: euclidean_control
+    kappa_B: exact_Bolza_metric
+    open_interior: synthetic_constant_curvature_metric_interpolation
+  grid: null
+solver_tolerances: null
+

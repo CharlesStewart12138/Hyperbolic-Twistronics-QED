@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "parameter_id": "PF-PHY-007",
+  "immutable_record": true,
+  "authority": "2026-09-04 highest-priority theory-production directive",
+  "classification": "DEVICE_ONLY",
+  "disposition": "DEFER",
+  "status": "Deferred",
+  "exact_source": "pp.5-6 Eqs. (26)-(37)",
+  "exact_dependency": "Before hardware claim",
+  "rationale": "Coupling capacitance is required only for the circuit-to-device calibration map.",
+  "frozen_value": null,
+  "partial_directive_values": null,
+  "production_scope": "device-only downstream",
+  "validation": "PASSED"
+}

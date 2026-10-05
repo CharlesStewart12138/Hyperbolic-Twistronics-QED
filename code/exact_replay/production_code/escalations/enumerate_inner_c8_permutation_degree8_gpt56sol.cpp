@@ -1,0 +1,10 @@
+#include <algorithm>
+#include <array>
+#include <cstdint>
+#include <iostream>
+#include <map>
+#include <queue>
+#include <set>
+#include <unordered_set>
+namespace{constexpr int D=8;struct P{std::array<std::uint8_t,D>x{};bool operator==(const P&)const=default;bool operator<(const P&o)const{return x<o.x;}};P id(){P r;for(int i=0;i<D;++i)r.x[i]=i;return r;}P mul(const P&a,const P&b){P r;for(int i=0;i<D;++i)r.x[i]=a.x[b.x[i]];return r;}P inv(const P&a){P r;for(int i=0;i<D;++i)r.x[a.x[i]]=i;return r;}P conj(const P&t,const P&x){return mul(mul(t,x),inv(t));}std::uint32_t rank(const P&p){std::uint32_t r=0;for(int i=0;i<D;++i){int n=0;for(int j=i+1;j<D;++j)n+=p.x[j]<p.x[i];r=r*(D-i)+n;}return r;}std::uint64_t key(const P&p,int z){return(std::uint64_t(rank(p))<<1)|(z&1);}std::size_t b3(const std::array<P,8>&g){std::unordered_set<std::uint64_t>s;s.insert(key(id(),0));for(int a=0;a<8;++a){s.insert(key(g[a],1));for(int b=0;b<8;++b)if(b!=(a+4)%8){auto ab=mul(g[a],g[b]);s.insert(key(ab,0));for(int c=0;c<8;++c)if(c!=(b+4)%8)s.insert(key(mul(ab,g[c]),1));}}return s.size();}std::size_t generated(const std::array<P,8>&g){struct E{P p;int z;};std::unordered_set<std::uint64_t>s;std::queue<E>q;s.insert(key(id(),0));q.push({id(),0});while(!q.empty()){auto a=q.front();q.pop();for(auto&x:g){E y{mul(a.p,x),a.z^1};if(s.insert(key(y.p,y.z)).second)q.push(y);}}return s.size();}}
+int main(){auto t=id();for(int i=0;i<7;++i)t.x[i]=i+1;t.x[7]=0;P x=id();std::uint64_t all=0,ni=0,nr=0,nd=0;std::map<std::size_t,std::uint64_t>orders,bhist;do{++all;std::array<P,8>g{};g[0]=x;for(int i=1;i<8;++i)g[i]=conj(t,g[i-1]);if(!(g[4]==inv(g[0])))continue;++ni;auto r=id();for(int i:std::array<int,8>{0,5,2,7,4,1,6,3})r=mul(r,g[i]);if(!(r==id()))continue;++nr;if(std::set<P>(g.begin(),g.end()).size()!=8)continue;++nd;auto n=generated(g);orders[n]++;if(n>=2338&&n<=50000)bhist[b3(g)]++;}while(std::next_permutation(x.x.begin(),x.x.end()));std::cout<<"seeds="<<all<<" inverse="<<ni<<" relator="<<nr<<" distinct="<<nd<<'\n';for(auto[n,c]:orders)std::cout<<"ORDER "<<n<<" count="<<c<<'\n';for(auto[n,c]:bhist)std::cout<<"WINDOW_B3 "<<n<<" count="<<c<<'\n';}

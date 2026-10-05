@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0",
+  "candidate_id": "CAND-R4-0005",
+  "candidate_order": 46080,
+  "factor_orders": [
+    720,
+    64
+  ],
+  "direct_product_set_equality": true,
+  "enumeration": "deterministic BFS order from certified physical generators",
+  "presentation_generator_image_ids_zero_based": {
+    "a1": 1,
+    "b1": 6,
+    "a2": 312,
+    "b2": 429
+  },
+  "physical_shell_image_ids_zero_based": {
+    "g0": 1,
+    "g1": 2,
+    "g2": 3,
+    "g3": 4,
+    "g4": 5,
+    "g5": 6,
+    "g6": 7,
+    "g7": 8
+  },
+  "artifacts": {
+    "CAND-R4-0005.elements_u8.bin": {
+      "bytes": 460800,
+      "sha256": "21416040D7C1FB642DF6434D7CE1AB255935D5078D083E68E9CB19E99F3CF2E2"
+    },
+    "CAND-R4-0005.right_generators_u32le.bin": {
+      "bytes": 1474560,
+      "sha256": "700B36077CA3C10B1EFFC88930E59AB2931047513BF520C3D3561EEF4BDA692E"
+    },
+    "CAND-R4-0005.inverse_u32le.bin": {
+      "bytes": 184320,
+      "sha256": "CDB2B23647D6D52E4A3620489A1C336C6ED5ADE1E8C42503F8F5771BA7F6FB5E"
+    },
+    "CAND-R4-0005.C8_automorphism_u32le.bin": {
+      "bytes": 184320,
+      "sha256": "1E16205FBB9C0E620D1AC8C38409F4DC8B19540BB1EF8E9C188FF7E6DE69C9C1"
+    },
+    "CAND-R4-0005.parity_u8.bin": {
+      "bytes": 46080,
+      "sha256": "CCA79462B9FD3D7FBFAD830C6691C1591C017D6BA677B70464EC8B9CD05CF9EF"
+    },
+    "CAND-R4-0005_factor_regular_generators.g": {
+      "bytes": 23943,
+      "sha256": "BE2C2E7AFA563E955EB32D7C3C0C19704FACCB8E9F615F2DF20E6D11527823B5"
+    }
+  },
+  "formats": {
+    "CAND-R4-0005.elements_u8.bin": "46080 records x 10 unsigned bytes: eight F3 arithmetic coordinates, then v in [0,15], z in [0,3]",
+    "CAND-R4-0005.right_generators_u32le.bin": "generator-major 8 x 46080 zero-based uint32 little-endian right-multiplication targets",
+    "CAND-R4-0005.inverse_u32le.bin": "46080 zero-based uint32 little-endian inverse IDs",
+    "CAND-R4-0005.C8_automorphism_u32le.bin": "46080 zero-based uint32 little-endian exact C8 automorphism targets",
+    "CAND-R4-0005.parity_u8.bin": "46080 bytes in {0,1}",
+    "CAND-R4-0005_factor_regular_generators.g": "GAP source defining Areg and Breg as exact regular permutation groups"
+  },
+  "reconstruction_rule": "Q is the full direct product Areg x Breg; the candidate marked images are the diagonal pairs of like-indexed physical generators",
+  "classification": "PASS_EXPLICIT_EXACT_ACTION_ARTIFACTS"
+}

@@ -1,0 +1,27 @@
+schema_version: "1.0"
+certificate_id: "PF-GRP-001-PARITY-PHYSICAL"
+status: "certified"
+universal_homomorphism:
+  definition: "pi(a1)=pi(b1)=pi(a2)=pi(b2)=1 in Z/2Z"
+  relator_parity: 0
+  kernel_normal: true
+  phi8_invariant: true
+physical_shell:
+  name: "S8_GEOMETRIC"
+  ordered_parities: [1, 1, 1, 1, 1, 1, 1, 1]
+  consequence: "every physical nearest-neighbour edge flips parity"
+quotient_rule:
+  factorization: "pi_bar(q(gamma))=pi(gamma) is well-defined iff ker(q) subset ker(pi)"
+  executable_check: "generator-induced labels must be conflict-free, complete, and additive on the exact group table"
+  graph_check: "every nonzero S8_GEOMETRIC adjacency entry joins opposite labels"
+acceptance:
+  P-01_relator_parity_zero: true
+  P-02_homomorphism: true
+  P-03_kernel_normal: true
+  P-04_phi8_invariant: true
+  P-05_all_geometric_generators_odd: true
+  P-06_quotient_factorization_requires_candidate_check: true
+  P-07_physical_bipartiteness_requires_candidate_check: true
+scope_boundary:
+  presentation_shell_used_for_physical_adjacency: false
+  main_tex_modified: false

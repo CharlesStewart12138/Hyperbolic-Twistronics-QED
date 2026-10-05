@@ -1,0 +1,1 @@
+"""Independent exact Euclidean validations."""

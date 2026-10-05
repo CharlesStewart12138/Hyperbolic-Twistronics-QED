@@ -1,0 +1,70 @@
+\section{Uniform Schur and tail estimates}
+\label{sec:r7-schur}
+
+Set $\kappa=R^{-1}$ and
+\begin{equation}
+ A_\Gamma=max\left\{1,
+ \frac{\exp(3a_0/2R)}{\cosh(a_0/2R)-1}\right\},\qquad
+ S(\beta)=\frac{A_\Gamma}{1-e^{-(\beta-\kappa)a_0}}
+ \quad(\beta>\kappa).
+ \label{eq:r7-packing-constants}
+\end{equation}
+The packing argument with disjoint balls of radius $a_0/2$ gives, uniformly
+in the centre,
+\begin{equation}
+ \#\{y:na_0\le d(x,y)<(n+1)a_0\}
+ \le A_\Gamma e^{\kappa na_0}.
+ \label{eq:r7-shell-count}
+\end{equation}
+
+\begin{theorem}[Infinite-operator well-posedness]
+\label{thm:r7-wellposed}
+Assume the frozen growth--decay inequality
+\begin{equation}\mu>\kappa.\label{eq:r7-growth-decay}\end{equation}
+Then $T_\theta$ is bounded for every $\theta$, uniformly in $\theta$, and
+\begin{equation}
+ \|T_\theta\|\le C_{\rm Schur}:=
+ |w|e^{\mu h}S(\mu).
+ \label{eq:r7-schur}
+\end{equation}
+Consequently $H(\theta)$ is bounded and self-adjoint on all of $\mathscr H$,
+with
+\begin{equation}\|H(\theta)\|\le M:=8|t|+C_{\rm Schur}.\end{equation}
+Moreover, with $\gamma=\mu-\kappa>0$,
+\begin{equation}
+ \|T_\theta-T_\theta^{[L]}\|
+ \le C_{\rm tail}e^{-\gamma L},\qquad
+ C_{\rm tail}=
+ \frac{|w|e^{\mu h}A_\Gamma e^{\gamma a_0}}
+ {1-e^{-\gamma a_0}} .
+ \label{eq:r7-tail}
+\end{equation}
+All estimates are independent of $\theta$.
+\end{theorem}
+
+\begin{proof}
+Since $\sqrt{h^2+d^2}-h\ge d-h$,
+$|T_\theta(x,y)|\le |w|e^{\mu h}e^{-\mu d_\theta(x,y)}$.
+Equation~\eqref{eq:r7-shell-count} and a geometric series give the uniform
+row sum $C_{\rm Schur}$.  The same estimate holds for column sums because
+$r_\theta$ is an isometry.  Schur's test proves
+\eqref{eq:r7-schur}.  The nearest-neighbour adjacency has norm at most eight;
+bounded block-operator calculus then proves boundedness and self-adjointness.
+For the tail, start the geometric series at
+$\lfloor L/a_0\rfloor$ and use
+$e^{-\gamma a_0\lfloor L/a_0\rfloor}
+\le e^{\gamma a_0}e^{-\gamma L}$.  Schur's test proves
+\eqref{eq:r7-tail}.
+\end{proof}
+
+The theorem also proves local finiteness in the analytic sense needed here:
+every row is absolutely summable.  No pointwise finite support is asserted for
+the exponential kernel.
+
+For later weighted estimates define, for $0<q<\mu-\kappa$,
+\begin{equation}
+ \Phi(q)=8|t|(e^{qa_0}-1)
+ +|w|e^{\mu h}\{S(\mu-q)-S(\mu)\}.
+ \label{eq:r7-Phi}
+\end{equation}
+It is finite, increasing, and tends to zero as $q\downarrow0$.

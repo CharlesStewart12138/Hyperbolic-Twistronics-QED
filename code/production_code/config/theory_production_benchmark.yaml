@@ -1,0 +1,80 @@
+schema_version: 1
+registry_id: theory-production-benchmark-2026-09-04
+immutable: true
+status: preregistered_with_explicit_blockers
+authority: 2026-09-04 highest-priority theory-production directive
+scope: dimensionless theory production
+model:
+  nlay: 2
+  norb: 1
+  intralayer_degree: 8
+  generator_shell: S8
+  kappa_B_a: 3.057141839
+  curvature_ratios: [0.0, 0.25, 0.5, 0.75, 1.0]
+  intermediate_curvature_scope: synthetic_metric_deformation
+twist:
+  interval: [0, pi/8]
+  initial_uniform_points: 91
+  include_endpoints: true
+  zeta_track: 0.20
+  minimum_delta_theta_rad: 1.0e-4
+  refinement_triggers: [small_gap, rapid_projector_rotation, physical_score_extremum, hodge_root_bracket, representation_label_change, avoided_crossing]
+interlayer:
+  h_over_a: 0.50
+  kernel: "w*exp(-(D-h)/lambda_perp)"
+  primary_lambda_perp_over_a: 0.20
+  locked_lambda_holdouts: [0.125, 0.25]
+cutoff:
+  primary_Dc_over_a: 3.0
+  mandatory_convergence_Dc_over_a: [2.5, 3.0, 3.5]
+  extension_start_Dc_over_a: 4.0
+  extension_rule: monotone_until_C0_C1_C2_close_or_admissible_covers_insufficient
+analytic_validation_bridge:
+  production_input: false
+  q1: 0.007124099762028338
+  omega_ref_over_t: 140.36861265335298
+  g_star_over_t: 264.73722530670597
+coupling_scan:
+  coordinate: omega_over_omega_ref
+  values: [0.0, 0.25, 0.50, 0.75, 0.90, 0.97, 1.00, 1.03, 1.10, 1.25, 1.50, 2.00]
+  boundary_expansion:
+    maximum_uses: 1
+    interval: [0.125, 4.0]
+    trigger: candidate_reaches_initial_boundary
+controls:
+  exact_null_omega_over_omega_ref: 0.0
+  detuned_negative_omega_over_omega_ref: 0.75
+  square_five_state_no_root: required
+  fixed_bare_parameter_curvature: required
+  fixed_local_second_moment: required
+  fixed_total_interlayer_frobenius_norm: required
+numerics:
+  hermiticity_relative_residual_max: 1.0e-12
+  eigenpair_normalized_residual_max: 1.0e-10
+  kpm: {primary_moments: 8192, primary_probes: 64, holdout_moments: [4096, 8192, 16384], holdout_probes: [32, 64, 128], kernel: Jackson}
+  slq: {primary_probes: 64, lanczos_steps: 256, reorthogonalization: full}
+flatness:
+  basic: {W_over_Delta_max: 0.10, E_velocity_over_Delta_max: 0.10, E_second_order_over_Delta_max: 0.10, Ekin_rho_coh_min: 5, C_coh_min: 0.80}
+  strong: {W_over_Delta_max: 0.05, E_velocity_over_Delta_max: 0.05, E_second_order_over_Delta_max: 0.05, Ekin_rho_coh_min: 10, C_coh_min: 0.90}
+robustness:
+  prng: PCG64-DXSM
+  base_seed: 170217
+  screening_samples_per_point: 64
+  final_samples: {optimum: 256, detuned_negative_control: 256, stress_negative_control: 256}
+  layer_detuning_over_t: [0.0, 0.02, 0.05, 0.10]
+  scenarios:
+    mild: {sigma_omega_over_t: 0.02, sigma_t: 0.005, sigma_perp: 0.005, sigma_theta_degree: 0.01, gamma_loss_over_t: 0.02}
+    medium: {sigma_omega_over_t: 0.05, sigma_t: 0.01, sigma_perp: 0.01, sigma_theta_degree: 0.025, gamma_loss_over_t: 0.05}
+    stress_negative_control: {sigma_omega_over_t: 0.10, sigma_t: 0.02, sigma_perp: 0.02, sigma_theta_degree: 0.05, gamma_loss_over_t: 0.10}
+unresolved_theory_gates:
+  - finite_normal_quotient_and_two_inequivalent_cover_towers
+  - target_band_anchor_contour_rank_and_isolation
+  - complete_irrep_registry_and_common_sector_scope
+  - C0_C1_C2_tail_majorant_constants
+  - remaining_root_linear_solver_and_derivative_tolerances
+  - DOS_broadening_suite_and_DOS_seed_namespace
+  - nonuniform_loss_sigma_covariance_and_conditioning
+  - robustness_confidence_level_and_yield_threshold
+device_only_parameters:
+  disposition: Deferred — physical device calibration not required for theory production
+  ids: [PF-PHY-001, PF-PHY-002, PF-PHY-003, PF-PHY-007, PF-PHY-008, PF-PHY-009, PF-EUC-004, PF-ROB-006, PF-SPC-001, PF-SPC-002, PF-SPC-003, PF-QUB-001, PF-QUB-002, PF-QUB-003, PF-QUB-004]

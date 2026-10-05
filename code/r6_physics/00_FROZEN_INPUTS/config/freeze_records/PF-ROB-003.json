@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "parameter_id": "PF-ROB-003",
+  "immutable_record": true,
+  "authority": "2026-09-04 highest-priority theory-production directive",
+  "classification": "THEORY_PRODUCTION",
+  "disposition": "FREEZE",
+  "status": "Fixed",
+  "exact_source": "p.15 Eq. (182)",
+  "exact_dependency": "Before Monte Carlo",
+  "rationale": "Freeze truncated-normal sigma_theta={0.01,0.025,0.05} degree for mild, medium, stress.",
+  "frozen_value": {
+    "law": "independent standard normal truncated at |Z|<=5",
+    "sigma_theta_degree": {
+      "mild": 0.01,
+      "medium": 0.025,
+      "stress": 0.05
+    },
+    "prng": "PCG64-DXSM",
+    "base_seed": 170217
+  },
+  "partial_directive_values": null,
+  "production_scope": "dimensionless theory production",
+  "validation": "PASSED"
+}

@@ -1,0 +1,10 @@
+SetInfoLevel(InfoWarning,0);SetInfoLevel(InfoQuotientSystem,0);LoadPackage("nq");
+F:=FreeGroup("a1","b1","a2","b2");r:=F.1*F.2*F.1^-1*F.2^-1*F.3*F.4*F.3^-1*F.4^-1;SG:=F/[r];s:=GeneratorsOfGroup(SG);
+w:=[s[2]^-1,s[3]^-1*s[2]*s[1],s[3]^-1*s[2]*s[1]*s[2]^-1*s[1]^-1*s[2]^-1*s[4]^-1,s[1]*s[2]*s[1]^-1*s[2]^-1*s[3]];
+q:=PQuotient(SG,2,3,256,"combinatorial":noninteractive:=true);e:=EpimorphismQuotientSystem(q);u:=Image(e);g:=List(s,x->Image(e,x));a:=GroupHomomorphismByImages(u,u,g,List(w,x->Image(e,x)));pc:=Pcgs(u);b:=pc{[14..38]};l:=Subgroup(u,b);
+rows:=List(b,x->ExponentsOfPcElement(pc,Image(a,x)){[14..38]});m:=Matrix(GF(2),rows);ii:=IdentityMat(25,GF(2));
+Print("pc_len=",Length(pc)," relorders=",RelativeOrders(pc),"\n");
+Print("layer invariant=",ForAll(b,x->Image(a,x) in l)," firstzero=",ForAll(b,x->ForAll(ExponentsOfPcElement(pc,Image(a,x)){[1..13]},y->y=0)),"\n");
+Print("m type=",m,"\nm8eq=",m^8=ii," m8one=",m^8=One(m),"\n");
+for i in [1..25] do if ExponentsOfPcElement(pc,Image(a^8,b[i])){[14..38]}<>ii[i] then Print("bad ",i,"\n");fi;od;
+QUIT;

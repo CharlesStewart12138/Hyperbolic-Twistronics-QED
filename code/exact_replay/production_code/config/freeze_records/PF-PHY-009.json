@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "parameter_id": "PF-PHY-009",
+  "immutable_record": true,
+  "authority": "2026-09-04 highest-priority theory-production directive",
+  "classification": "DEVICE_ONLY",
+  "disposition": "DEFER",
+  "status": "Deferred",
+  "exact_source": "pp.5,16",
+  "exact_dependency": "Before multimode robustness",
+  "rationale": "Measured unused-mode separation is required only for a device-specific single-mode license.",
+  "frozen_value": null,
+  "partial_directive_values": null,
+  "production_scope": "device-only downstream",
+  "validation": "PASSED"
+}

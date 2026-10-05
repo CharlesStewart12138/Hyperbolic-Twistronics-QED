@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "parameter_id": "PF-PHY-005",
+  "immutable_record": true,
+  "authority": "2026-09-04 highest-priority theory-production directive",
+  "classification": "THEORY_PRODUCTION",
+  "disposition": "FREEZE",
+  "status": "Fixed",
+  "exact_source": "pp.9-10; p.13 validation label",
+  "exact_dependency": "Before production spectrum",
+  "rationale": "Theory freezes h/a=0.50; dimensional h remains device-only.",
+  "frozen_value": {
+    "h_over_a": 0.5,
+    "dimensional_h": "Deferred — physical device calibration not required for theory production"
+  },
+  "partial_directive_values": null,
+  "production_scope": "dimensionless theory production",
+  "validation": "PASSED"
+}

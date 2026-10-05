@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "parameter_id": "PF-ROB-004",
+  "immutable_record": true,
+  "authority": "2026-09-04 highest-priority theory-production directive",
+  "classification": "THEORY_PRODUCTION",
+  "disposition": "BLOCKED",
+  "status": "Blocked",
+  "exact_source": "p.15 Eq. (183)",
+  "exact_dependency": "Before open-system MC",
+  "rationale": "Mean gamma_loss/t is supplied for three scenarios, but sigma_ln(gamma), nonuniform spatial covariance, and conditioning remain unspecified.",
+  "frozen_value": null,
+  "partial_directive_values": {
+    "gamma_loss_over_t": {
+      "mild": 0.02,
+      "medium": 0.05,
+      "stress": 0.1
+    },
+    "missing": [
+      "sigma_ln_gamma",
+      "nonuniform spatial covariance",
+      "conditioning rule"
+    ]
+  },
+  "production_scope": "blocked dependent theory branch",
+  "validation": "PASSED"
+}

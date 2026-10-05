@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "parameter_id": "PF-FLT-006",
+  "immutable_record": true,
+  "authority": "2026-09-04 highest-priority theory-production directive",
+  "classification": "THEORY_PRODUCTION",
+  "disposition": "FREEZE",
+  "status": "Fixed",
+  "exact_source": "p.60; p.232 onward",
+  "exact_dependency": "Before flatness run",
+  "rationale": "Freeze basic C_coh>=0.80 and strong C_coh>=0.90.",
+  "frozen_value": {
+    "metric": "basis_invariant_projector_coherence",
+    "basic_min": 0.8,
+    "strong_min": 0.9
+  },
+  "partial_directive_values": null,
+  "production_scope": "dimensionless theory production",
+  "validation": "PASSED"
+}

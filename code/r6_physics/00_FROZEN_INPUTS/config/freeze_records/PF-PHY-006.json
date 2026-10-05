@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "parameter_id": "PF-PHY-006",
+  "immutable_record": true,
+  "authority": "2026-09-04 highest-priority theory-production directive",
+  "classification": "THEORY_PRODUCTION",
+  "disposition": "FREEZE",
+  "status": "Fixed",
+  "exact_source": "pp.10-11; p.17 Eq. (197)",
+  "exact_dependency": "Before production spectrum",
+  "rationale": "Theory freezes primary lambda_perp/a=0.20 and locked holdouts [0.125,0.25].",
+  "frozen_value": {
+    "primary_lambda_perp_over_a": 0.2,
+    "locked_holdouts": [
+      0.125,
+      0.25
+    ],
+    "retuning_after_results": false
+  },
+  "partial_directive_values": null,
+  "production_scope": "dimensionless theory production",
+  "validation": "PASSED"
+}

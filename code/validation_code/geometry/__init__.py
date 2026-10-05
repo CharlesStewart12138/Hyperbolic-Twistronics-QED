@@ -1,0 +1,1 @@
+"""Independent exact-geometry validations."""

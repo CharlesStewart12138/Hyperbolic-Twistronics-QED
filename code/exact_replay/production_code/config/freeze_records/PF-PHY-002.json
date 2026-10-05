@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "parameter_id": "PF-PHY-002",
+  "immutable_record": true,
+  "authority": "2026-09-04 highest-priority theory-production directive",
+  "classification": "DEVICE_ONLY",
+  "disposition": "DEFER",
+  "status": "Deferred",
+  "exact_source": "p.15 Table II; Eqs. (38),(192)",
+  "exact_dependency": "Before device/spectroscopy",
+  "rationale": "Loaded GHz frequency is needed for a fabricated device, RWA, and spectroscopy; dimensionless spectra subtract the common omega0 shift.",
+  "frozen_value": null,
+  "partial_directive_values": null,
+  "production_scope": "device-only downstream",
+  "validation": "PASSED"
+}

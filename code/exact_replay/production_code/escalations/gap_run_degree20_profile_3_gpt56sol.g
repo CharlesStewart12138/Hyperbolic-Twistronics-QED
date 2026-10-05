@@ -1,0 +1,1 @@
+GetEnv:=function(s)if s="BOLZA20_KMIN"then return "436";elif s="BOLZA20_KMAX"then return "537";else return fail;fi;end;Read("/mnt/d/work/revise/production_code/escalations/gap_transitive_degree20_aut_profile_slice_gpt56sol.g");

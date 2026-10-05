@@ -1,0 +1,42 @@
+\section{A fixed generic angle and the three distinct limits}
+\label{sec:r7-fixed-angle}
+
+\begin{theorem}[Exact infinite-system finite-resolution magic]
+\label{thm:r7-fixed-generic}
+Fix any
+$\theta\in I_{\rm magic}\setminus\Theta_C$ from
+Theorem~\ref{thm:r7-inheritance}.  Then the exact, nonperiodic, bounded
+self-adjoint operator $H(\theta)$ has the strict five-component certificate
+\eqref{eq:r7-strict-magic} at the declared finite $(\ell,\eta,T)$.  In
+particular its broadened local spectral measure
+\begin{equation}
+ \rho_{\psi,\eta}(E)=
+ -\pi^{-1}\Im\langle\psi,(E+i\eta-H(\theta))^{-1}\psi\rangle
+\end{equation}
+and its finite-time dynamics are infinite-system observables; they are not
+properties of a Dirichlet cluster.
+\end{theorem}
+
+\begin{proof}
+The finite matrices used in the proof converge to these exact observables by
+Corollary~\ref{cor:r7-res-trunc} and Theorem~\ref{thm:r7-dyn}.  The perturbation
+budgets in Theorem~\ref{thm:r7-inheritance} leave all inequalities strict.
+R5 excludes an exact finite common cover at the selected angle.
+\end{proof}
+
+This theorem closes the fixed-generic-angle problem in the broadened local
+spectral and finite-time senses requested by R7.  It does not merge the
+following limits:
+\begin{enumerate}
+\item $\ell\to\infty$ requires a simultaneously shrinking angular window as
+in \eqref{eq:r7-exponential-window};
+\item $\eta\downarrow0$ requires local spectral regularity (for a density) or
+control of atoms/singular continuous measure;
+\item $T\to\infty$ requires spectral-type or transport information, such as a
+mobility gap, dynamical localization, a Mourre estimate, or an appropriate
+RAGE decomposition.
+\end{enumerate}
+Finite moments and a Hodge Hessian do not determine spectral type, so none of
+these extra hypotheses follows from the frozen inputs.  This is the precise
+obstruction to the stronger zero-resolution/infinite-time slogan.  It does
+not weaken Theorem~\ref{thm:r7-fixed-generic}.

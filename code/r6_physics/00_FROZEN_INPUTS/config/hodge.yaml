@@ -1,0 +1,33 @@
+schema_version: 1
+freeze_status: incomplete
+parameter_ids:
+  - PF-HOD-001
+  - PF-HOD-002
+  - PF-HOD-003
+  - PF-HOD-004
+parameters:
+  PF-HOD-001:
+    status: fixed
+    release_id: PF-HOD-001-LOCAL-2026-09-05
+    scope: LOCAL_SCALAR_CHARACTER
+    basis_registry: production_code/hodge/BOLZA_HARMONIC_TANGENT_BASIS.yaml
+    ordered_basis: [eta_a1, eta_b1, eta_a2, eta_b2]
+    dimension_real: 4
+    transport: I_4
+    finite_quotient_required: false
+    nonabelian_Ad_rho_basis: not_asserted
+  PF-HOD-002:
+    status: fixed
+    release_id: PF-HOD-002-LOCAL-2026-09-05
+    scope: LOCAL_SCALAR_CHARACTER
+    metric_registry: production_code/hodge/BOLZA_HODGE_METRIC.yaml
+    basis_order: [eta_a1, eta_b1, eta_a2, eta_b2]
+    determinant: 1
+    eigenvalues: [sqrt(2)-1, sqrt(2)-1, sqrt(2)+1, sqrt(2)+1]
+    positive_definite: true
+    identity_metric: false
+    normalized_hessian: G^(-1/2) K G^(-1/2)
+    finite_quotient_required: false
+    nonabelian_Ad_rho_metric: not_asserted
+  PF-HOD-003: null
+  PF-HOD-004: null
