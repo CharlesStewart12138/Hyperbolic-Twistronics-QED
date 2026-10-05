@@ -14,10 +14,26 @@ FORBIDDEN_SUFFIXES = {
     ".bin", ".npz", ".npy", ".csv", ".jsonl", ".gz", ".pdf",
     ".png", ".jpg", ".jpeg", ".svg", ".xlsx", ".xls", ".parquet",
     ".h5", ".hdf5", ".mp4", ".avi", ".mov", ".exe", ".dll",
+    ".tex", ".sty", ".cls", ".bib",
 }
 NODE_SUFFIXES = {".js", ".mjs", ".cjs", ".ts", ".tsx"}
 NODE_FILENAMES = {"package.json", "package-lock.json", "yarn.lock", "pnpm-lock.yaml"}
 REMOVED_MANIFESTS = {"ENTRYPOINTS.tsv", "SOURCE_MANIFEST.tsv", "PACKAGE_MANIFEST.tsv"}
+REMOVED_LAYOUT_TOOLS = {
+    "build_course.py",
+    "build_claims_and_paper_package.py",
+    "build_r5_input_manifest.py",
+    "finalize_r5_root.py",
+    "locate_min_font.py",
+    "locate_min_font_context.py",
+    "prepare_clean_pdf_build.py",
+    "prepare_clean_pdf_build_v2.py",
+    "prepare_clean_pdf_build_v3.py",
+    "prepare_clean_pdf_build_v4.py",
+    "qa_and_contact_sheet.py",
+    "qa_r5_pdf.py",
+    "verify_final_internal_closure.py",
+}
 NATIVE_SUFFIXES = {".c", ".cc", ".cpp", ".cxx", ".h", ".hh", ".hpp", ".hxx", ".cu"}
 
 
@@ -40,6 +56,9 @@ def main() -> int:
     removed_manifest_residue = [
         path.relative_to(ROOT).as_posix() for path in files if path.name in REMOVED_MANIFESTS
     ]
+    layout_tool_residue = [
+        path.relative_to(ROOT).as_posix() for path in files if path.name in REMOVED_LAYOUT_TOOLS
+    ]
     suffixes: Counter[str] = Counter(path.suffix.lower() or "[none]" for path in files)
     sections: Counter[str] = Counter(
         path.relative_to(ROOT).parts[0] if len(path.relative_to(ROOT).parts) > 1 else "release_root"
@@ -56,7 +75,7 @@ def main() -> int:
         "native_c_cpp_headers": sum(path.suffix.lower() in NATIVE_SUFFIXES for path in files),
         "exact_replay_files": len(exact_files),
     }
-    passed = not forbidden and not node_files and not removed_manifest_residue
+    passed = not forbidden and not node_files and not removed_manifest_residue and not layout_tool_residue
     report = {
         "status": "pass" if passed else "fail",
         "file_count": len(files),
@@ -67,8 +86,9 @@ def main() -> int:
         "forbidden_result_or_binary_files": forbidden,
         "node_source_or_lockfiles": node_files,
         "removed_manifest_residue": removed_manifest_residue,
+        "manuscript_or_pdf_layout_tool_residue": layout_tool_residue,
     }
-    REPORT.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    REPORT.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8", newline="\n")
     print(json.dumps(report, indent=2, ensure_ascii=False))
     return 0 if passed else 1
 

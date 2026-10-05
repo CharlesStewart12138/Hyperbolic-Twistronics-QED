@@ -9,6 +9,6 @@ Excluded in full:
 - all Node.js source and lockfiles;
 - generated numerical results, figures, reports, checkpoints, caches, and large frozen binary tables.
 
-The retained modules cover R4 constructive realization, R5 periodicity/commensurator closure, R6 numerical physics, R7 exact certificate replay, production/validation utilities, and the newest manuscript/figure helpers. Version-like suffixes still present in active filenames identify current mathematical protocols, frozen schemas, or corrected entry points; they are not duplicate historical releases.
+The retained modules cover R4 constructive realization, R5 periodicity/commensurator closure, R6 numerical physics, R7 exact certificate replay, production/validation utilities, and current data-driven scientific-figure helpers. Manuscript generation, LaTeX typesetting, PDF assembly, PDF/font QA, and contact-sheet utilities are excluded. Version-like suffixes still present in active filenames identify current mathematical protocols, frozen schemas, or corrected entry points; they are not duplicate historical releases.
 
 `p2_14_16_failed_runs_manifest.py` is retained because it is the current audit program for classifying production attempts, not an obsolete failed implementation.

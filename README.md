@@ -11,9 +11,9 @@ Generated scientific results, rendered figures, PDFs, workbooks, caches, checkpo
 - `code/CONSTRUCTIVE_EXECUTION_R4/`: current exact quotient and construction code.
 - `code/OPERATOR_CLOSURE_R5_REVIEWER_SUPPLEMENT/`: current R5 constructive and proof-support checks.
 - `code/r6_physics/`: current non-Bloch numerical operators, campaigns, convergence tools, and reduced tests.
-- `code/r7_theory/`: exact magic-margin certificate, R7 figure sources, and theorem specifications.
+- `code/r7_theory/`: exact magic-margin certificate and its executable tests.
 - `code/exact_replay/`: complete frozen GAP jobs, shell shard launchers, recovery controllers, C/C++ enumerators, and their supporting source/configuration files.
-- `code/manuscript_tools/`: newest paper and scientific-figure builders.
+- `code/scientific_figures/`: data- and formula-driven scientific-figure builders.
 - `reproduce.py`: portable current-code command dispatcher.
 
 The exact-replay layer is isolated so it cannot shadow the current R4--R7 Python modules. Its original script names and path conventions are retained because they encode the large sharded computations; see `code/exact_replay/README.md`.
@@ -39,7 +39,9 @@ The reduced R6 demo and R7 certificate do not require the excluded large registr
 
 ## External tools
 
-Exact stages additionally require GAP and its named packages, a C++20 compiler with GMP/MPFR where indicated, and a LaTeX/Poppler toolchain for source figure builds.
+Exact stages additionally require GAP and its named packages, plus a C++20 compiler with GMP/MPFR where indicated.
+
+Manuscript generation, LaTeX typesetting, PDF assembly, font inspection, and PDF contact-sheet utilities are intentionally excluded. Scientific plotting code is retained and may export publication-ready graphics from formulas or numerical data.
 
 ## Release policy
 

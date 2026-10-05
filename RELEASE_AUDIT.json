@@ -1,10 +1,10 @@
 {
   "status": "pass",
-  "file_count": 9431,
-  "total_bytes": 421754464,
+  "file_count": 9393,
+  "total_bytes": 421605687,
   "sections": {
     ".github": 1,
-    "code": 9415,
+    "code": 9377,
     "docs": 5,
     "release_root": 8,
     "tools": 2
@@ -14,11 +14,10 @@
     ".g": 6765,
     ".json": 228,
     ".md": 14,
-    ".ps1": 37,
-    ".py": 1215,
+    ".ps1": 36,
+    ".py": 1199,
     ".sh": 953,
     ".slurm": 1,
-    ".tex": 21,
     ".toml": 1,
     ".tsv": 2,
     ".txt": 1,
@@ -27,14 +26,15 @@
     "[none]": 1
   },
   "source_counts": {
-    "python": 1215,
+    "python": 1199,
     "gap": 6765,
     "shell_sh": 953,
-    "powershell": 37,
+    "powershell": 36,
     "native_c_cpp_headers": 95,
-    "exact_replay_files": 8583
+    "exact_replay_files": 8571
   },
   "forbidden_result_or_binary_files": [],
   "node_source_or_lockfiles": [],
-  "removed_manifest_residue": []
+  "removed_manifest_residue": [],
+  "manuscript_or_pdf_layout_tool_residue": []
 }

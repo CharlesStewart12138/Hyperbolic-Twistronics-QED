@@ -19,9 +19,9 @@ CODE = ROOT / "code"
 PYTHON = sys.executable
 REQUIRED_MODULES = (
     "numpy", "scipy", "h5py", "sympy", "matplotlib", "yaml",
-    "openpyxl", "psutil", "PIL", "pypdf", "mpmath", "pytest",
+    "openpyxl", "psutil", "PIL", "mpmath", "pytest",
 )
-REQUIRED_TOOLS = ("g++", "gap", "latexmk")
+REQUIRED_TOOLS = ("g++", "gap")
 
 
 def environment() -> dict[str, str]:

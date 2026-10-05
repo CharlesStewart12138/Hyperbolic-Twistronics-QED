@@ -14,9 +14,9 @@ The source release omits the large Q* generator table and universal-cover archiv
 
 The reduced demonstration validates code paths only and sets `production_claim` to `false`.
 
-## R7 theorem/certificate layer
+## R7 certificate layer
 
-`code/r7_theory/` contains the theorem specifications, exact-rational magic-margin verifier, and source TeX for the R7 explanatory figures. Generated certificates go to `outputs/r7/`.
+`code/r7_theory/` contains the executable exact-rational magic-margin verifier and its tests. Generated certificates go to `outputs/r7/`. Manuscript and LaTeX sources are deliberately excluded.
 
 ```bash
 python reproduce.py test r6
